@@ -12,4 +12,4 @@ This repository is designed to publish from the `/docs` folder.
 
 Public tool path:
 
-`/nothingbuta/debt-payoff-calculator/`
+`/debt-payoff-calculator/`
