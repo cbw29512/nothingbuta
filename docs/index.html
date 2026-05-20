@@ -2,26 +2,115 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>NothingButA</title>
-  <meta name="description" content="Simple single-purpose web tools that do one job clearly.">
+  <title>NothingButA — Simple Single-Purpose Tools</title>
+  <meta name="description" content="NothingButA is a growing hub of simple single-purpose web tools that do one job clearly.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     *{box-sizing:border-box}
     body{margin:0;font-family:Arial,sans-serif;background:#f8fafc;color:#0f172a}
-    main{width:min(100% - 24px,900px);margin:auto;padding:42px 0}
-    .card{background:white;border:1px solid #dbe3ef;border-radius:24px;padding:24px;box-shadow:0 14px 40px rgba(15,23,42,.08)}
-    h1{font-size:clamp(36px,8vw,64px);line-height:1;margin:0 0 12px;letter-spacing:-.05em}
-    p{color:#475569;line-height:1.5;font-size:18px}
-    a{display:inline-block;margin-top:12px;background:#2563eb;color:white;text-decoration:none;font-weight:900;padding:14px 18px;border-radius:16px}
+    a{color:inherit}
+    .wrap{width:min(100% - 24px,1060px);margin:auto;padding:22px 0 56px}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:18px}
+    .brand{font-weight:900;letter-spacing:-.04em;font-size:22px}
+    .pill{display:inline-flex;align-items:center;gap:8px;border:1px solid #dbe3ef;background:#fff;border-radius:999px;padding:9px 12px;color:#475569;font-weight:800;font-size:13px}
+    .hero{display:grid;gap:18px;align-items:stretch}
+    .hero-card{background:linear-gradient(135deg,#0f172a,#1d4ed8);color:white;border-radius:28px;padding:28px;box-shadow:0 22px 70px rgba(15,23,42,.18)}
+    .eyebrow{display:inline-block;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.2);border-radius:999px;padding:8px 12px;font-size:13px;font-weight:900}
+    h1{font-size:clamp(42px,10vw,78px);line-height:.92;margin:14px 0 14px;letter-spacing:-.07em}
+    .hero p{font-size:19px;line-height:1.5;color:#dbeafe;margin:0}
+    .actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:14px 18px;border-radius:17px;background:#fff;color:#0f172a;text-decoration:none;font-weight:900}
+    .btn.secondary{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.24)}
+    .panel{background:white;border:1px solid #dbe3ef;border-radius:28px;padding:20px;box-shadow:0 14px 45px rgba(15,23,42,.08)}
+    .panel h2,.section h2{margin:0 0 8px;font-size:26px;letter-spacing:-.04em}
+    .muted{color:#64748b;line-height:1.5}
+    .tool-card{display:grid;gap:12px;margin-top:14px;padding:18px;border-radius:22px;background:#f1f5f9;border:1px solid #dbe3ef}
+    .tool-card h3{margin:0;font-size:24px;letter-spacing:-.04em}
+    .tool-card p{margin:0;color:#475569;line-height:1.45}
+    .open-tool{display:inline-flex;justify-content:center;text-decoration:none;background:#2563eb;color:white;border-radius:16px;padding:14px 16px;font-weight:900}
+    .section{margin-top:18px}
+    .grid{display:grid;grid-template-columns:1fr;gap:12px}
+    .small-card{background:white;border:1px solid #dbe3ef;border-radius:22px;padding:18px;box-shadow:0 10px 30px rgba(15,23,42,.06)}
+    .small-card h3{margin:0 0 8px;font-size:20px;letter-spacing:-.03em}
+    .small-card p{margin:0;color:#64748b;line-height:1.45}
+    .tag{display:inline-block;margin-bottom:10px;border-radius:999px;background:#e0e7ff;color:#3730a3;padding:6px 10px;font-size:12px;font-weight:900}
+    .tag.soon{background:#fef3c7;color:#78350f}
+    footer{margin-top:24px;color:#64748b;font-size:14px;line-height:1.5}
+    @media (min-width:800px){
+      .wrap{padding-top:34px}
+      .hero{grid-template-columns:1.4fr .8fr}
+      .grid{grid-template-columns:repeat(3,1fr)}
+      .hero-card,.panel{padding:30px}
+    }
   </style>
 </head>
 <body>
-  <main>
-    <section class="card">
-      <h1>NothingButA</h1>
-      <p>Simple single-purpose web tools that do one job clearly.</p>
-      <a href="./debt-payoff-calculator/">Open the Debt Payoff Calculator</a>
+  <main class="wrap">
+    <nav class="nav" aria-label="Main navigation">
+      <div class="brand">NothingButA</div>
+      <span class="pill">Simple tools. No clutter.</span>
+    </nav>
+
+    <section class="hero">
+      <div class="hero-card">
+        <span class="eyebrow">Single-purpose web tools</span>
+        <h1>One clear tool for one clear job.</h1>
+        <p>NothingButA is a growing hub of focused utilities. No bloated dashboards. No forced accounts. Just simple pages that help you solve one problem at a time.</p>
+        <div class="actions">
+          <a class="btn" href="./debt-payoff-calculator/">Open the live tool</a>
+          <a class="btn secondary" href="#coming-next">See what is coming next</a>
+        </div>
+      </div>
+
+      <aside class="panel">
+        <h2>Featured tool</h2>
+        <p class="muted">The first live NothingButA utility is ready.</p>
+        <div class="tool-card">
+          <span class="tag">Live</span>
+          <h3>Debt Payoff Calculator</h3>
+          <p>Estimate payoff time, interest paid, interest saved, and months saved from extra monthly payments.</p>
+          <a class="open-tool" href="./debt-payoff-calculator/">Use the calculator</a>
+        </div>
+      </aside>
     </section>
+
+    <section class="section" id="tools">
+      <h2>Available tools</h2>
+      <p class="muted">Only finished tools appear here as live links.</p>
+      <div class="grid">
+        <article class="small-card">
+          <span class="tag">Live</span>
+          <h3>Debt Payoff Calculator</h3>
+          <p>See how extra monthly payments can change your debt payoff path.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="coming-next">
+      <h2>Coming next</h2>
+      <p class="muted">These are planned utility directions. They are not live tools yet.</p>
+      <div class="grid">
+        <article class="small-card">
+          <span class="tag soon">Planned</span>
+          <h3>Mortgage Payment Calculator</h3>
+          <p>A simple way to estimate monthly mortgage payments without a cluttered finance portal.</p>
+        </article>
+        <article class="small-card">
+          <span class="tag soon">Planned</span>
+          <h3>Tip Calculator</h3>
+          <p>A fast mobile-first tip splitter for real-world restaurant situations.</p>
+        </article>
+        <article class="small-card">
+          <span class="tag soon">Planned</span>
+          <h3>Paycheck Estimator</h3>
+          <p>A plain-English take-home pay estimate tool with clear disclaimers.</p>
+        </article>
+      </div>
+    </section>
+
+    <footer>
+      NothingButA tools are estimates and simple utilities. Financial tools are for general education only and are not professional financial advice.
+    </footer>
   </main>
 </body>
 </html>
