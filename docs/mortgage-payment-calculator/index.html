@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>NothingButA Mortgage Payment Calculator</title>
-  <meta name="description" content="Estimate a monthly mortgage payment using price, down payment, rate, term, and escrow.">
+  <meta name="description" content="Estimate a monthly mortgage payment using loan amount, interest rate, loan term, taxes, insurance, and other housing costs before you shop.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     *{box-sizing:border-box}
@@ -205,6 +205,22 @@
     }
   }
 </style>
+<script type="application/ld+json" id="nothingbuta-optimization-batch-002-schema">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "NothingButA Mortgage Payment Calculator",
+  "url": "https://cbw29512.github.io/nothingbuta/mortgage-payment-calculator/",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any",
+  "description": "Estimate a monthly mortgage payment using loan amount, interest rate, loan term, taxes, insurance, and other housing costs before you shop.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+</script>
 </head>
 <body>
 <nav class="tool-jump" id="nothingbuta-tool-jump" aria-label="NothingButA tool navigation">
@@ -269,7 +285,56 @@
         </details>
         
     </section>
-  </main>
+  <section class="nba-growth-section" id="nothingbuta-optimization-batch-002-content" aria-labelledby="mortgage-growth-help">
+  <style>
+    .nba-growth-section {
+      margin: 1.5rem auto 2rem;
+      padding: 1.2rem;
+      border: 1px solid rgba(15, 23, 42, 0.12);
+      border-radius: 24px;
+      background: rgba(255,255,255,0.94);
+      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
+    }
+    .nba-growth-section h2 {
+      margin: 0 0 0.7rem;
+      font-size: clamp(1.35rem, 3vw, 2rem);
+      letter-spacing: -0.04em;
+    }
+    .nba-growth-section h3 {
+      margin: 1rem 0 0.4rem;
+      font-size: 1.05rem;
+    }
+    .nba-growth-section p {
+      color: #475569;
+      line-height: 1.65;
+      margin: 0.35rem 0;
+    }
+  </style>
+
+  <h2 id="mortgage-growth-help">Make the mortgage estimate useful</h2>
+
+  <h3>How to use this calculator</h3>
+  <p>
+    Enter the loan amount, interest rate, loan length, and any extra monthly housing costs.
+    The calculator gives you an estimated monthly payment so you can compare homes,
+    loan scenarios, or budget ranges before making a bigger decision.
+  </p>
+
+  <h3>What the result means</h3>
+  <p>
+    Treat the result as a planning estimate, not a lender quote. Your final payment can change
+    based on taxes, insurance, HOA fees, private mortgage insurance, escrow rules, credit profile,
+    down payment, and lender terms.
+  </p>
+
+  <h3>Useful next checks</h3>
+  <p>
+    After estimating a mortgage payment, compare it with your monthly income, emergency fund,
+    and other debts. A payment that looks affordable alone may feel different once maintenance,
+    utilities, and savings goals are included.
+  </p>
+</section>
+</main>
 
   <script>
     const FORMULA = "mortgage";
