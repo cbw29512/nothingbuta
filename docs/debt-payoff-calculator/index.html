@@ -94,13 +94,13 @@
       <form class="card" onsubmit="event.preventDefault();calc();">
         <h2>Your numbers</h2>
         <label>Current balance <small>How much you owe today</small></label>
-        <input id="balance" type="number" inputmode="decimal" value="5000">
+        <input id="balance" type="number" inputmode="decimal" value="5000" aria-label="Current debt balance">
         <label>APR % <small>Annual interest rate</small></label>
-        <input id="apr" type="number" inputmode="decimal" value="19.99" step="0.01">
+        <input id="apr" type="number" inputmode="decimal" value="19.99" step="0.01" aria-label="Annual interest rate">
         <label>Monthly payment <small>Your regular planned payment</small></label>
-        <input id="pay" type="number" inputmode="decimal" value="250">
+        <input id="pay" type="number" inputmode="decimal" value="250" aria-label="Current monthly payment">
         <label>Extra monthly payment <small>Optional extra amount</small></label>
-        <input id="extra" type="number" inputmode="decimal" value="50">
+        <input id="extra" type="number" inputmode="decimal" value="50" aria-label="Extra monthly payment">
         <button type="submit">Calculate payoff</button>
         <p class="note">This calculator provides an estimate only and is not financial advice. Actual payoff dates can vary based on lender terms, fees, payment timing, and compounding.</p>
       </form>
