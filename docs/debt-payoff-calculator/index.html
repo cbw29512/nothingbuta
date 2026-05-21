@@ -40,8 +40,49 @@
       .card,.result,.help{padding:22px}
     }
   </style>
+<style id="nothingbuta-tool-jump-style">
+  .tool-jump {
+    margin: 0 auto;
+    padding: 0.85rem 1rem;
+    max-width: 1120px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 0.65rem;
+  }
+  .tool-jump label {
+    font-size: 0.9rem;
+    font-weight: 700;
+  }
+  .tool-jump select {
+    max-width: 280px;
+    width: 100%;
+    padding: 0.65rem 0.8rem;
+    border: 1px solid rgba(15, 23, 42, 0.18);
+    border-radius: 999px;
+    background: #ffffff;
+    font: inherit;
+  }
+  @media (max-width: 700px) {
+    .tool-jump {
+      justify-content: stretch;
+      align-items: stretch;
+      flex-direction: column;
+    }
+    .tool-jump select {
+      max-width: none;
+    }
+  }
+</style>
 </head>
 <body>
+<nav class="tool-jump" id="nothingbuta-tool-jump" aria-label="NothingButA tool navigation">
+  <label for="tool-jump-select">More NothingButA tools</label>
+  <select id="tool-jump-select" onchange="if (this.value) window.location.href = this.value;">
+    <option value="">Jump to another tool...</option><option value="../">All tools home</option><option value="../break-even-calculator/">Break Even Calculator</option><option value="../car-payment-calculator/">Car Payment Calculator</option><option value="../churn-rate-calculator/">Churn Rate Calculator</option><option value="../concrete-calculator/">Concrete Calculator</option><option value="../conversion-rate-calculator/">Conversion Rate Calculator</option><option value="../days-between-dates-calculator/">Days Between Dates Calculator</option><option value="../debt-payoff-calculator/" selected>Debt Payoff Calculator</option><option value="../discount-calculator/">Discount Calculator</option><option value="../emergency-fund-calculator/">Emergency Fund Calculator</option><option value="../flooring-calculator/">Flooring Calculator</option><option value="../freelance-rate-calculator/">Freelance Rate Calculator</option><option value="../hourly-to-salary-calculator/">Hourly to Salary Calculator</option><option value="../loan-early-payoff-calculator/">Loan Early Payoff Calculator</option><option value="../mortgage-payment-calculator/">Mortgage Payment Calculator</option><option value="../paint-coverage-calculator/">Paint Coverage Calculator</option><option value="../paycheck-estimator/">Paycheck Take-Home Estimator</option><option value="../percentage-change-calculator/">Percentage Change Calculator</option><option value="../recipe-scale-calculator/">Recipe Scale Calculator</option><option value="../rent-affordability-calculator/">Rent Affordability Calculator</option><option value="../sales-tax-calculator/">Sales Tax Calculator</option><option value="../savings-goal-calculator/">Savings Goal Calculator</option><option value="../roi-calculator/">Simple ROI Calculator</option><option value="../time-card-calculator/">Time Card Calculator</option><option value="../tip-calculator/">Tip Calculator</option><option value="../unit-price-calculator/">Unit Price Calculator</option>
+  </select>
+</nav>
+
   <main class="wrap">
     <section class="hero">
       <span class="eyebrow">Debt payoff calculator</span>

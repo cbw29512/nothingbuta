@@ -1,3 +1,9 @@
+<details class="home-tool-directory" id="nothingbuta-home-tool-directory">
+  <summary>Browse all NothingButA tools</summary>
+  <div class="tool-directory-grid">
+    <a href="break-even-calculator/">Break Even Calculator</a><a href="car-payment-calculator/">Car Payment Calculator</a><a href="churn-rate-calculator/">Churn Rate Calculator</a><a href="concrete-calculator/">Concrete Calculator</a><a href="conversion-rate-calculator/">Conversion Rate Calculator</a><a href="days-between-dates-calculator/">Days Between Dates Calculator</a><a href="debt-payoff-calculator/">Debt Payoff Calculator</a><a href="discount-calculator/">Discount Calculator</a><a href="emergency-fund-calculator/">Emergency Fund Calculator</a><a href="flooring-calculator/">Flooring Calculator</a><a href="freelance-rate-calculator/">Freelance Rate Calculator</a><a href="hourly-to-salary-calculator/">Hourly to Salary Calculator</a><a href="loan-early-payoff-calculator/">Loan Early Payoff Calculator</a><a href="mortgage-payment-calculator/">Mortgage Payment Calculator</a><a href="paint-coverage-calculator/">Paint Coverage Calculator</a><a href="paycheck-estimator/">Paycheck Take-Home Estimator</a><a href="percentage-change-calculator/">Percentage Change Calculator</a><a href="recipe-scale-calculator/">Recipe Scale Calculator</a><a href="rent-affordability-calculator/">Rent Affordability Calculator</a><a href="sales-tax-calculator/">Sales Tax Calculator</a><a href="savings-goal-calculator/">Savings Goal Calculator</a><a href="roi-calculator/">Simple ROI Calculator</a><a href="time-card-calculator/">Time Card Calculator</a><a href="tip-calculator/">Tip Calculator</a><a href="unit-price-calculator/">Unit Price Calculator</a>
+  </div>
+</details>
 <!doctype html>
 <html lang="en">
 <head>
@@ -43,6 +49,59 @@
       .hero-card,.panel{padding:30px}
     }
   </style>
+<style id="nothingbuta-tool-jump-style">
+  .tool-jump, .home-tool-directory {
+    margin: 0 auto;
+    padding: 0.85rem 1rem;
+    max-width: 1120px;
+  }
+  .tool-jump {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 0.65rem;
+  }
+  .tool-jump label, .home-tool-directory summary {
+    font-size: 0.92rem;
+    font-weight: 800;
+    cursor: pointer;
+  }
+  .tool-jump select {
+    max-width: 290px;
+    width: 100%;
+    padding: 0.65rem 0.8rem;
+    border: 1px solid rgba(15, 23, 42, 0.18);
+    border-radius: 999px;
+    background: #fff;
+    font: inherit;
+  }
+  .tool-directory-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 0.65rem;
+    margin-top: 0.9rem;
+  }
+  .tool-directory-grid a {
+    display: block;
+    padding: 0.7rem 0.8rem;
+    border: 1px solid rgba(15, 23, 42, 0.12);
+    border-radius: 14px;
+    background: rgba(255,255,255,0.86);
+    text-decoration: none;
+    color: inherit;
+    font-weight: 700;
+  }
+  @media (max-width: 700px) {
+    .tool-jump {
+      justify-content: stretch;
+      align-items: stretch;
+      flex-direction: column;
+    }
+    .tool-jump select {
+      max-width: none;
+    }
+  }
+</style>
 </head>
 <body>
   <main class="wrap">
@@ -55,7 +114,7 @@
       <div class="hero-card">
         <span class="eyebrow">Single-purpose web tools</span>
         <h1>One clear tool for one clear job.</h1>
-        <p>NothingButA is a growing hub of focused utilities. No bloated dashboards. No forced accounts. Just simple pages that help you solve one problem at a time.</p>
+        <p>NothingButA is a growing hub of focused utilities. No bloated menus. No forced accounts. Just simple pages that help you solve one problem at a time.</p>
         <div class="actions">
           <a class="btn" href="./debt-payoff-calculator/">Open the live tool</a>
           <a class="btn secondary" href="#coming-next">See what is coming next</a>

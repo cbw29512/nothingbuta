@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>NothingButA Days Between Dates Calculator</title>
+  <meta name="description" content="Calculate the number of days between two dates, with an inclusive count option shown.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Arial,sans-serif;background:#f8fafc;color:#0f172a}
+    .wrap{width:min(100% - 24px,980px);margin:auto;padding:22px 0 52px}
+    .hero{padding:24px;border-radius:28px;background:linear-gradient(135deg,#111827,#2563eb);color:white;box-shadow:0 18px 55px rgba(15,23,42,.18)}
+    .eyebrow{display:inline-block;padding:7px 11px;border-radius:999px;background:rgba(255,255,255,.14);font-size:13px;font-weight:900}
+    h1{font-size:clamp(38px,9vw,64px);line-height:.95;margin:14px 0 10px;letter-spacing:-.06em}
+    .hero p{color:#dbeafe;font-size:18px;line-height:1.5;margin:0}
+    .grid{display:grid;grid-template-columns:1fr;gap:14px;margin-top:14px}
+    .card,.result,.faq{background:white;border:1px solid #dbe3ef;border-radius:24px;padding:18px;box-shadow:0 14px 40px rgba(15,23,42,.08)}
+    label{display:block;font-weight:900;margin:14px 0 7px}
+    small{display:block;color:#64748b;font-weight:500;margin-top:3px}
+    input{width:100%;min-height:54px;border:1px solid #cbd5e1;border-radius:17px;padding:14px 15px;font-size:18px;background:#f8fafc}
+    button{width:100%;min-height:54px;border:0;border-radius:17px;background:#2563eb;color:white;font-size:17px;font-weight:900;margin-top:16px}
+    .metric{padding:14px;border-radius:17px;background:#f1f5f9;margin-top:10px}
+    .metric strong{display:block;font-size:25px;letter-spacing:-.03em}
+    .metric span{color:#64748b;font-size:13px}
+    .warn{background:#fef3c7;color:#78350f;padding:14px;border-radius:17px;margin-top:12px;font-weight:800}
+    .faq{margin-top:14px}
+    details{border-top:1px solid #e2e8f0;padding:12px 0}
+    details:first-of-type{border-top:0}
+    summary{font-weight:900;cursor:pointer}
+    details p{color:#475569;line-height:1.5}
+    @media (min-width:800px){.wrap{padding-top:32px}.grid{grid-template-columns:.9fr 1.1fr}.card,.result,.faq{padding:22px}}
+  </style>
+<style id="nothingbuta-tool-jump-style">
+  .tool-jump {
+    margin: 0 auto;
+    padding: 0.85rem 1rem;
+    max-width: 1120px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 0.65rem;
+  }
+  .tool-jump label {
+    font-size: 0.9rem;
+    font-weight: 700;
+  }
+  .tool-jump select {
+    max-width: 280px;
+    width: 100%;
+    padding: 0.65rem 0.8rem;
+    border: 1px solid rgba(15, 23, 42, 0.18);
+    border-radius: 999px;
+    background: #ffffff;
+    font: inherit;
+  }
+  @media (max-width: 700px) {
+    .tool-jump {
+      justify-content: stretch;
+      align-items: stretch;
+      flex-direction: column;
+    }
+    .tool-jump select {
+      max-width: none;
+    }
+  }
+</style>
+</head>
+<body>
+<nav class="tool-jump" id="nothingbuta-tool-jump" aria-label="NothingButA tool navigation">
+  <label for="tool-jump-select">More NothingButA tools</label>
+  <select id="tool-jump-select" onchange="if (this.value) window.location.href = this.value;">
+    <option value="">Jump to another tool...</option><option value="../">All tools home</option><option value="../break-even-calculator/">Break Even Calculator</option><option value="../car-payment-calculator/">Car Payment Calculator</option><option value="../churn-rate-calculator/">Churn Rate Calculator</option><option value="../concrete-calculator/">Concrete Calculator</option><option value="../conversion-rate-calculator/">Conversion Rate Calculator</option><option value="../days-between-dates-calculator/" selected>Days Between Dates Calculator</option><option value="../debt-payoff-calculator/">Debt Payoff Calculator</option><option value="../discount-calculator/">Discount Calculator</option><option value="../emergency-fund-calculator/">Emergency Fund Calculator</option><option value="../flooring-calculator/">Flooring Calculator</option><option value="../freelance-rate-calculator/">Freelance Rate Calculator</option><option value="../hourly-to-salary-calculator/">Hourly to Salary Calculator</option><option value="../loan-early-payoff-calculator/">Loan Early Payoff Calculator</option><option value="../mortgage-payment-calculator/">Mortgage Payment Calculator</option><option value="../paint-coverage-calculator/">Paint Coverage Calculator</option><option value="../paycheck-estimator/">Paycheck Take-Home Estimator</option><option value="../percentage-change-calculator/">Percentage Change Calculator</option><option value="../recipe-scale-calculator/">Recipe Scale Calculator</option><option value="../rent-affordability-calculator/">Rent Affordability Calculator</option><option value="../sales-tax-calculator/">Sales Tax Calculator</option><option value="../savings-goal-calculator/">Savings Goal Calculator</option><option value="../roi-calculator/">Simple ROI Calculator</option><option value="../time-card-calculator/">Time Card Calculator</option><option value="../tip-calculator/">Tip Calculator</option><option value="../unit-price-calculator/">Unit Price Calculator</option>
+  </select>
+</nav>
+
+  <main class="wrap">
+    <section class="hero">
+      <span class="eyebrow">NothingButA tool</span>
+      <h1>Days Between Dates Calculator</h1>
+      <p>Calculate the number of days between two dates, with an inclusive count option shown.</p>
+    </section>
+
+    <section class="grid">
+      <form class="card" onsubmit="event.preventDefault();calc();">
+        <h2>Your dates</h2>
+        <label for="start">Start date <small>First calendar date</small></label>
+        <input id="start" type="date" inputmode="numeric" value="2026-01-01">
+
+        <label for="end">End date <small>Second calendar date</small></label>
+        <input id="end" type="date" inputmode="numeric" value="2026-12-31">
+
+        <button type="submit">Calculate days</button>
+      </form>
+
+      <section class="result" aria-live="polite">
+        <h2>Result</h2>
+        <div id="out"></div>
+      </section>
+    </section>
+
+    <section class="faq">
+      <h2>FAQ</h2>
+      <details>
+        <summary>What is inclusive count?</summary>
+        <p>Inclusive count includes both the start date and the end date.</p>
+      </details>
+      <details>
+        <summary>Does time of day matter?</summary>
+        <p>No. This simple tool compares calendar dates only.</p>
+      </details>
+    </section>
+  </main>
+
+  <script>
+    const block = (value, label) => `<div class="metric"><strong>${value}</strong><span>${label}</span></div>`;
+
+    function readDate(id) {
+      const value = document.getElementById(id).value;
+      return value ? new Date(value + "T00:00:00") : null;
+    }
+
+    function calc() {
+      try {
+        const start = readDate("start");
+        const end = readDate("end");
+
+        if (!start || !end || Number.isNaN(start.getTime()) || Number.isNaN(end.getTime())) {
+          document.getElementById("out").innerHTML = '<div class="warn">Enter both dates.</div>';
+          return;
+        }
+
+        const diff = Math.round((end.getTime() - start.getTime()) / 86400000);
+        const absoluteDays = Math.abs(diff);
+        const inclusiveDays = absoluteDays + 1;
+        const direction = diff >= 0 ? "End date is after start date" : "End date is before start date";
+
+        document.getElementById("out").innerHTML =
+          block(absoluteDays.toLocaleString(), "Days between dates") +
+          block(inclusiveDays.toLocaleString(), "Inclusive day count") +
+          block(direction, "Date order");
+      } catch (err) {
+        console.error(err);
+        document.getElementById("out").innerHTML = '<div class="warn">Check the dates and try again.</div>';
+      }
+    }
+
+    document.querySelectorAll("input").forEach((input) => input.addEventListener("input", calc));
+    calc();
+  </script>
+</body>
+</html>

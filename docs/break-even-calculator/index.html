@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>NothingButA Break-Even Calculator</title>
+  <meta name="description" content="Estimate how many units you need to sell to cover fixed and variable costs.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Arial,sans-serif;background:#f8fafc;color:#0f172a}
+    .wrap{width:min(100% - 24px,980px);margin:auto;padding:22px 0 52px}
+    .hero{padding:24px;border-radius:28px;background:linear-gradient(135deg,#111827,#2563eb);color:white;box-shadow:0 18px 55px rgba(15,23,42,.18)}
+    .eyebrow{display:inline-block;padding:7px 11px;border-radius:999px;background:rgba(255,255,255,.14);font-size:13px;font-weight:900}
+    h1{font-size:clamp(38px,9vw,64px);line-height:.95;margin:14px 0 10px;letter-spacing:-.06em}
+    .hero p{color:#dbeafe;font-size:18px;line-height:1.5;margin:0}
+    .grid{display:grid;grid-template-columns:1fr;gap:14px;margin-top:14px}
+    .card,.result,.note,.faq{background:white;border:1px solid #dbe3ef;border-radius:24px;padding:18px;box-shadow:0 14px 40px rgba(15,23,42,.08)}
+    label{display:block;font-weight:900;margin:14px 0 7px}
+    small{display:block;color:#64748b;font-weight:500;margin-top:3px}
+    input{width:100%;min-height:54px;border:1px solid #cbd5e1;border-radius:17px;padding:14px 15px;font-size:18px;background:#f8fafc}
+    input:focus{outline:4px solid rgba(37,99,235,.16);border-color:#2563eb;background:white}
+    button{width:100%;min-height:54px;border:0;border-radius:17px;background:#2563eb;color:white;font-size:17px;font-weight:900;margin-top:16px}
+    .metric{padding:14px;border-radius:17px;background:#f1f5f9;margin-top:10px}
+    .metric strong{display:block;font-size:25px;letter-spacing:-.03em}
+    .metric span{color:#64748b;font-size:13px}
+    .warn{background:#fef3c7;color:#78350f;padding:14px;border-radius:17px;margin-top:12px;font-weight:800}
+    .fine{color:#64748b;font-size:14px;line-height:1.5;margin-top:14px}
+    .faq{margin-top:14px}
+    details{border-top:1px solid #e2e8f0;padding:12px 0}
+    details:first-of-type{border-top:0}
+    summary{font-weight:900;cursor:pointer}
+    details p{color:#475569;line-height:1.5}
+    @media (min-width:800px){.wrap{padding-top:32px}.grid{grid-template-columns:.9fr 1.1fr}.card,.result,.note,.faq{padding:22px}}
+  </style>
+<style id="nothingbuta-tool-jump-style">
+  .tool-jump {
+    margin: 0 auto;
+    padding: 0.85rem 1rem;
+    max-width: 1120px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 0.65rem;
+  }
+  .tool-jump label {
+    font-size: 0.9rem;
+    font-weight: 700;
+  }
+  .tool-jump select {
+    max-width: 280px;
+    width: 100%;
+    padding: 0.65rem 0.8rem;
+    border: 1px solid rgba(15, 23, 42, 0.18);
+    border-radius: 999px;
+    background: #ffffff;
+    font: inherit;
+  }
+  @media (max-width: 700px) {
+    .tool-jump {
+      justify-content: stretch;
+      align-items: stretch;
+      flex-direction: column;
+    }
+    .tool-jump select {
+      max-width: none;
+    }
+  }
+</style>
+</head>
+<body>
+<nav class="tool-jump" id="nothingbuta-tool-jump" aria-label="NothingButA tool navigation">
+  <label for="tool-jump-select">More NothingButA tools</label>
+  <select id="tool-jump-select" onchange="if (this.value) window.location.href = this.value;">
+    <option value="">Jump to another tool...</option><option value="../">All tools home</option><option value="../break-even-calculator/" selected>Break Even Calculator</option><option value="../car-payment-calculator/">Car Payment Calculator</option><option value="../churn-rate-calculator/">Churn Rate Calculator</option><option value="../concrete-calculator/">Concrete Calculator</option><option value="../conversion-rate-calculator/">Conversion Rate Calculator</option><option value="../days-between-dates-calculator/">Days Between Dates Calculator</option><option value="../debt-payoff-calculator/">Debt Payoff Calculator</option><option value="../discount-calculator/">Discount Calculator</option><option value="../emergency-fund-calculator/">Emergency Fund Calculator</option><option value="../flooring-calculator/">Flooring Calculator</option><option value="../freelance-rate-calculator/">Freelance Rate Calculator</option><option value="../hourly-to-salary-calculator/">Hourly to Salary Calculator</option><option value="../loan-early-payoff-calculator/">Loan Early Payoff Calculator</option><option value="../mortgage-payment-calculator/">Mortgage Payment Calculator</option><option value="../paint-coverage-calculator/">Paint Coverage Calculator</option><option value="../paycheck-estimator/">Paycheck Take-Home Estimator</option><option value="../percentage-change-calculator/">Percentage Change Calculator</option><option value="../recipe-scale-calculator/">Recipe Scale Calculator</option><option value="../rent-affordability-calculator/">Rent Affordability Calculator</option><option value="../sales-tax-calculator/">Sales Tax Calculator</option><option value="../savings-goal-calculator/">Savings Goal Calculator</option><option value="../roi-calculator/">Simple ROI Calculator</option><option value="../time-card-calculator/">Time Card Calculator</option><option value="../tip-calculator/">Tip Calculator</option><option value="../unit-price-calculator/">Unit Price Calculator</option>
+  </select>
+</nav>
+
+  <main class="wrap">
+    <section class="hero">
+      <span class="eyebrow">NothingButA tool</span>
+      <h1>Break-Even Calculator</h1>
+      <p>Estimate how many units you need to sell to cover fixed and variable costs.</p>
+    </section>
+
+    <section class="grid">
+      <form class="card" onsubmit="event.preventDefault();calc();">
+        <h2>Your numbers</h2>
+        
+        <label for="fixed">Fixed costs <small>Costs that do not change with each sale</small></label>
+        <input id="fixed" type="number" inputmode="decimal" value="2000" step="0.01">
+        
+
+        <label for="price">Selling price per unit <small>Revenue from one unit sold</small></label>
+        <input id="price" type="number" inputmode="decimal" value="50" step="0.01">
+        
+
+        <label for="variable">Variable cost per unit <small>Cost to produce or deliver one unit</small></label>
+        <input id="variable" type="number" inputmode="decimal" value="20" step="0.01">
+        
+        <button type="submit">Calculate result</button>
+        <p class="fine">Estimate only. This is not financial, tax, payroll, lending, or professional advice.</p>
+      </form>
+
+      <section class="result" aria-live="polite">
+        <h2>Result</h2>
+        <div id="out"></div>
+      </section>
+    </section>
+
+    <section class="faq">
+      <h2>FAQ</h2>
+      
+        <details>
+          <summary>What does break-even mean?</summary>
+          <p>It is the point where estimated revenue covers estimated costs.</p>
+        </details>
+        
+
+        <details>
+          <summary>What if variable cost is higher than price?</summary>
+          <p>The calculator will warn you because each sale loses money before fixed costs are covered.</p>
+        </details>
+        
+    </section>
+  </main>
+
+  <script>
+    const FORMULA = "breakeven";
+    const usd = new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" });
+    const num = (id) => Number(document.getElementById(id)?.value) || 0;
+    const money = (value) => usd.format(Number.isFinite(value) ? value : 0);
+    const block = (value, label) => `<div class="metric"><strong>${value}</strong><span>${label}</span></div>`;
+
+    function payment(principal, apr, months) {
+      const rate = apr / 100 / 12;
+      if (principal <= 0 || months <= 0) return 0;
+      if (rate <= 0) return principal / months;
+      return principal * (rate * Math.pow(1 + rate, months)) / (Math.pow(1 + rate, months) - 1);
+    }
+
+    function payoff(balance, apr, monthly) {
+      const rate = apr / 100 / 12;
+      if (balance <= 0 || monthly <= 0) return { ok: false, msg: "Enter a balance and payment above zero." };
+      if (rate > 0 && monthly <= balance * rate) return { ok: false, msg: "Payment is too low to reduce the balance." };
+      let months = 0;
+      let interest = 0;
+      while (balance > 0 && months < 1200) {
+        const charge = balance * rate;
+        interest += charge;
+        balance = balance + charge - monthly;
+        months += 1;
+      }
+      return months >= 1200 ? { ok: false, msg: "Try a higher payment." } : { ok: true, months, interest };
+    }
+
+    function monthsText(months) {
+      const years = Math.floor(months / 12);
+      const rem = months % 12;
+      return years ? `${years} yr ${rem} mo` : `${rem} mo`;
+    }
+
+    function calc() {
+      try {
+        let html = "";
+
+        if (FORMULA === "mortgage") {
+          const principal = Math.max(num("price") - num("down"), 0);
+          const pi = payment(principal, num("rate"), num("years") * 12);
+          const total = pi + num("escrow");
+          html = block(money(total), "Estimated monthly payment") + block(money(pi), "Principal and interest") + block(money(num("escrow")), "Taxes and insurance estimate") + block(money(principal), "Estimated loan amount");
+        }
+
+        if (FORMULA === "paycheck") {
+          const gross = num("gross");
+          const federal = gross * num("federal") / 100;
+          const state = gross * num("state") / 100;
+          const deductions = num("deduct");
+          const takehome = Math.max(gross - federal - state - deductions, 0);
+          html = block(money(takehome), "Estimated take-home pay") + block(money(federal + state + deductions), "Estimated deductions") + block(money(federal), "Federal estimate") + block(money(state), "State/local estimate");
+        }
+
+        if (FORMULA === "timecard") {
+          const regularPay = num("rate") * num("regular");
+          const overtimePay = num("rate") * num("multiplier") * num("overtime");
+          const gross = regularPay + overtimePay;
+          html = block(money(gross), "Estimated gross pay") + block(money(regularPay), "Regular pay") + block(money(overtimePay), "Overtime pay") + block(money(gross * 52), "Estimated annual gross pay");
+        }
+
+        if (FORMULA === "car") {
+          const principal = Math.max(num("price") - num("down"), 0);
+          const monthly = payment(principal, num("rate"), num("months"));
+          html = block(money(monthly), "Estimated monthly payment") + block(money(monthly * num("months")), "Estimated total paid") + block(money(Math.max(monthly * num("months") - principal, 0)), "Estimated interest") + block(money(principal), "Estimated loan amount");
+        }
+
+        if (FORMULA === "earlyloan") {
+          const base = payoff(num("balance"), num("rate"), num("payment"));
+          const extra = payoff(num("balance"), num("rate"), num("payment") + num("extra"));
+          if (!base.ok || !extra.ok) {
+            html = `<div class="warn">${base.msg || extra.msg}</div>`;
+          } else {
+            html = block(monthsText(extra.months), "Payoff time with extra payment") + block(money(extra.interest), "Interest paid") + block(money(Math.max(base.interest - extra.interest, 0)), "Interest saved") + block(String(Math.max(base.months - extra.months, 0)), "Months saved");
+          }
+        }
+
+        if (FORMULA === "tip") {
+          const bill = num("bill");
+          const tip = bill * num("tip") / 100;
+          const total = bill + tip;
+          const each = total / Math.max(num("people"), 1);
+          html = block(money(tip), "Tip amount") + block(money(total), "Total bill") + block(money(each), "Each person pays");
+        }
+
+        if (FORMULA === "hourlysalary") {
+          const weekly = num("rate") * num("hours");
+          const yearly = weekly * num("weeks");
+          html = block(money(weekly), "Estimated weekly gross pay") + block(money(yearly / 12), "Estimated monthly gross pay") + block(money(yearly), "Estimated yearly gross pay");
+        }
+
+        if (FORMULA === "savingsgoal") {
+          const remaining = Math.max(num("goal") - num("current"), 0);
+          const months = num("monthly") > 0 ? Math.ceil(remaining / num("monthly")) : 0;
+          html = block(money(remaining), "Amount left to save") + block(String(months), "Months to goal") + block(money(num("monthly") * months), "Planned future savings");
+        }
+
+        if (FORMULA === "unitprice") {
+          const first = num("units") > 0 ? num("price") / num("units") : 0;
+          const second = num("compareunits") > 0 ? num("compare") / num("compareunits") : 0;
+          const winner = first && second ? (first < second ? "First package is cheaper per unit" : "Second package is cheaper per unit") : "Enter both packages to compare";
+          html = block(money(first), "First unit price") + block(money(second), "Second unit price") + block(winner, "Best value");
+        }
+
+        if (FORMULA === "discount") {
+          const savings = num("price") * num("discount") / 100;
+          html = block(money(Math.max(num("price") - savings, 0)), "Sale price") + block(money(savings), "Amount saved");
+        }
+
+        if (FORMULA === "salestax") {
+          const tax = num("price") * num("tax") / 100;
+          html = block(money(tax), "Estimated sales tax") + block(money(num("price") + tax), "Estimated total");
+        }
+
+        if (FORMULA === "percentchange") {
+          const oldValue = num("old");
+          const newValue = num("new");
+          const change = newValue - oldValue;
+          const percent = oldValue !== 0 ? (change / oldValue) * 100 : 0;
+          html = block(change.toLocaleString(), "Numeric change") + block(`${percent.toFixed(2)}%`, "Percentage change");
+        }
+
+
+        // === RENDERER_EXPANSION_PACK_1_FORMULAS START ===
+        if (FORMULA === "emergencyfund") {
+          const target = num("expenses") * num("months");
+          const remaining = Math.max(target - num("current"), 0);
+          const monthsNeeded = num("monthly") > 0 ? Math.ceil(remaining / num("monthly")) : 0;
+          html = block(money(target), "Emergency fund target") + block(money(remaining), "Amount left to save") + block(String(monthsNeeded), "Months to target") + block(money(num("current")), "Current savings");
+        }
+
+        if (FORMULA === "rent") {
+          const targetRent = num("income") * num("percent") / 100;
+          const practicalRent = Math.max(targetRent - num("debts") - num("utilities"), 0);
+          html = block(money(practicalRent), "Estimated practical rent ceiling") + block(money(targetRent), "Income-based rent target") + block(money(num("debts") + num("utilities")), "Debts and utilities considered") + block(`${num("percent").toFixed(1)}%`, "Target rent percentage");
+        }
+
+        if (FORMULA === "breakeven") {
+          const contribution = num("price") - num("variable");
+          if (contribution <= 0) {
+            html = '<div class="warn">Selling price must be higher than variable cost per unit.</div>';
+          } else {
+            const units = Math.ceil(num("fixed") / contribution);
+            const revenue = units * num("price");
+            html = block(units.toLocaleString(), "Units to break even") + block(money(revenue), "Revenue at break-even") + block(money(contribution), "Contribution per unit") + block(money(num("fixed")), "Fixed costs");
+          }
+        }
+
+        if (FORMULA === "freelancerate") {
+          const billableHours = Math.max(num("hours") * num("weeks"), 1);
+          const subtotal = num("income") + num("expenses");
+          const taxBuffer = subtotal * num("tax") / 100;
+          const neededRevenue = subtotal + taxBuffer;
+          const rate = neededRevenue / billableHours;
+          html = block(money(rate), "Estimated hourly rate") + block(money(neededRevenue), "Revenue target") + block(billableHours.toLocaleString(), "Annual billable hours") + block(money(taxBuffer), "Tax and buffer amount");
+        }
+        // === RENDERER_EXPANSION_PACK_1_FORMULAS END ===
+
+        document.getElementById("out").innerHTML = html || '<div class="warn">This tool needs a stricter formula before it can pass.</div>';
+      } catch (err) {
+        console.error(err);
+        document.getElementById("out").innerHTML = '<div class="warn">Check the numbers and try again.</div>';
+      }
+    }
+
+    document.querySelectorAll("input").forEach((input) => input.addEventListener("input", calc));
+    calc();
+  </script>
+</body>
+</html>
