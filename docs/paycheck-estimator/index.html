@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>NothingButA Paycheck Take-Home Estimator</title>
-  <meta name="description" content="Estimate take-home pay after tax percentages and deductions.">
+  <meta name="description" content="Estimate take-home pay from gross income using pay frequency, taxes, deductions, and withholding assumptions before planning your budget.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     *{box-sizing:border-box}
@@ -205,6 +205,22 @@
     }
   }
 </style>
+<script type="application/ld+json" id="nothingbuta-optimization-batch-004-schema">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "NothingButA Paycheck Take-Home Estimator",
+  "url": "https://cbw29512.github.io/nothingbuta/paycheck-estimator/",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any",
+  "description": "Estimate take-home pay from gross income using pay frequency, taxes, deductions, and withholding assumptions before planning your budget.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+</script>
 </head>
 <body>
 <nav class="tool-jump" id="nothingbuta-tool-jump" aria-label="NothingButA tool navigation">
@@ -265,7 +281,104 @@
         </details>
         
     </section>
-  </main>
+  <section class="nba-growth-section" id="nothingbuta-optimization-batch-004-content" aria-labelledby="paycheck-growth-help">
+  <style>
+    .nba-growth-section {
+      margin: 1.5rem auto 2rem;
+      padding: 1.2rem;
+      border: 1px solid rgba(15, 23, 42, 0.12);
+      border-radius: 24px;
+      background: rgba(255,255,255,0.94);
+      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
+    }
+    .nba-growth-section h2 {
+      margin: 0 0 0.7rem;
+      font-size: clamp(1.35rem, 3vw, 2rem);
+      letter-spacing: -0.04em;
+    }
+    .nba-growth-section h3 {
+      margin: 1rem 0 0.4rem;
+      font-size: 1.05rem;
+    }
+    .nba-growth-section p {
+      color: #475569;
+      line-height: 1.65;
+      margin: 0.35rem 0;
+    }
+    .nba-related-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 0.75rem;
+      margin-top: 0.85rem;
+    }
+    .nba-related-card {
+      display: grid;
+      gap: 0.35rem;
+      padding: 0.85rem;
+      border: 1px solid rgba(15, 23, 42, 0.12);
+      border-radius: 16px;
+      background: rgba(248, 250, 252, 0.92);
+      text-decoration: none;
+      color: inherit;
+    }
+    .nba-related-card:hover {
+      border-color: rgba(37, 99, 235, 0.35);
+      transform: translateY(-1px);
+    }
+    .nba-related-card span {
+      color: #475569;
+      line-height: 1.45;
+    }
+  </style>
+
+  <h2 id="paycheck-growth-help">Make the paycheck estimate useful</h2>
+
+  <h3>How to use this estimator</h3>
+  <p>
+    Enter your gross pay, pay frequency, tax assumptions, and recurring deductions.
+    The estimator helps you turn headline income into a rough take-home number
+    before you build a monthly budget.
+  </p>
+
+  <h3>What the result means</h3>
+  <p>
+    Treat the result as a planning estimate, not a payroll guarantee. Actual take-home
+    pay can change based on federal and state taxes, benefits, retirement contributions,
+    insurance premiums, withholding choices, bonuses, overtime, and employer payroll rules.
+  </p>
+
+  <h3>Useful next checks</h3>
+  <p>
+    After estimating take-home pay, compare it with rent, savings, debt payments,
+    groceries, transportation, and emergency fund goals. A budget should be based on
+    money that actually reaches your account, not only gross pay.
+  </p>
+
+  <h3>Related tools</h3>
+  <div class="nba-related-grid">
+
+      <a class="nba-related-card" href="../hourly-to-salary-calculator/">
+        <strong>Hourly to Salary Calculator</strong>
+        <span>Convert hourly wages into annual gross pay first.</span>
+      </a>
+
+      <a class="nba-related-card" href="../rent-affordability-calculator/">
+        <strong>Rent Affordability Calculator</strong>
+        <span>Compare take-home pay against a realistic rent range.</span>
+      </a>
+
+      <a class="nba-related-card" href="../savings-goal-calculator/">
+        <strong>Savings Goal Calculator</strong>
+        <span>Turn estimated paychecks into monthly savings targets.</span>
+      </a>
+
+      <a class="nba-related-card" href="../debt-payoff-calculator/">
+        <strong>Debt Payoff Calculator</strong>
+        <span>See how income can support faster debt payoff.</span>
+      </a>
+  </div>
+</section>
+</main>
 
   <script>
     const FORMULA = "paycheck";
