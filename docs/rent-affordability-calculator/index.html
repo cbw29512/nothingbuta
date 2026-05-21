@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>NothingButA Rent Affordability Calculator</title>
-  <meta name="description" content="Estimate a rent range from monthly income, target rent percentage, debts, and utilities.">
+  <meta name="description" content="Estimate how much rent may fit your monthly budget using income, debt, expenses, and savings goals before you choose a place.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     *{box-sizing:border-box}
@@ -205,6 +205,22 @@
     }
   }
 </style>
+<script type="application/ld+json" id="nothingbuta-optimization-batch-003-schema">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "NothingButA Rent Affordability Calculator",
+  "url": "https://cbw29512.github.io/nothingbuta/rent-affordability-calculator/",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any",
+  "description": "Estimate how much rent may fit your monthly budget using income, debt, expenses, and savings goals before you choose a place.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+</script>
 </head>
 <body>
 <nav class="tool-jump" id="nothingbuta-tool-jump" aria-label="NothingButA tool navigation">
@@ -265,7 +281,104 @@
         </details>
         
     </section>
-  </main>
+  <section class="nba-growth-section" id="nothingbuta-optimization-batch-003-content" aria-labelledby="rent-growth-help">
+  <style>
+    .nba-growth-section {
+      margin: 1.5rem auto 2rem;
+      padding: 1.2rem;
+      border: 1px solid rgba(15, 23, 42, 0.12);
+      border-radius: 24px;
+      background: rgba(255,255,255,0.94);
+      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
+    }
+    .nba-growth-section h2 {
+      margin: 0 0 0.7rem;
+      font-size: clamp(1.35rem, 3vw, 2rem);
+      letter-spacing: -0.04em;
+    }
+    .nba-growth-section h3 {
+      margin: 1rem 0 0.4rem;
+      font-size: 1.05rem;
+    }
+    .nba-growth-section p {
+      color: #475569;
+      line-height: 1.65;
+      margin: 0.35rem 0;
+    }
+    .nba-related-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 0.75rem;
+      margin-top: 0.85rem;
+    }
+    .nba-related-card {
+      display: grid;
+      gap: 0.35rem;
+      padding: 0.85rem;
+      border: 1px solid rgba(15, 23, 42, 0.12);
+      border-radius: 16px;
+      background: rgba(248, 250, 252, 0.92);
+      text-decoration: none;
+      color: inherit;
+    }
+    .nba-related-card:hover {
+      border-color: rgba(37, 99, 235, 0.35);
+      transform: translateY(-1px);
+    }
+    .nba-related-card span {
+      color: #475569;
+      line-height: 1.45;
+    }
+  </style>
+
+  <h2 id="rent-growth-help">Make the rent estimate useful</h2>
+
+  <h3>How to use this calculator</h3>
+  <p>
+    Enter your monthly income, recurring debt, expected bills, and savings goals.
+    The calculator helps estimate a rent range that may fit your budget before
+    you apply for an apartment or compare neighborhoods.
+  </p>
+
+  <h3>What the result means</h3>
+  <p>
+    Treat the result as a planning estimate, not a rule. Actual affordability depends
+    on take-home pay, utilities, insurance, transportation, deposits, moving costs,
+    debt payments, savings needs, and how stable your income is.
+  </p>
+
+  <h3>Useful next checks</h3>
+  <p>
+    Before committing to rent, compare the estimate against take-home pay, emergency
+    savings, and other monthly obligations. A rent number can look comfortable until
+    utilities, groceries, transportation, and unexpected expenses are included.
+  </p>
+
+  <h3>Related tools</h3>
+  <div class="nba-related-grid">
+
+      <a class="nba-related-card" href="../hourly-to-salary-calculator/">
+        <strong>Hourly to Salary Calculator</strong>
+        <span>Convert hourly pay into annual income before estimating rent.</span>
+      </a>
+
+      <a class="nba-related-card" href="../paycheck-estimator/">
+        <strong>Paycheck Take-Home Estimator</strong>
+        <span>Compare rent against estimated take-home pay.</span>
+      </a>
+
+      <a class="nba-related-card" href="../mortgage-payment-calculator/">
+        <strong>Mortgage Payment Calculator</strong>
+        <span>Compare renting with a possible home payment.</span>
+      </a>
+
+      <a class="nba-related-card" href="../emergency-fund-calculator/">
+        <strong>Emergency Fund Calculator</strong>
+        <span>Check whether rent leaves room for savings.</span>
+      </a>
+  </div>
+</section>
+</main>
 
   <script>
     const FORMULA = "rent";
