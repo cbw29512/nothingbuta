@@ -1,174 +1,320 @@
-<details class="home-tool-directory" id="nothingbuta-home-tool-directory">
-  <summary>Browse all NothingButA tools</summary>
-  <div class="tool-directory-grid">
-    <a href="break-even-calculator/">Break Even Calculator</a><a href="car-payment-calculator/">Car Payment Calculator</a><a href="churn-rate-calculator/">Churn Rate Calculator</a><a href="concrete-calculator/">Concrete Calculator</a><a href="conversion-rate-calculator/">Conversion Rate Calculator</a><a href="days-between-dates-calculator/">Days Between Dates Calculator</a><a href="debt-payoff-calculator/">Debt Payoff Calculator</a><a href="discount-calculator/">Discount Calculator</a><a href="emergency-fund-calculator/">Emergency Fund Calculator</a><a href="flooring-calculator/">Flooring Calculator</a><a href="freelance-rate-calculator/">Freelance Rate Calculator</a><a href="hourly-to-salary-calculator/">Hourly to Salary Calculator</a><a href="loan-early-payoff-calculator/">Loan Early Payoff Calculator</a><a href="mortgage-payment-calculator/">Mortgage Payment Calculator</a><a href="paint-coverage-calculator/">Paint Coverage Calculator</a><a href="paycheck-estimator/">Paycheck Take-Home Estimator</a><a href="percentage-change-calculator/">Percentage Change Calculator</a><a href="recipe-scale-calculator/">Recipe Scale Calculator</a><a href="rent-affordability-calculator/">Rent Affordability Calculator</a><a href="sales-tax-calculator/">Sales Tax Calculator</a><a href="savings-goal-calculator/">Savings Goal Calculator</a><a href="roi-calculator/">Simple ROI Calculator</a><a href="time-card-calculator/">Time Card Calculator</a><a href="tip-calculator/">Tip Calculator</a><a href="unit-price-calculator/">Unit Price Calculator</a>
-  </div>
-</details>
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>NothingButA — Simple Single-Purpose Tools</title>
-  <meta name="description" content="NothingButA is a growing hub of simple single-purpose web tools that do one job clearly.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NothingButA Tools</title>
+  <meta name="description" content="A clean directory of simple NothingButA utility tools.">
   <style>
-    *{box-sizing:border-box}
-    body{margin:0;font-family:Arial,sans-serif;background:#f8fafc;color:#0f172a}
-    a{color:inherit}
-    .wrap{width:min(100% - 24px,1060px);margin:auto;padding:22px 0 56px}
-    .nav{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:18px}
-    .brand{font-weight:900;letter-spacing:-.04em;font-size:22px}
-    .pill{display:inline-flex;align-items:center;gap:8px;border:1px solid #dbe3ef;background:#fff;border-radius:999px;padding:9px 12px;color:#475569;font-weight:800;font-size:13px}
-    .hero{display:grid;gap:18px;align-items:stretch}
-    .hero-card{background:linear-gradient(135deg,#0f172a,#1d4ed8);color:white;border-radius:28px;padding:28px;box-shadow:0 22px 70px rgba(15,23,42,.18)}
-    .eyebrow{display:inline-block;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.2);border-radius:999px;padding:8px 12px;font-size:13px;font-weight:900}
-    h1{font-size:clamp(42px,10vw,78px);line-height:.92;margin:14px 0 14px;letter-spacing:-.07em}
-    .hero p{font-size:19px;line-height:1.5;color:#dbeafe;margin:0}
-    .actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
-    .btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:14px 18px;border-radius:17px;background:#fff;color:#0f172a;text-decoration:none;font-weight:900}
-    .btn.secondary{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.24)}
-    .panel{background:white;border:1px solid #dbe3ef;border-radius:28px;padding:20px;box-shadow:0 14px 45px rgba(15,23,42,.08)}
-    .panel h2,.section h2{margin:0 0 8px;font-size:26px;letter-spacing:-.04em}
-    .muted{color:#64748b;line-height:1.5}
-    .tool-card{display:grid;gap:12px;margin-top:14px;padding:18px;border-radius:22px;background:#f1f5f9;border:1px solid #dbe3ef}
-    .tool-card h3{margin:0;font-size:24px;letter-spacing:-.04em}
-    .tool-card p{margin:0;color:#475569;line-height:1.45}
-    .open-tool{display:inline-flex;justify-content:center;text-decoration:none;background:#2563eb;color:white;border-radius:16px;padding:14px 16px;font-weight:900}
-    .section{margin-top:18px}
-    .grid{display:grid;grid-template-columns:1fr;gap:12px}
-    .small-card{background:white;border:1px solid #dbe3ef;border-radius:22px;padding:18px;box-shadow:0 10px 30px rgba(15,23,42,.06)}
-    .small-card h3{margin:0 0 8px;font-size:20px;letter-spacing:-.03em}
-    .small-card p{margin:0;color:#64748b;line-height:1.45}
-    .tag{display:inline-block;margin-bottom:10px;border-radius:999px;background:#e0e7ff;color:#3730a3;padding:6px 10px;font-size:12px;font-weight:900}
-    .tag.soon{background:#fef3c7;color:#78350f}
-    footer{margin-top:24px;color:#64748b;font-size:14px;line-height:1.5}
-    @media (min-width:800px){
-      .wrap{padding-top:34px}
-      .hero{grid-template-columns:1.4fr .8fr}
-      .grid{grid-template-columns:repeat(3,1fr)}
-      .hero-card,.panel{padding:30px}
+    :root {
+      color-scheme: light;
+      --bg: #f6f8fc;
+      --card: #ffffff;
+      --ink: #0f172a;
+      --muted: #475569;
+      --line: rgba(15, 23, 42, 0.12);
+      --blue: #2563eb;
+      --blue-dark: #1e3a8a;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top left, #e0edff, transparent 28rem), var(--bg);
+      color: var(--ink);
+    }
+
+    main {
+      width: min(1120px, calc(100% - 2rem));
+      margin: 0 auto;
+      padding: 2rem 0 3rem;
+    }
+
+    .hero {
+      display: grid;
+      gap: 1rem;
+      padding: 2rem;
+      border-radius: 28px;
+      background: linear-gradient(135deg, var(--blue-dark), var(--blue));
+      color: white;
+      box-shadow: 0 24px 60px rgba(37, 99, 235, 0.20);
+    }
+
+    .eyebrow {
+      width: fit-content;
+      padding: 0.35rem 0.7rem;
+      border: 1px solid rgba(255,255,255,0.35);
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 800;
+      background: rgba(255,255,255,0.12);
+    }
+
+    h1 {
+      max-width: 820px;
+      margin: 0;
+      font-size: clamp(2.25rem, 7vw, 5rem);
+      line-height: 0.95;
+      letter-spacing: -0.07em;
+    }
+
+    .hero p {
+      max-width: 680px;
+      margin: 0;
+      font-size: 1.08rem;
+      line-height: 1.65;
+    }
+
+    .meta {
+      margin-top: 1rem;
+      color: #64748b;
+      font-size: 0.92rem;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 1rem;
+      margin: 2rem 0 1rem;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(1.5rem, 3vw, 2.25rem);
+      letter-spacing: -0.04em;
+    }
+
+    .count {
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .tool-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 0.85rem;
+    }
+
+    .tool-card {
+      min-height: 145px;
+      display: grid;
+      align-content: start;
+      gap: 0.65rem;
+      padding: 1rem;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: rgba(255,255,255,0.92);
+      color: inherit;
+      text-decoration: none;
+      box-shadow: 0 14px 35px rgba(15, 23, 42, 0.06);
+    }
+
+    .tool-card:hover {
+      transform: translateY(-1px);
+      border-color: rgba(37, 99, 235, 0.35);
+    }
+
+    .tool-card strong {
+      font-size: 1.05rem;
+    }
+
+    .tool-card span:last-child {
+      color: var(--muted);
+      line-height: 1.45;
+    }
+
+    .badge {
+      width: fit-content;
+      padding: 0.25rem 0.55rem;
+      border-radius: 999px;
+      background: #dbeafe;
+      color: #1d4ed8;
+      font-size: 0.78rem;
+      font-weight: 900;
+    }
+
+    footer {
+      margin-top: 2rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.9rem;
     }
   </style>
-<style id="nothingbuta-tool-jump-style">
-  .tool-jump, .home-tool-directory {
-    margin: 0 auto;
-    padding: 0.85rem 1rem;
-    max-width: 1120px;
-  }
-  .tool-jump {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 0.65rem;
-  }
-  .tool-jump label, .home-tool-directory summary {
-    font-size: 0.92rem;
-    font-weight: 800;
-    cursor: pointer;
-  }
-  .tool-jump select {
-    max-width: 290px;
-    width: 100%;
-    padding: 0.65rem 0.8rem;
-    border: 1px solid rgba(15, 23, 42, 0.18);
-    border-radius: 999px;
-    background: #fff;
-    font: inherit;
-  }
-  .tool-directory-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-    gap: 0.65rem;
-    margin-top: 0.9rem;
-  }
-  .tool-directory-grid a {
-    display: block;
-    padding: 0.7rem 0.8rem;
-    border: 1px solid rgba(15, 23, 42, 0.12);
-    border-radius: 14px;
-    background: rgba(255,255,255,0.86);
-    text-decoration: none;
-    color: inherit;
-    font-weight: 700;
-  }
-  @media (max-width: 700px) {
-    .tool-jump {
-      justify-content: stretch;
-      align-items: stretch;
-      flex-direction: column;
-    }
-    .tool-jump select {
-      max-width: none;
-    }
-  }
-</style>
 </head>
 <body>
-  <main class="wrap">
-    <nav class="nav" aria-label="Main navigation">
-      <div class="brand">NothingButA</div>
-      <span class="pill">Simple tools. No clutter.</span>
-    </nav>
-
+  <main>
     <section class="hero">
-      <div class="hero-card">
-        <span class="eyebrow">Single-purpose web tools</span>
-        <h1>One clear tool for one clear job.</h1>
-        <p>NothingButA is a growing hub of focused utilities. No bloated menus. No forced accounts. Just simple pages that help you solve one problem at a time.</p>
-        <div class="actions">
-          <a class="btn" href="./debt-payoff-calculator/">Open the live tool</a>
-          <a class="btn secondary" href="#coming-next">See what is coming next</a>
-        </div>
-      </div>
-
-      <aside class="panel">
-        <h2>Featured tool</h2>
-        <p class="muted">The first live NothingButA utility is ready.</p>
-        <div class="tool-card">
-          <span class="tag">Live</span>
-          <h3>Debt Payoff Calculator</h3>
-          <p>Estimate payoff time, interest paid, interest saved, and months saved from extra monthly payments.</p>
-          <a class="open-tool" href="./debt-payoff-calculator/">Use the calculator</a>
-        </div>
-      </aside>
+      <span class="eyebrow">NothingButA utility tools</span>
+      <h1>One clear tool for one clear job.</h1>
+      <p>Pick the calculator or utility you need. No account wall, no clutter, no long setup.</p>
     </section>
 
-    <section class="section" id="tools">
+    <div class="section-head">
       <h2>Available tools</h2>
-      <p class="muted">Only finished tools appear here as live links.</p>
-      <div class="grid">
-        <article class="small-card">
-          <span class="tag">Live</span>
-          <h3>Debt Payoff Calculator</h3>
-          <p>See how extra monthly payments can change your debt payoff path.</p>
-        </article>
-      </div>
-    </section>
+      <span class="count">25 live tools</span>
+    </div>
 
-    <section class="section" id="coming-next">
-      <h2>Coming next</h2>
-      <p class="muted">These are planned utility directions. They are not live tools yet.</p>
-      <div class="grid">
-        <article class="small-card">
-          <span class="tag soon">Planned</span>
-          <h3>Mortgage Payment Calculator</h3>
-          <p>A simple way to estimate monthly mortgage payments without a cluttered finance portal.</p>
-        </article>
-        <article class="small-card">
-          <span class="tag soon">Planned</span>
-          <h3>Tip Calculator</h3>
-          <p>A fast mobile-first tip splitter for real-world restaurant situations.</p>
-        </article>
-        <article class="small-card">
-          <span class="tag soon">Planned</span>
-          <h3>Paycheck Estimator</h3>
-          <p>A plain-English take-home pay estimate tool with clear disclaimers.</p>
-        </article>
-      </div>
+    <section class="tool-grid" aria-label="Available NothingButA tools">
+
+        <a class="tool-card" href="break-even-calculator/">
+          <span class="badge">Live</span>
+          <strong>Break Even Calculator</strong>
+          <span>Open this simple utility.</span>
+        </a>
+
+        <a class="tool-card" href="car-payment-calculator/">
+          <span class="badge">Live</span>
+          <strong>Car Payment Calculator</strong>
+          <span>Open this simple utility.</span>
+        </a>
+
+        <a class="tool-card" href="churn-rate-calculator/">
+          <span class="badge">Live</span>
+          <strong>Churn Rate Calculator</strong>
+          <span>Open this simple utility.</span>
+        </a>
+
+        <a class="tool-card" href="concrete-calculator/">
+          <span class="badge">Live</span>
+          <strong>Concrete Calculator</strong>
+          <span>Open this simple utility.</span>
+        </a>
+
+        <a class="tool-card" href="conversion-rate-calculator/">
+          <span class="badge">Live</span>
+          <strong>Conversion Rate Calculator</strong>
+          <span>Open this simple utility.</span>
+        </a>
+
+        <a class="tool-card" href="days-between-dates-calculator/">
+          <span class="badge">Live</span>
+          <strong>Days Between Dates Calculator</strong>
+          <span>Open this simple utility.</span>
+        </a>
+
+        <a class="tool-card" href="debt-payoff-calculator/">
+          <span class="badge">Live</span>
+          <strong>Debt Payoff Calculator</strong>
+          <span>Open this simple utility.</span>
+        </a>
+
+        <a class="tool-card" href="discount-calculator/">
+          <span class="badge">Live</span>
+          <strong>Discount Calculator</strong>
+          <span>Open this simple utility.</span>
+        </a>
+
+        <a class="tool-card" href="emergency-fund-calculator/">
+          <span class="badge">Live</span>
+          <strong>Emergency Fund Calculator</strong>
+          <span>Open this simple utility.</span>
+        </a>
+
+        <a class="tool-card" href="flooring-calculator/">
+          <span class="badge">Live</span>
+          <strong>Flooring Calculator</strong>
+          <span>Open this simple utility.</span>
+        </a>
+
+        <a class="tool-card" href="freelance-rate-calculator/">
+          <span class="badge">Live</span>
+          <strong>Freelance Rate Calculator</strong>
+          <span>Open this simple utility.</span>
+        </a>
+
+        <a class="tool-card" href="hourly-to-salary-calculator/">
+          <span class="badge">Live</span>
+          <strong>Hourly to Salary Calculator</strong>
+          <span>Open this simple utility.</span>
+        </a>
+
+        <a class="tool-card" href="loan-early-payoff-calculator/">
+          <span class="badge">Live</span>
+          <strong>Loan Early Payoff Calculator</strong>
+          <span>Open this simple utility.</span>
+        </a>
+
+        <a class="tool-card" href="mortgage-payment-calculator/">
+          <span class="badge">Live</span>
+          <strong>Mortgage Payment Calculator</strong>
+          <span>Open this simple utility.</span>
+        </a>
+
+        <a class="tool-card" href="paint-coverage-calculator/">
+          <span class="badge">Live</span>
+          <strong>Paint Coverage Calculator</strong>
+          <span>Open this simple utility.</span>
+        </a>
+
+        <a class="tool-card" href="paycheck-estimator/">
+          <span class="badge">Live</span>
+          <strong>Paycheck Take-Home Estimator</strong>
+          <span>Open this simple utility.</span>
+        </a>
+
+        <a class="tool-card" href="percentage-change-calculator/">
+          <span class="badge">Live</span>
+          <strong>Percentage Change Calculator</strong>
+          <span>Open this simple utility.</span>
+        </a>
+
+        <a class="tool-card" href="recipe-scale-calculator/">
+          <span class="badge">Live</span>
+          <strong>Recipe Scale Calculator</strong>
+          <span>Open this simple utility.</span>
+        </a>
+
+        <a class="tool-card" href="rent-affordability-calculator/">
+          <span class="badge">Live</span>
+          <strong>Rent Affordability Calculator</strong>
+          <span>Open this simple utility.</span>
+        </a>
+
+        <a class="tool-card" href="sales-tax-calculator/">
+          <span class="badge">Live</span>
+          <strong>Sales Tax Calculator</strong>
+          <span>Open this simple utility.</span>
+        </a>
+
+        <a class="tool-card" href="savings-goal-calculator/">
+          <span class="badge">Live</span>
+          <strong>Savings Goal Calculator</strong>
+          <span>Open this simple utility.</span>
+        </a>
+
+        <a class="tool-card" href="roi-calculator/">
+          <span class="badge">Live</span>
+          <strong>Simple ROI Calculator</strong>
+          <span>Open this simple utility.</span>
+        </a>
+
+        <a class="tool-card" href="time-card-calculator/">
+          <span class="badge">Live</span>
+          <strong>Time Card Calculator</strong>
+          <span>Open this simple utility.</span>
+        </a>
+
+        <a class="tool-card" href="tip-calculator/">
+          <span class="badge">Live</span>
+          <strong>Tip Calculator</strong>
+          <span>Open this simple utility.</span>
+        </a>
+
+        <a class="tool-card" href="unit-price-calculator/">
+          <span class="badge">Live</span>
+          <strong>Unit Price Calculator</strong>
+          <span>Open this simple utility.</span>
+        </a>
     </section>
 
     <footer>
-      NothingButA tools are estimates and simple utilities. Financial tools are for general education only and are not professional financial advice.
+      NothingButA tools directory. Last rebuilt locally: 2026-05-21T17:55:09-04:00.
     </footer>
   </main>
 </body>
