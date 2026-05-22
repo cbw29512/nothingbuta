@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>NothingButA Churn Rate Calculator</title>
-  <meta name="description" content="Calculate customer churn rate from starting customers and customers lost.">
+  <meta name="description" content="Calculate churn rate from customers lost and starting customers so you can measure retention, customer loss, and business stability.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     *{box-sizing:border-box}
@@ -205,6 +205,22 @@
     }
   }
 </style>
+<script type="application/ld+json" id="nothingbuta-optimization-batch-009-schema">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "NothingButA Churn Rate Calculator",
+  "url": "https://cbw29512.github.io/nothingbuta/churn-rate-calculator/",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Any",
+  "description": "Calculate churn rate from customers lost and starting customers so you can measure retention, customer loss, and business stability.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+</script>
 </head>
 <body>
 <nav class="tool-jump" id="nothingbuta-tool-jump" aria-label="NothingButA tool navigation">
@@ -257,7 +273,56 @@
         </details>
         
     </section>
-  </main>
+  <section class="nba-growth-section" id="nothingbuta-optimization-batch-009-content" aria-labelledby="churn-rate-growth-help">
+  <style>
+    .nba-growth-section {
+      margin: 1.5rem auto 2rem;
+      padding: 1.2rem;
+      border: 1px solid rgba(15, 23, 42, 0.12);
+      border-radius: 24px;
+      background: rgba(255,255,255,0.94);
+      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
+    }
+    .nba-growth-section h2 { margin: 0 0 0.7rem; font-size: clamp(1.35rem, 3vw, 2rem); }
+    .nba-growth-section h3 { margin: 1rem 0 0.4rem; font-size: 1.05rem; }
+    .nba-growth-section p { color: #475569; line-height: 1.65; margin: 0.35rem 0; }
+    .nba-related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 0.75rem; margin-top: 0.85rem; }
+    .nba-related-card { display: grid; gap: 0.35rem; padding: 0.85rem; border: 1px solid rgba(15, 23, 42, 0.12); border-radius: 16px; background: rgba(248, 250, 252, 0.92); text-decoration: none; color: inherit; }
+    .nba-related-card span { color: #475569; line-height: 1.45; }
+  </style>
+
+  <h2 id="churn-rate-growth-help">Make the churn rate estimate useful</h2>
+  <h3>How to use this calculator</h3>
+  <p>Enter the number of customers, subscribers, or accounts you started with and how many were lost during the period. The calculator turns those numbers into a churn rate percentage.</p>
+  <h3>What the result means</h3>
+  <p>Treat the result as a retention signal, not the whole story. Churn can change because of pricing, onboarding, product quality, support, seasonality, competition, or the type of customer acquired.</p>
+  <h3>Useful next checks</h3>
+  <p>After calculating churn rate, compare it with conversion rate, ROI, break-even point, and the cost of replacing lost customers.</p>
+  <h3>Related tools</h3>
+  <div class="nba-related-grid">
+
+      <a class="nba-related-card" href="../conversion-rate-calculator/">
+        <strong>Conversion Rate Calculator</strong>
+        <span>Measure how many visitors or leads become customers.</span>
+      </a>
+
+      <a class="nba-related-card" href="../roi-calculator/">
+        <strong>Simple ROI Calculator</strong>
+        <span>Estimate whether customer growth is worth the cost.</span>
+      </a>
+
+      <a class="nba-related-card" href="../break-even-calculator/">
+        <strong>Break-Even Calculator</strong>
+        <span>See how many sales or customers may be needed to cover costs.</span>
+      </a>
+
+      <a class="nba-related-card" href="../freelance-rate-calculator/">
+        <strong>Freelance Rate Calculator</strong>
+        <span>Compare retention work against the value of your time.</span>
+      </a>
+  </div>
+</section>
+</main>
 
   <script>
     const FORMULA = "churnrate";
