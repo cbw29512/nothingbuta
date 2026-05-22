@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>NothingButA Time Card Calculator</title>
-  <meta name="description" content="Estimate regular pay, overtime pay, and total gross pay from hours worked.">
+  <meta name="description" content="Use the Time Card Calculator to add work hours, breaks, and totals for a pay period. Enter your numbers to get a clearer result for planning, comparison, or budgeting.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     *{box-sizing:border-box}
@@ -205,6 +205,22 @@
     }
   }
 </style>
+<script type="application/ld+json" id="nothingbuta-optimization-batch-021-schema">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "NothingButA Time Card Calculator",
+  "url": "https://cbw29512.github.io/nothingbuta/time-card-calculator/",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any",
+  "description": "Use the Time Card Calculator to add work hours, breaks, and totals for a pay period. Enter your numbers to get a clearer result for planning, comparison, or budgeting.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+</script>
 </head>
 <body>
 <nav class="tool-jump" id="nothingbuta-tool-jump" aria-label="NothingButA tool navigation">
@@ -265,7 +281,41 @@
         </details>
         
     </section>
-  </main>
+  <section class="nba-growth-section" id="nothingbuta-optimization-batch-021-content" aria-labelledby="time-card-calculator-growth-help">
+  <style>
+    .nba-growth-section {
+      margin: 1.5rem auto 2rem;
+      padding: 1.2rem;
+      border: 1px solid rgba(15, 23, 42, 0.12);
+      border-radius: 24px;
+      background: rgba(255,255,255,0.94);
+      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
+    }
+    .nba-growth-section h2 { margin: 0 0 0.7rem; font-size: clamp(1.35rem, 3vw, 2rem); }
+    .nba-growth-section h3 { margin: 1rem 0 0.4rem; font-size: 1.05rem; }
+    .nba-growth-section p { color: #475569; line-height: 1.65; margin: 0.35rem 0; }
+    .nba-related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 0.75rem; margin-top: 0.85rem; }
+    .nba-related-card { display: grid; gap: 0.35rem; padding: 0.85rem; border: 1px solid rgba(15, 23, 42, 0.12); border-radius: 16px; background: rgba(248, 250, 252, 0.92); text-decoration: none; color: inherit; }
+    .nba-related-card span { color: #475569; line-height: 1.45; }
+  </style>
+
+  <h2 id="time-card-calculator-growth-help">Make the time card calculator useful</h2>
+  <h3>How to use this calculator</h3>
+  <p>Enter the requested numbers for the time card calculator. The calculator uses those inputs to produce a clear estimate you can use for planning or comparison.</p>
+  <h3>What the result means</h3>
+  <p>Treat the result as a planning estimate, not a guarantee. Real-world totals can change because of fees, timing, taxes, rounding, usage, price changes, or missing inputs.</p>
+  <h3>Useful next checks</h3>
+  <p>After reviewing the result, compare it with your budget, timeline, other costs, and any related tools that help complete the decision.</p>
+  <h3>Related tools</h3>
+  <div class="nba-related-grid">
+
+      <a class="nba-related-card" href="../days-between-dates-calculator/">
+        <strong>Days Between Dates Calculator</strong>
+        <span>Use this next when comparing related numbers or planning the next step.</span>
+      </a>
+  </div>
+</section>
+</main>
 
   <script>
     const FORMULA = "timecard";
