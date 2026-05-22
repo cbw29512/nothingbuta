@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>NothingButA Simple ROI Calculator</title>
-  <meta name="description" content="Estimate return on investment from cost and return values.">
+  <meta name="description" content="Estimate return on investment by comparing gain, cost, and profit so you can judge whether a project, campaign, or purchase is worth it.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     *{box-sizing:border-box}
@@ -205,6 +205,22 @@
     }
   }
 </style>
+<script type="application/ld+json" id="nothingbuta-optimization-batch-006-schema">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "NothingButA Simple ROI Calculator",
+  "url": "https://cbw29512.github.io/nothingbuta/roi-calculator/",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Any",
+  "description": "Estimate return on investment by comparing gain, cost, and profit so you can judge whether a project, campaign, or purchase is worth it.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+</script>
 </head>
 <body>
 <nav class="tool-jump" id="nothingbuta-tool-jump" aria-label="NothingButA tool navigation">
@@ -257,7 +273,56 @@
         </details>
         
     </section>
-  </main>
+  <section class="nba-growth-section" id="nothingbuta-optimization-batch-006-content" aria-labelledby="roi-growth-help">
+  <style>
+    .nba-growth-section {
+      margin: 1.5rem auto 2rem;
+      padding: 1.2rem;
+      border: 1px solid rgba(15, 23, 42, 0.12);
+      border-radius: 24px;
+      background: rgba(255,255,255,0.94);
+      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
+    }
+    .nba-growth-section h2 { margin: 0 0 0.7rem; font-size: clamp(1.35rem, 3vw, 2rem); }
+    .nba-growth-section h3 { margin: 1rem 0 0.4rem; font-size: 1.05rem; }
+    .nba-growth-section p { color: #475569; line-height: 1.65; margin: 0.35rem 0; }
+    .nba-related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 0.75rem; margin-top: 0.85rem; }
+    .nba-related-card { display: grid; gap: 0.35rem; padding: 0.85rem; border: 1px solid rgba(15, 23, 42, 0.12); border-radius: 16px; background: rgba(248, 250, 252, 0.92); text-decoration: none; color: inherit; }
+    .nba-related-card span { color: #475569; line-height: 1.45; }
+  </style>
+
+  <h2 id="roi-growth-help">Make the ROI estimate useful</h2>
+  <h3>How to use this calculator</h3>
+  <p>Enter the cost of the investment and the return or gain you expect from it. The calculator estimates ROI so you can compare options using a simple percentage.</p>
+  <h3>What the result means</h3>
+  <p>Treat the result as a planning estimate, not a guaranteed outcome. ROI can change if costs rise, sales fall, timelines stretch, or the return is harder to measure than expected.</p>
+  <h3>Useful next checks</h3>
+  <p>After estimating ROI, compare it with break-even point, conversion rate, churn rate, and the time or labor required to get the return.</p>
+  <h3>Related tools</h3>
+  <div class="nba-related-grid">
+
+      <a class="nba-related-card" href="../break-even-calculator/">
+        <strong>Break-Even Calculator</strong>
+        <span>See how much you need to sell before a project pays for itself.</span>
+      </a>
+
+      <a class="nba-related-card" href="../conversion-rate-calculator/">
+        <strong>Conversion Rate Calculator</strong>
+        <span>Measure how well traffic or leads turn into results.</span>
+      </a>
+
+      <a class="nba-related-card" href="../churn-rate-calculator/">
+        <strong>Churn Rate Calculator</strong>
+        <span>Account for customer loss when estimating return.</span>
+      </a>
+
+      <a class="nba-related-card" href="../freelance-rate-calculator/">
+        <strong>Freelance Rate Calculator</strong>
+        <span>Compare ROI against the value of your time.</span>
+      </a>
+  </div>
+</section>
+</main>
 
   <script>
     const FORMULA = "roi";
