@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>NothingButA Break-Even Calculator</title>
-  <meta name="description" content="Estimate how many units you need to sell to cover fixed and variable costs.">
+  <meta name="description" content="Calculate the break-even point for a product, service, or project by comparing fixed costs, variable costs, and price per sale.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     *{box-sizing:border-box}
@@ -205,6 +205,22 @@
     }
   }
 </style>
+<script type="application/ld+json" id="nothingbuta-optimization-batch-007-schema">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "NothingButA Break-Even Calculator",
+  "url": "https://cbw29512.github.io/nothingbuta/break-even-calculator/",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Any",
+  "description": "Calculate the break-even point for a product, service, or project by comparing fixed costs, variable costs, and price per sale.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+</script>
 </head>
 <body>
 <nav class="tool-jump" id="nothingbuta-tool-jump" aria-label="NothingButA tool navigation">
@@ -261,7 +277,56 @@
         </details>
         
     </section>
-  </main>
+  <section class="nba-growth-section" id="nothingbuta-optimization-batch-007-content" aria-labelledby="break-even-growth-help">
+  <style>
+    .nba-growth-section {
+      margin: 1.5rem auto 2rem;
+      padding: 1.2rem;
+      border: 1px solid rgba(15, 23, 42, 0.12);
+      border-radius: 24px;
+      background: rgba(255,255,255,0.94);
+      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
+    }
+    .nba-growth-section h2 { margin: 0 0 0.7rem; font-size: clamp(1.35rem, 3vw, 2rem); }
+    .nba-growth-section h3 { margin: 1rem 0 0.4rem; font-size: 1.05rem; }
+    .nba-growth-section p { color: #475569; line-height: 1.65; margin: 0.35rem 0; }
+    .nba-related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 0.75rem; margin-top: 0.85rem; }
+    .nba-related-card { display: grid; gap: 0.35rem; padding: 0.85rem; border: 1px solid rgba(15, 23, 42, 0.12); border-radius: 16px; background: rgba(248, 250, 252, 0.92); text-decoration: none; color: inherit; }
+    .nba-related-card span { color: #475569; line-height: 1.45; }
+  </style>
+
+  <h2 id="break-even-growth-help">Make the break-even estimate useful</h2>
+  <h3>How to use this calculator</h3>
+  <p>Enter your fixed costs, variable cost per unit, and price per sale. The calculator estimates how many sales you may need before revenue covers the costs.</p>
+  <h3>What the result means</h3>
+  <p>Treat the result as a planning estimate. The real break-even point can change if pricing, supplies, labor, platform fees, refunds, or marketing costs shift.</p>
+  <h3>Useful next checks</h3>
+  <p>After finding break-even, compare the result with ROI, conversion rate, churn rate, and the amount of traffic or sales volume needed to make the project worthwhile.</p>
+  <h3>Related tools</h3>
+  <div class="nba-related-grid">
+
+      <a class="nba-related-card" href="../roi-calculator/">
+        <strong>Simple ROI Calculator</strong>
+        <span>Estimate whether the project return is worth the cost.</span>
+      </a>
+
+      <a class="nba-related-card" href="../conversion-rate-calculator/">
+        <strong>Conversion Rate Calculator</strong>
+        <span>Estimate how many visitors or leads may turn into sales.</span>
+      </a>
+
+      <a class="nba-related-card" href="../churn-rate-calculator/">
+        <strong>Churn Rate Calculator</strong>
+        <span>Account for customer loss when planning recurring revenue.</span>
+      </a>
+
+      <a class="nba-related-card" href="../freelance-rate-calculator/">
+        <strong>Freelance Rate Calculator</strong>
+        <span>Compare break-even against the value of your time.</span>
+      </a>
+  </div>
+</section>
+</main>
 
   <script>
     const FORMULA = "breakeven";
