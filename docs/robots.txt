@@ -1,4 +1,4 @@
-﻿User-agent: *
+User-agent: *
 Allow: /
 
-Sitemap: https://cbw29512.github.io/nothingbuta/sitemap.xml
+Sitemap: https://onecleartool.com/sitemap.xml
