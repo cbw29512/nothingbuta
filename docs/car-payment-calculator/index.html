@@ -2,470 +2,55 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>One Clear Tool Car Payment Calculator</title>
-  <meta name="description" content="Estimate a monthly car payment using price, down payment, trade-in, interest rate, and loan term before shopping.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    *{box-sizing:border-box}
-    body{margin:0;font-family:Arial,sans-serif;background:#f8fafc;color:#0f172a}
-    .wrap{width:min(100% - 24px,980px);margin:auto;padding:22px 0 52px}
-    .hero{padding:24px;border-radius:28px;background:linear-gradient(135deg,#111827,#2563eb);color:white;box-shadow:0 18px 55px rgba(15,23,42,.18)}
-    .eyebrow{display:inline-block;padding:7px 11px;border-radius:999px;background:rgba(255,255,255,.14);font-size:13px;font-weight:900}
-    h1{font-size:clamp(38px,9vw,64px);line-height:.95;margin:14px 0 10px;letter-spacing:-.06em}
-    .hero p{color:#dbeafe;font-size:18px;line-height:1.5;margin:0}
-    .grid{display:grid;grid-template-columns:1fr;gap:14px;margin-top:14px}
-    .card,.result,.note,.faq{background:white;border:1px solid #dbe3ef;border-radius:24px;padding:18px;box-shadow:0 14px 40px rgba(15,23,42,.08)}
-    label{display:block;font-weight:900;margin:14px 0 7px}
-    small{display:block;color:#64748b;font-weight:500;margin-top:3px}
-    input{width:100%;min-height:54px;border:1px solid #cbd5e1;border-radius:17px;padding:14px 15px;font-size:18px;background:#f8fafc}
-    input:focus{outline:4px solid rgba(37,99,235,.16);border-color:#2563eb;background:white}
-    button{width:100%;min-height:54px;border:0;border-radius:17px;background:#2563eb;color:white;font-size:17px;font-weight:900;margin-top:16px}
-    .metric{padding:14px;border-radius:17px;background:#f1f5f9;margin-top:10px}
-    .metric strong{display:block;font-size:25px;letter-spacing:-.03em}
-    .metric span{color:#64748b;font-size:13px}
-    .warn{background:#fef3c7;color:#78350f;padding:14px;border-radius:17px;margin-top:12px;font-weight:800}
-    .fine{color:#64748b;font-size:14px;line-height:1.5;margin-top:14px}
-    .faq{margin-top:14px}
-    details{border-top:1px solid #e2e8f0;padding:12px 0}
-    details:first-of-type{border-top:0}
-    summary{font-weight:900;cursor:pointer}
-    details p{color:#475569;line-height:1.5}
-    @media (min-width:800px){.wrap{padding-top:32px}.grid{grid-template-columns:.9fr 1.1fr}.card,.result,.note,.faq{padding:22px}}
-  </style>
-<style id="nothingbuta-tool-jump-style">
-  .tool-jump {
-    margin: 0 auto;
-    padding: 0.85rem 1rem;
-    max-width: 1120px;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 0.65rem;
-  }
-  .tool-jump label {
-    font-size: 0.9rem;
-    font-weight: 700;
-  }
-  .tool-jump select {
-    max-width: 280px;
-    width: 100%;
-    padding: 0.65rem 0.8rem;
-    border: 1px solid rgba(15, 23, 42, 0.18);
-    border-radius: 999px;
-    background: #ffffff;
-    font: inherit;
-  }
-  @media (max-width: 700px) {
-    .tool-jump {
-      justify-content: stretch;
-      align-items: stretch;
-      flex-direction: column;
-    }
-    .tool-jump select {
-      max-width: none;
-    }
-  }
-</style>
-<style id="nothingbuta-visual-polish-pass-001">
-  :root {
-    --nba-bg-soft: #f6f8fc;
-    --nba-panel: rgba(255, 255, 255, 0.94);
-    --nba-ink: #0f172a;
-    --nba-muted: #475569;
-    --nba-line: rgba(15, 23, 42, 0.12);
-    --nba-blue: #2563eb;
-    --nba-blue-dark: #1e3a8a;
-    --nba-green: #16a34a;
-    --nba-shadow: 0 18px 45px rgba(15, 23, 42, 0.10);
-    --nba-focus: 0 0 0 4px rgba(37, 99, 235, 0.22);
-  }
-
-  html {
-    scroll-behavior: smooth;
-  }
-
-  body {
-    min-height: 100vh;
-    background:
-      radial-gradient(circle at top left, rgba(37, 99, 235, 0.16), transparent 30rem),
-      radial-gradient(circle at bottom right, rgba(22, 163, 74, 0.10), transparent 28rem),
-      var(--nba-bg-soft) !important;
-    color: var(--nba-ink);
-  }
-
-  main, .wrap, .container, .page, .shell {
-    width: min(1120px, calc(100% - 2rem));
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  h1 {
-    letter-spacing: -0.055em;
-  }
-
-  h1 + p, .hero p, header p {
-    color: var(--nba-muted);
-    font-size: clamp(1rem, 2vw, 1.12rem);
-    line-height: 1.65;
-  }
-
-  .tool-jump {
-    position: sticky;
-    top: 0;
-    z-index: 20;
-    backdrop-filter: blur(14px);
-    background: rgba(246, 248, 252, 0.82);
-    border-bottom: 1px solid rgba(15, 23, 42, 0.08);
-  }
-
-  .tool-jump select {
-    border: 1px solid rgba(37, 99, 235, 0.22) !important;
-    box-shadow: 0 8px 22px rgba(15, 23, 42, 0.07);
-  }
-
-  .card, section.card, .calculator, .panel, form {
-    border: 1px solid var(--nba-line) !important;
-    border-radius: 24px !important;
-    background: var(--nba-panel) !important;
-    box-shadow: var(--nba-shadow) !important;
-  }
-
-  form, .calculator, .card {
-    overflow: hidden;
-  }
-
-  label {
-    font-weight: 750;
-    color: var(--nba-ink);
-  }
-
-  input, select, textarea {
-    width: 100%;
-    border: 1px solid rgba(15, 23, 42, 0.18) !important;
-    border-radius: 14px !important;
-    padding: 0.78rem 0.9rem !important;
-    background: #ffffff !important;
-    color: var(--nba-ink) !important;
-    box-shadow: inset 0 1px 0 rgba(15, 23, 42, 0.03);
-  }
-
-  input:focus, select:focus, textarea:focus, button:focus-visible, a:focus-visible {
-    outline: none !important;
-    box-shadow: var(--nba-focus) !important;
-    border-color: rgba(37, 99, 235, 0.65) !important;
-  }
-
-  button, .button, .btn, input[type="submit"] {
-    border: 0 !important;
-    border-radius: 16px !important;
-    padding: 0.85rem 1rem !important;
-    background: linear-gradient(135deg, var(--nba-blue-dark), var(--nba-blue)) !important;
-    color: #ffffff !important;
-    font-weight: 850 !important;
-    cursor: pointer;
-    box-shadow: 0 14px 30px rgba(37, 99, 235, 0.22) !important;
-    transition: transform 140ms ease, box-shadow 140ms ease, filter 140ms ease;
-  }
-
-  button:hover, .button:hover, .btn:hover {
-    transform: translateY(-1px);
-    filter: brightness(1.03);
-    box-shadow: 0 18px 38px rgba(37, 99, 235, 0.28) !important;
-  }
-
-  [id*="result"], [class*="result"], [id*="output"], [class*="output"], [aria-live] {
-    border-radius: 22px !important;
-    border: 1px solid rgba(22, 163, 74, 0.20) !important;
-    background:
-      linear-gradient(135deg, rgba(22, 163, 74, 0.10), rgba(37, 99, 235, 0.08)),
-      rgba(255, 255, 255, 0.94) !important;
-    box-shadow: 0 16px 38px rgba(15, 23, 42, 0.08) !important;
-  }
-
-  .tool-card {
-    transition: transform 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
-  }
-
-  .tool-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 20px 46px rgba(15, 23, 42, 0.12);
-  }
-
-  @media (max-width: 720px) {
-    main, .wrap, .container, .page, .shell {
-      width: min(100% - 1rem, 1120px);
-    }
-
-    .card, section.card, .calculator, .panel, form {
-      border-radius: 20px !important;
-    }
-
-    button, .button, .btn {
-      width: 100%;
-    }
-  }
-</style>
-<script type="application/ld+json" id="nothingbuta-optimization-batch-011-schema">
-{
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "One Clear Tool Car Payment Calculator",
-  "url": "https://onecleartool.com/car-payment-calculator/",
-  "applicationCategory": "FinanceApplication",
-  "operatingSystem": "Any",
-  "description": "Use the Car Payment Calculator to estimate monthly auto payments from price, rate, term, and down payment. Enter your numbers to get a clearer result for planning, comparison, or budgeting.",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  }
-}
-</script>
+  <title>Car Payment Calculator | Estimate Monthly Auto Payments</title>
+  <meta name="description" content="Estimate a monthly car payment using vehicle price, down payment, trade-in value, interest rate, and loan term.">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
   <link rel="canonical" href="https://onecleartool.com/car-payment-calculator/">
+  <meta property="og:title" content="Car Payment Calculator | One Clear Tool">
+  <meta property="og:description" content="Estimate monthly auto payments before you shop or compare loan options.">
+  <meta property="og:url" content="https://onecleartool.com/car-payment-calculator/">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="../assets/site.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Car Payment Calculator","url":"https://onecleartool.com/car-payment-calculator/","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
 </head>
 <body>
-<nav class="tool-jump" id="nothingbuta-tool-jump" aria-label="One Clear Tool tool navigation">
-  <label for="tool-jump-select">More One Clear Tool tools</label>
-  <select id="tool-jump-select" onchange="if (this.value) window.location.href = this.value;">
-    <option value="">Jump to another tool...</option><option value="../break-even-calculator/">Break Even Calculator</option><option value="../car-payment-calculator/" selected>Car Payment Calculator</option><option value="../churn-rate-calculator/">Churn Rate Calculator</option><option value="../concrete-calculator/">Concrete Calculator</option><option value="../conversion-rate-calculator/">Conversion Rate Calculator</option><option value="../days-between-dates-calculator/">Days Between Dates Calculator</option><option value="../debt-payoff-calculator/">Debt Payoff Calculator</option><option value="../discount-calculator/">Discount Calculator</option><option value="../emergency-fund-calculator/">Emergency Fund Calculator</option><option value="../flooring-calculator/">Flooring Calculator</option><option value="../freelance-rate-calculator/">Freelance Rate Calculator</option><option value="../hourly-to-salary-calculator/">Hourly to Salary Calculator</option><option value="../loan-early-payoff-calculator/">Loan Early Payoff Calculator</option><option value="../mortgage-payment-calculator/">Mortgage Payment Calculator</option><option value="../paint-coverage-calculator/">Paint Coverage Calculator</option><option value="../paycheck-estimator/">Paycheck Take-Home Estimator</option><option value="../percentage-change-calculator/">Percentage Change Calculator</option><option value="../recipe-scale-calculator/">Recipe Scale Calculator</option><option value="../rent-affordability-calculator/">Rent Affordability Calculator</option><option value="../sales-tax-calculator/">Sales Tax Calculator</option><option value="../savings-goal-calculator/">Savings Goal Calculator</option><option value="../roi-calculator/">Simple ROI Calculator</option><option value="../time-card-calculator/">Time Card Calculator</option><option value="../tip-calculator/">Tip Calculator</option><option value="../unit-price-calculator/">Unit Price Calculator</option>
-  </select>
-</nav>
-
   <main class="wrap">
+    <p class="breadcrumb"><a href="../">One Clear Tool</a> / Car Payment Calculator</p>
     <section class="hero">
-      <span class="eyebrow">One Clear Tool tool</span>
-      <h1>Car Payment Calculator</h1>
-      <p>Estimate a monthly car payment from price, down payment, rate, and loan term.</p>
+      <span class="eyebrow">Auto loan estimate</span>
+      <h1>Estimate your car payment before you commit.</h1>
+      <p>Enter the vehicle price, down payment, trade-in, loan term, and interest rate to estimate your monthly payment and total loan cost.</p>
     </section>
-
     <section class="grid">
       <form class="card" onsubmit="event.preventDefault();calc();">
         <h2>Your numbers</h2>
-        
-        <label for="price">Vehicle price <small>Purchase price</small></label>
-        <input id="price" type="number" inputmode="decimal" value="28000" step="0.01">
-        
-
-        <label for="down">Down payment <small>Cash down or trade-in</small></label>
-        <input id="down" type="number" inputmode="decimal" value="3000" step="0.01">
-        
-
-        <label for="rate">APR % <small>Annual percentage rate</small></label>
-        <input id="rate" type="number" inputmode="decimal" value="7.25" step="0.01">
-        
-
-        <label for="months">Loan term months <small>Common terms are 48, 60, or 72</small></label>
-        <input id="months" type="number" inputmode="decimal" value="60" step="0.01">
-        
-        <button type="submit">Calculate result</button>
-        <p class="fine">Estimate only. This is not financial, tax, payroll, lending, or professional advice.</p>
+        <label for="price">Vehicle price <small>Sticker price or negotiated price.</small></label><input id="price" type="number" inputmode="decimal" value="30000" step="0.01">
+        <label for="down">Down payment <small>Cash you plan to put down.</small></label><input id="down" type="number" inputmode="decimal" value="3000" step="0.01">
+        <label for="trade">Trade-in value <small>Estimated value of a trade-in vehicle.</small></label><input id="trade" type="number" inputmode="decimal" value="0" step="0.01">
+        <label for="rate">Interest rate % <small>Annual percentage rate estimate.</small></label><input id="rate" type="number" inputmode="decimal" value="7.5" step="0.01">
+        <label for="months">Loan term months <small>Common terms are 36, 48, 60, 72, or 84 months.</small></label><input id="months" type="number" inputmode="numeric" value="60" step="1">
+        <button type="submit">Calculate car payment</button>
+        <p class="fine">Estimate only. This is not lending, tax, financial, or professional advice.</p>
       </form>
-
-      <section class="result" aria-live="polite">
-        <h2>Result</h2>
-        <div id="out"></div>
-      </section>
+      <section class="result" aria-live="polite"><h2>Result</h2><div id="out"></div></section>
     </section>
-
-    <section class="faq">
-      <h2>FAQ</h2>
-      
-        <details>
-          <summary>Does this include taxes and fees?</summary>
-          <p>No. Add taxes and fees into the vehicle price if you want them included.</p>
-        </details>
-        
-
-        <details>
-          <summary>Is this financial advice?</summary>
-          <p>No. It is an educational estimate only.</p>
-        </details>
-        
+    <section class="content-grid">
+      <div class="panel"><h3>How to use it</h3><p>Use the best numbers you have today. If you are comparing vehicles, run the calculator once for each price and loan term.</p></div>
+      <div class="panel"><h3>What it means</h3><p>The result estimates principal and interest only. Dealer fees, taxes, registration, insurance, and add-ons can change the real monthly cost.</p></div>
+      <div class="panel"><h3>Next check</h3><p>Compare the payment with your monthly budget and emergency fund before stretching for a higher price or longer term.</p></div>
     </section>
-  <section class="nba-growth-section" id="nothingbuta-optimization-batch-011-content" aria-labelledby="car-payment-calculator-growth-help">
-  <style>
-    .nba-growth-section {
-      margin: 1.5rem auto 2rem;
-      padding: 1.2rem;
-      border: 1px solid rgba(15, 23, 42, 0.12);
-      border-radius: 24px;
-      background: rgba(255,255,255,0.94);
-      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
-    }
-    .nba-growth-section h2 { margin: 0 0 0.7rem; font-size: clamp(1.35rem, 3vw, 2rem); }
-    .nba-growth-section h3 { margin: 1rem 0 0.4rem; font-size: 1.05rem; }
-    .nba-growth-section p { color: #475569; line-height: 1.65; margin: 0.35rem 0; }
-    .nba-related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 0.75rem; margin-top: 0.85rem; }
-    .nba-related-card { display: grid; gap: 0.35rem; padding: 0.85rem; border: 1px solid rgba(15, 23, 42, 0.12); border-radius: 16px; background: rgba(248, 250, 252, 0.92); text-decoration: none; color: inherit; }
-    .nba-related-card span { color: #475569; line-height: 1.45; }
-  </style>
-
-  <h2 id="car-payment-calculator-growth-help">Make the car payment calculator useful</h2>
-  <h3>How to use this calculator</h3>
-  <p>Enter the requested numbers for the car payment calculator. The calculator uses those inputs to produce a clear estimate you can use for planning or comparison.</p>
-  <h3>What the result means</h3>
-  <p>Treat the result as a planning estimate, not a guarantee. Real-world totals can change because of fees, timing, taxes, rounding, usage, price changes, or missing inputs.</p>
-  <h3>Useful next checks</h3>
-  <p>After reviewing the result, compare it with your budget, timeline, other costs, and any related tools that help complete the decision.</p>
-  <h3>Related tools</h3>
-  <div class="nba-related-grid">
-
-      <a class="nba-related-card" href="../loan-early-payoff-calculator/">
-        <strong>Loan Early Payoff Calculator</strong>
-        <span>Use this next when comparing related numbers or planning the next step.</span>
-      </a>
-
-      <a class="nba-related-card" href="../emergency-fund-calculator/">
-        <strong>Emergency Fund Calculator</strong>
-        <span>Use this next when comparing related numbers or planning the next step.</span>
-      </a>
-
-      <a class="nba-related-card" href="../savings-goal-calculator/">
-        <strong>Savings Goal Calculator</strong>
-        <span>Use this next when comparing related numbers or planning the next step.</span>
-      </a>
-
-      <a class="nba-related-card" href="../debt-payoff-calculator/">
-        <strong>Debt Payoff Calculator</strong>
-        <span>Use this next when comparing related numbers or planning the next step.</span>
-      </a>
-  </div>
-</section>
-</main>
-
+    <section class="faq"><h2>Car payment FAQ</h2><details><summary>Does this include taxes and fees?</summary><p>No. Add expected taxes and fees to the vehicle price if you want them included in the estimate.</p></details><details><summary>Is a longer term always better?</summary><p>A longer term can lower the monthly payment, but it may increase total interest and keep you in debt longer.</p></details></section>
+    <section class="panel"><h2>Related tools</h2><div class="related"><a href="../loan-early-payoff-calculator/">Loan Early Payoff</a><a href="../debt-payoff-calculator/">Debt Payoff</a><a href="../savings-goal-calculator/">Savings Goal</a></div></section>
+    <footer class="footer">One Clear Tool calculators provide planning estimates for comparison only. Last updated 2026-07-03.</footer>
+  </main>
   <script>
-    const FORMULA = "car";
-    const usd = new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" });
-    const num = (id) => Number(document.getElementById(id)?.value) || 0;
-    const money = (value) => usd.format(Number.isFinite(value) ? value : 0);
-    const block = (value, label) => `<div class="metric"><strong>${value}</strong><span>${label}</span></div>`;
-
-    function payment(principal, apr, months) {
-      const rate = apr / 100 / 12;
-      if (principal <= 0 || months <= 0) return 0;
-      if (rate <= 0) return principal / months;
-      return principal * (rate * Math.pow(1 + rate, months)) / (Math.pow(1 + rate, months) - 1);
-    }
-
-    function payoff(balance, apr, monthly) {
-      const rate = apr / 100 / 12;
-      if (balance <= 0 || monthly <= 0) return { ok: false, msg: "Enter a balance and payment above zero." };
-      if (rate > 0 && monthly <= balance * rate) return { ok: false, msg: "Payment is too low to reduce the balance." };
-      let months = 0;
-      let interest = 0;
-      while (balance > 0 && months < 1200) {
-        const charge = balance * rate;
-        interest += charge;
-        balance = balance + charge - monthly;
-        months += 1;
-      }
-      return months >= 1200 ? { ok: false, msg: "Try a higher payment." } : { ok: true, months, interest };
-    }
-
-    function monthsText(months) {
-      const years = Math.floor(months / 12);
-      const rem = months % 12;
-      return years ? `${years} yr ${rem} mo` : `${rem} mo`;
-    }
-
-    function calc() {
-      try {
-        let html = "";
-
-        if (FORMULA === "mortgage") {
-          const principal = Math.max(num("price") - num("down"), 0);
-          const pi = payment(principal, num("rate"), num("years") * 12);
-          const total = pi + num("escrow");
-          html = block(money(total), "Estimated monthly payment") + block(money(pi), "Principal and interest") + block(money(num("escrow")), "Taxes and insurance estimate") + block(money(principal), "Estimated loan amount");
-        }
-
-        if (FORMULA === "paycheck") {
-          const gross = num("gross");
-          const federal = gross * num("federal") / 100;
-          const state = gross * num("state") / 100;
-          const deductions = num("deduct");
-          const takehome = Math.max(gross - federal - state - deductions, 0);
-          html = block(money(takehome), "Estimated take-home pay") + block(money(federal + state + deductions), "Estimated deductions") + block(money(federal), "Federal estimate") + block(money(state), "State/local estimate");
-        }
-
-        if (FORMULA === "timecard") {
-          const regularPay = num("rate") * num("regular");
-          const overtimePay = num("rate") * num("multiplier") * num("overtime");
-          const gross = regularPay + overtimePay;
-          html = block(money(gross), "Estimated gross pay") + block(money(regularPay), "Regular pay") + block(money(overtimePay), "Overtime pay") + block(money(gross * 52), "Estimated annual gross pay");
-        }
-
-        if (FORMULA === "car") {
-          const principal = Math.max(num("price") - num("down"), 0);
-          const monthly = payment(principal, num("rate"), num("months"));
-          html = block(money(monthly), "Estimated monthly payment") + block(money(monthly * num("months")), "Estimated total paid") + block(money(Math.max(monthly * num("months") - principal, 0)), "Estimated interest") + block(money(principal), "Estimated loan amount");
-        }
-
-        if (FORMULA === "earlyloan") {
-          const base = payoff(num("balance"), num("rate"), num("payment"));
-          const extra = payoff(num("balance"), num("rate"), num("payment") + num("extra"));
-          if (!base.ok || !extra.ok) {
-            html = `<div class="warn">${base.msg || extra.msg}</div>`;
-          } else {
-            html = block(monthsText(extra.months), "Payoff time with extra payment") + block(money(extra.interest), "Interest paid") + block(money(Math.max(base.interest - extra.interest, 0)), "Interest saved") + block(String(Math.max(base.months - extra.months, 0)), "Months saved");
-          }
-        }
-
-        if (FORMULA === "tip") {
-          const bill = num("bill");
-          const tip = bill * num("tip") / 100;
-          const total = bill + tip;
-          const each = total / Math.max(num("people"), 1);
-          html = block(money(tip), "Tip amount") + block(money(total), "Total bill") + block(money(each), "Each person pays");
-        }
-
-        if (FORMULA === "hourlysalary") {
-          const weekly = num("rate") * num("hours");
-          const yearly = weekly * num("weeks");
-          html = block(money(weekly), "Estimated weekly gross pay") + block(money(yearly / 12), "Estimated monthly gross pay") + block(money(yearly), "Estimated yearly gross pay");
-        }
-
-        if (FORMULA === "savingsgoal") {
-          const remaining = Math.max(num("goal") - num("current"), 0);
-          const months = num("monthly") > 0 ? Math.ceil(remaining / num("monthly")) : 0;
-          html = block(money(remaining), "Amount left to save") + block(String(months), "Months to goal") + block(money(num("monthly") * months), "Planned future savings");
-        }
-
-        if (FORMULA === "unitprice") {
-          const first = num("units") > 0 ? num("price") / num("units") : 0;
-          const second = num("compareunits") > 0 ? num("compare") / num("compareunits") : 0;
-          const winner = first && second ? (first < second ? "First package is cheaper per unit" : "Second package is cheaper per unit") : "Enter both packages to compare";
-          html = block(money(first), "First unit price") + block(money(second), "Second unit price") + block(winner, "Best value");
-        }
-
-        if (FORMULA === "discount") {
-          const savings = num("price") * num("discount") / 100;
-          html = block(money(Math.max(num("price") - savings, 0)), "Sale price") + block(money(savings), "Amount saved");
-        }
-
-        if (FORMULA === "salestax") {
-          const tax = num("price") * num("tax") / 100;
-          html = block(money(tax), "Estimated sales tax") + block(money(num("price") + tax), "Estimated total");
-        }
-
-        if (FORMULA === "percentchange") {
-          const oldValue = num("old");
-          const newValue = num("new");
-          const change = newValue - oldValue;
-          const percent = oldValue !== 0 ? (change / oldValue) * 100 : 0;
-          html = block(change.toLocaleString(), "Numeric change") + block(`${percent.toFixed(2)}%`, "Percentage change");
-        }
-
-        document.getElementById("out").innerHTML = html || '<div class="warn">This tool needs a stricter formula before it can pass.</div>';
-      } catch (err) {
-        console.error(err);
-        document.getElementById("out").innerHTML = '<div class="warn">Check the numbers and try again.</div>';
-      }
-    }
-
-    document.querySelectorAll("input").forEach((input) => input.addEventListener("input", calc));
-    calc();
+    const usd=new Intl.NumberFormat("en-US",{style:"currency",currency:"USD"});
+    const num=(id)=>Number(document.getElementById(id)?.value)||0;
+    const block=(value,label)=>`<div class="metric"><strong>${value}</strong><span>${label}</span></div>`;
+    function payment(principal,apr,months){const r=apr/100/12;if(principal<=0||months<=0)return 0;if(r<=0)return principal/months;return principal*(r*Math.pow(1+r,months))/(Math.pow(1+r,months)-1)}
+    function calc(){try{const principal=Math.max(num("price")-num("down")-num("trade"),0);const monthly=payment(principal,num("rate"),num("months"));const total=monthly*num("months");const interest=Math.max(total-principal,0);document.getElementById("out").innerHTML=block(usd.format(monthly),"Estimated monthly payment")+block(usd.format(principal),"Estimated loan amount")+block(usd.format(total),"Estimated total paid")+block(usd.format(interest),"Estimated interest")}catch(err){console.error("Car payment calculator error",err);document.getElementById("out").innerHTML='<div class="warn">Check the numbers and try again.</div>'}}
+    document.querySelectorAll("input").forEach((input)=>input.addEventListener("input",calc));calc();
   </script>
 </body>
 </html>
-
