@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Meat Per Person Calculator | Estimate Pounds to Buy</title>
+  <meta name="description" content="Estimate how many pounds of meat to buy for a group meal from guest count, ounces per person, and a waste allowance.">
+  <link rel="canonical" href="https://onecleartool.com/meat-per-person-calculator/"><meta name="robots" content="index, follow">
+  <link rel="stylesheet" href="../assets/site.css"><link rel="stylesheet" href="../assets/commercial.css"><script src="../assets/tool-ux.js" defer></script>
+  <script type="application/ld+json" id="oct-tool-schema">{"@context":"https://schema.org","@type":"WebApplication","name":"Meat Per Person Calculator","url":"https://onecleartool.com/meat-per-person-calculator/","applicationCategory":"UtilityApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+</head>
+<body><main class="wrap">
+  <p class="breadcrumb"><a href="../">All tools</a> / Kitchen</p>
+  <section class="hero"><span class="eyebrow">One Clear Tool</span><h1>Meat Per Person Calculator</h1><p>Estimate how much raw meat to buy for a group meal based on portion size and a simple allowance.</p></section>
+  <section class="grid">
+    <form class="card" onsubmit="event.preventDefault();calc();"><h2>Your meal</h2>
+      <label for="people">People <small>Number of guests</small></label><input id="people" type="number" min="0" step="1" value="8">
+      <label for="ounces">Portion per person <small>Raw ounces per person</small></label><input id="ounces" type="number" min="0" step="0.5" value="8">
+      <label for="extra">Extra allowance <small>Percent for bigger appetites, trimming, or leftovers</small></label><input id="extra" type="number" min="0" step="1" value="15">
+      <button type="submit">Calculate quantity</button>
+    </form>
+    <section class="result" aria-live="polite"><h2>Result</h2><div id="out"></div></section>
+  </section>
+  <section class="panel"><h2>Use this as a shopping estimate</h2><div class="content-grid"><div><h3>Portion size matters</h3><p>A main-course portion may be larger than meat served in tacos, pasta, soup, or a buffet.</p></div><div><h3>Bone and trim matter</h3><p>Bone-in cuts and heavily trimmed meats can require more raw weight than boneless cuts.</p></div><div><h3>Leftovers are optional</h3><p>Raise or lower the allowance depending on whether you want leftovers.</p></div></div><div class="related"><a href="../recipe-scale-calculator/">Recipe Scale Calculator</a><a href="../rice-water-calculator/">Rice Water Calculator</a><a href="../unit-price-calculator/">Unit Price Calculator</a></div><p class="fine">Meal-planning estimate only. Adjust for cut type, bones, trimming, side dishes, guest appetite, and your recipe.</p></section>
+<aside class="oct-support" id="oct-tool-support" aria-label="Support One Clear Tool">
+  <strong>Help keep One Clear Tool free.</strong>
+  <p>If this calculator saved you time, optional support helps fund maintenance and new tools. No payment or account is required to use the calculator.</p>
+  <a href="https://www.buymeacoffee.com/divclass016" target="_blank" rel="noopener noreferrer">☕ Buy me a coffee</a>
+</aside>
+<nav class="oct-commercial-footer" id="oct-commercial-footer" aria-label="Site information"><a href="../">All tools</a><a href="../privacy/">Privacy</a><a href="../terms/">Terms</a><a href="https://www.buymeacoffee.com/divclass016" target="_blank" rel="noopener noreferrer">Support</a></nav>
+</main>
+<script>const n=id=>Math.max(Number(document.getElementById(id).value)||0,0),metric=(v,l)=>`<div class="metric"><strong>${v}</strong><span>${l}</span></div>`;function calc(){const people=n("people"),baseOz=people*n("ounces"),totalOz=baseOz*(1+n("extra")/100),lb=totalOz/16;document.getElementById("out").innerHTML=metric(baseOz.toFixed(0),"Base ounces")+metric(totalOz.toFixed(0),"Ounces with allowance")+metric(`${lb.toFixed(2)} lb`,"Estimated raw meat to buy");}calc();</script>
+</body></html>
