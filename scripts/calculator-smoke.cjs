@@ -34,6 +34,7 @@ function parseElements(html) {
   const elements = new Map();
   const inputs = [];
   const selects = [];
+  const textareas = [];
 
   for (const match of html.matchAll(/<input\b[^>]*>/gi)) {
     const tag = match[0];
@@ -58,11 +59,21 @@ function parseElements(html) {
     selects.push(element);
   }
 
+  for (const match of html.matchAll(/<textarea\b([^>]*)>([\s\S]*?)<\/textarea>/gi)) {
+    const tag = `<textarea${match[1]}>`;
+    const id = attribute(tag, 'id');
+    if (!id) continue;
+    const value = match[2].replace(/<[^>]+>/g, '');
+    const element = makeElement(value);
+    elements.set(id, element);
+    textareas.push(element);
+  }
+
   for (const id of ['out', 'summary', 'result', 'output']) {
     if (!elements.has(id)) elements.set(id, makeElement(''));
   }
 
-  return { elements, inputs, selects };
+  return { elements, inputs, selects, textareas };
 }
 
 function inlineScripts(html) {
@@ -79,7 +90,7 @@ function inlineScripts(html) {
 
 function runPage(file) {
   const html = fs.readFileSync(file, 'utf8');
-  const { elements, inputs, selects } = parseElements(html);
+  const { elements, inputs, selects, textareas } = parseElements(html);
   const errors = [];
 
   const document = {
@@ -88,7 +99,8 @@ function runPage(file) {
       return elements.get(id);
     },
     querySelectorAll(selector) {
-      if (selector.includes('select')) return [...inputs, ...selects];
+      if (selector.includes('textarea')) return textareas;
+      if (selector.includes('select')) return selects;
       if (selector.includes('input')) return inputs;
       return [];
     },
@@ -190,6 +202,9 @@ try {
 
   const kg = results.get('kg-to-pounds-converter')?.out || '';
   if (!kg.includes('22.046 lb')) failures.push('kg-to-pounds-converter: default conversion regression');
+
+  const words = results.get('word-counter')?.out || '';
+  if (results.has('word-counter') && !words.includes('10')) failures.push('word-counter: default word-count regression');
 } catch (error) {
   failures.push(`known-value assertions: ${error.message}`);
 }
