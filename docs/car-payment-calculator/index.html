@@ -12,7 +12,10 @@
   <meta property="og:url" content="https://onecleartool.com/car-payment-calculator/">
   <meta property="og:type" content="website">
   <link rel="stylesheet" href="../assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Car Payment Calculator","url":"https://onecleartool.com/car-payment-calculator/","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+
+
+  <link rel="stylesheet" href="../assets/commercial.css">
+  <script src="../assets/tool-ux.js" defer></script>
   <script type="application/ld+json" id="oct-tool-schema">{"@context":"https://schema.org","@type":"WebApplication","name":"Car Payment Calculator","url":"https://onecleartool.com/car-payment-calculator/","applicationCategory":"UtilityApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
 </head>
 <body>
@@ -26,11 +29,11 @@
     <section class="grid">
       <form class="card" onsubmit="event.preventDefault();calc();">
         <h2>Your numbers</h2>
-        <label for="price">Vehicle price <small>Sticker price or negotiated price.</small></label><input id="price" type="number" inputmode="decimal" value="30000" step="0.01">
-        <label for="down">Down payment <small>Cash you plan to put down.</small></label><input id="down" type="number" inputmode="decimal" value="3000" step="0.01">
-        <label for="trade">Trade-in value <small>Estimated value of a trade-in vehicle.</small></label><input id="trade" type="number" inputmode="decimal" value="0" step="0.01">
-        <label for="rate">Interest rate % <small>Annual percentage rate estimate.</small></label><input id="rate" type="number" inputmode="decimal" value="7.5" step="0.01">
-        <label for="months">Loan term months <small>Common terms are 36, 48, 60, 72, or 84 months.</small></label><input id="months" type="number" inputmode="numeric" value="60" step="1">
+        <label for="price">Vehicle price <small>Sticker price or negotiated price.</small></label><input id="price" type="number" inputmode="decimal" value="30000" min="0" step="0.01" required>
+        <label for="down">Down payment <small>Cash you plan to put down.</small></label><input id="down" type="number" inputmode="decimal" value="3000" min="0" step="0.01">
+        <label for="trade">Trade-in value <small>Estimated value of a trade-in vehicle.</small></label><input id="trade" type="number" inputmode="decimal" value="0" min="0" step="0.01">
+        <label for="rate">Interest rate % <small>Annual percentage rate estimate.</small></label><input id="rate" type="number" inputmode="decimal" value="7.5" min="0" max="100" step="0.01" required>
+        <label for="months">Loan term months <small>Common terms are 36, 48, 60, 72, or 84 months.</small></label><input id="months" type="number" inputmode="numeric" value="60" min="1" max="120" step="1" required>
         <button type="submit">Calculate car payment</button>
         <p class="fine">Estimate only. This is not lending, tax, financial, or professional advice.</p>
       </form>
@@ -64,6 +67,17 @@
   <div class="related"><a href="../loan-early-payoff-calculator/">Loan Early Payoff Calculator</a><a href="../debt-payoff-calculator/">Debt Payoff Calculator</a><a href="../savings-goal-calculator/">Savings Goal Calculator</a></div>
   <p class="fine">Results are planning estimates for education and comparison only. They are not financial, tax, legal, lending, payroll, construction, or professional advice.</p>
 </section>
+<aside class="oct-support" id="oct-tool-support" aria-label="Support One Clear Tool">
+  <strong>Help keep One Clear Tool free.</strong>
+  <p>If this calculator saved you time, optional support helps fund maintenance and new tools. No payment or account is required to use the calculator.</p>
+  <a href="https://www.buymeacoffee.com/divclass016" target="_blank" rel="noopener noreferrer">☕ Buy me a coffee</a>
+</aside>
+<nav class="oct-commercial-footer" id="oct-commercial-footer" aria-label="Site information">
+  <a href="../">All tools</a>
+  <a href="../privacy/">Privacy</a>
+  <a href="../terms/">Terms</a>
+  <a href="https://www.buymeacoffee.com/divclass016" target="_blank" rel="noopener noreferrer">Support</a>
+</nav>
 </main>
   <script>
     const usd=new Intl.NumberFormat("en-US",{style:"currency",currency:"USD"});

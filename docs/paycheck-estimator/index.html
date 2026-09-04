@@ -205,22 +205,7 @@
     }
   }
 </style>
-<script type="application/ld+json" id="nothingbuta-optimization-batch-004-schema">
-{
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "One Clear Tool Paycheck Take-Home Estimator",
-  "url": "https://onecleartool.com/paycheck-estimator/",
-  "applicationCategory": "FinanceApplication",
-  "operatingSystem": "Any",
-  "description": "Estimate take-home pay from gross income using pay frequency, taxes, deductions, and withholding assumptions before planning your budget.",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  }
-}
-</script>
+
   <link rel="canonical" href="https://onecleartool.com/paycheck-estimator/">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
   <meta property="og:title" content="Paycheck Take-Home Estimator | Estimate Net Pay">
@@ -228,6 +213,9 @@
   <meta property="og:url" content="https://onecleartool.com/paycheck-estimator/">
   <meta property="og:type" content="website">
   <link rel="stylesheet" href="../assets/site.css">
+
+  <link rel="stylesheet" href="../assets/commercial.css">
+  <script src="../assets/tool-ux.js" defer></script>
   <script type="application/ld+json" id="oct-tool-schema">{"@context":"https://schema.org","@type":"WebApplication","name":"Paycheck Take-Home Estimator","url":"https://onecleartool.com/paycheck-estimator/","applicationCategory":"UtilityApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
 </head>
 <body>
@@ -248,22 +236,22 @@
     <section class="grid">
       <form class="card" onsubmit="event.preventDefault();calc();">
         <h2>Your numbers</h2>
-        
+
         <label for="gross">Gross pay per check <small>Before taxes and deductions</small></label>
-        <input id="gross" type="number" inputmode="decimal" value="2200" step="0.01">
-        
+        <input id="gross" type="number" inputmode="decimal" value="2200" min="0" step="0.01" required>
+
 
         <label for="federal">Federal tax % <small>Estimate only</small></label>
-        <input id="federal" type="number" inputmode="decimal" value="12" step="0.01">
-        
+        <input id="federal" type="number" inputmode="decimal" value="12" min="0" max="100" step="0.01" required>
+
 
         <label for="state">State and local tax % <small>Estimate only</small></label>
-        <input id="state" type="number" inputmode="decimal" value="5" step="0.01">
-        
+        <input id="state" type="number" inputmode="decimal" value="5" min="0" max="100" step="0.01" required>
+
 
         <label for="deduct">Other deductions <small>Insurance, retirement, and other deductions</small></label>
-        <input id="deduct" type="number" inputmode="decimal" value="150" step="0.01">
-        
+        <input id="deduct" type="number" inputmode="decimal" value="150" min="0" step="0.01">
+
         <button type="submit">Calculate result</button>
         <p class="fine">Estimate only. This is not financial, tax, payroll, lending, or professional advice.</p>
       </form>
@@ -276,18 +264,18 @@
 
     <section class="faq">
       <h2>FAQ</h2>
-      
+
         <details>
           <summary>Is this a payroll calculator?</summary>
           <p>No. It is a simple estimate and is not tax, payroll, or financial advice.</p>
         </details>
-        
+
 
         <details>
           <summary>Why might my real check differ?</summary>
           <p>Payroll rules, benefits, pretax deductions, and local taxes can change the actual amount.</p>
         </details>
-        
+
     </section>
   <section class="nba-growth-section" id="nothingbuta-optimization-batch-004-content" aria-labelledby="paycheck-growth-help">
   <style>
@@ -343,7 +331,7 @@
 
   <h3>How to use this estimator</h3>
   <p>
-    Enter your gross pay, pay frequency, tax assumptions, and recurring deductions.
+    Enter your gross pay per check, tax assumptions, and recurring deductions.
     The estimator helps you turn headline income into a rough take-home number
     before you build a monthly budget.
   </p>
@@ -406,6 +394,17 @@
   <div class="related"><a href="../hourly-to-salary-calculator/">Hourly to Salary Calculator</a><a href="../rent-affordability-calculator/">Rent Affordability Calculator</a><a href="../savings-goal-calculator/">Savings Goal Calculator</a></div>
   <p class="fine">Results are planning estimates for education and comparison only. They are not financial, tax, legal, lending, payroll, construction, or professional advice.</p>
 </section>
+<aside class="oct-support" id="oct-tool-support" aria-label="Support One Clear Tool">
+  <strong>Help keep One Clear Tool free.</strong>
+  <p>If this calculator saved you time, optional support helps fund maintenance and new tools. No payment or account is required to use the calculator.</p>
+  <a href="https://www.buymeacoffee.com/divclass016" target="_blank" rel="noopener noreferrer">☕ Buy me a coffee</a>
+</aside>
+<nav class="oct-commercial-footer" id="oct-commercial-footer" aria-label="Site information">
+  <a href="../">All tools</a>
+  <a href="../privacy/">Privacy</a>
+  <a href="../terms/">Terms</a>
+  <a href="https://www.buymeacoffee.com/divclass016" target="_blank" rel="noopener noreferrer">Support</a>
+</nav>
 </main>
 
   <script>

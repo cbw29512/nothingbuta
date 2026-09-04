@@ -205,22 +205,7 @@
     }
   }
 </style>
-<script type="application/ld+json" id="nothingbuta-optimization-batch-010-schema">
-{
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "One Clear Tool Freelance Rate Calculator",
-  "url": "https://onecleartool.com/freelance-rate-calculator/",
-  "applicationCategory": "BusinessApplication",
-  "operatingSystem": "Any",
-  "description": "Estimate a freelance hourly rate from income goals, billable hours, expenses, taxes, and time off so pricing is easier to plan.",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  }
-}
-</script>
+
   <link rel="canonical" href="https://onecleartool.com/freelance-rate-calculator/">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
   <meta property="og:title" content="Freelance Rate Calculator | Estimate Your Hourly Rate">
@@ -228,6 +213,9 @@
   <meta property="og:url" content="https://onecleartool.com/freelance-rate-calculator/">
   <meta property="og:type" content="website">
   <link rel="stylesheet" href="../assets/site.css">
+
+  <link rel="stylesheet" href="../assets/commercial.css">
+  <script src="../assets/tool-ux.js" defer></script>
   <script type="application/ld+json" id="oct-tool-schema">{"@context":"https://schema.org","@type":"WebApplication","name":"Freelance Rate Calculator","url":"https://onecleartool.com/freelance-rate-calculator/","applicationCategory":"UtilityApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
 </head>
 <body>
@@ -248,26 +236,26 @@
     <section class="grid">
       <form class="card" onsubmit="event.preventDefault();calc();">
         <h2>Your numbers</h2>
-        
+
         <label for="income">Desired annual income <small>Amount you want to keep before business expenses and tax buffer</small></label>
-        <input id="income" type="number" inputmode="decimal" value="75000" step="0.01">
-        
+        <input id="income" type="number" inputmode="decimal" value="75000" min="0" step="0.01" required>
+
 
         <label for="expenses">Annual business expenses <small>Software, equipment, insurance, marketing, and similar costs</small></label>
-        <input id="expenses" type="number" inputmode="decimal" value="8000" step="0.01">
-        
+        <input id="expenses" type="number" inputmode="decimal" value="8000" min="0" step="0.01">
+
 
         <label for="tax">Tax buffer % <small>Extra percentage to reserve for taxes and overhead uncertainty</small></label>
-        <input id="tax" type="number" inputmode="decimal" value="25" step="0.01">
-        
+        <input id="tax" type="number" inputmode="decimal" value="25" min="0" max="100" step="0.01" required>
+
 
         <label for="hours">Billable hours per week <small>Hours you can realistically bill clients</small></label>
-        <input id="hours" type="number" inputmode="decimal" value="25" step="0.01">
-        
+        <input id="hours" type="number" inputmode="decimal" value="25" min="0.1" max="168" step="0.1" required>
+
 
         <label for="weeks">Working weeks per year <small>Use fewer than 52 if you want vacation or unpaid time</small></label>
-        <input id="weeks" type="number" inputmode="decimal" value="46" step="0.01">
-        
+        <input id="weeks" type="number" inputmode="decimal" value="46" min="1" max="52" step="1" required>
+
         <button type="submit">Calculate result</button>
         <p class="fine">Estimate only. This is not financial, tax, payroll, lending, or professional advice.</p>
       </form>
@@ -280,18 +268,18 @@
 
     <section class="faq">
       <h2>FAQ</h2>
-      
+
         <details>
           <summary>Why use billable hours instead of total hours?</summary>
           <p>Freelancers spend time on admin, sales, and unpaid work, so billable hours are the hours that generate revenue.</p>
         </details>
-        
+
 
         <details>
           <summary>Is this tax advice?</summary>
           <p>No. It is an educational estimate and does not replace tax or business advice.</p>
         </details>
-        
+
     </section>
   <section class="panel" id="one-clear-tool-seo-panel">
   <h2>Turn an income goal into a working freelance rate.</h2>
@@ -313,6 +301,17 @@
   <div class="related"><a href="../hourly-to-salary-calculator/">Hourly to Salary Calculator</a><a href="../roi-calculator/">Simple ROI Calculator</a><a href="../break-even-calculator/">Break Even Calculator</a></div>
   <p class="fine">Results are planning estimates for education and comparison only. They are not financial, tax, legal, lending, payroll, construction, or professional advice.</p>
 </section>
+<aside class="oct-support" id="oct-tool-support" aria-label="Support One Clear Tool">
+  <strong>Help keep One Clear Tool free.</strong>
+  <p>If this calculator saved you time, optional support helps fund maintenance and new tools. No payment or account is required to use the calculator.</p>
+  <a href="https://www.buymeacoffee.com/divclass016" target="_blank" rel="noopener noreferrer">☕ Buy me a coffee</a>
+</aside>
+<nav class="oct-commercial-footer" id="oct-commercial-footer" aria-label="Site information">
+  <a href="../">All tools</a>
+  <a href="../privacy/">Privacy</a>
+  <a href="../terms/">Terms</a>
+  <a href="https://www.buymeacoffee.com/divclass016" target="_blank" rel="noopener noreferrer">Support</a>
+</nav>
 </main>
 
   <script>

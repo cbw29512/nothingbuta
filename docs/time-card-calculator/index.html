@@ -205,22 +205,7 @@
     }
   }
 </style>
-<script type="application/ld+json" id="nothingbuta-optimization-batch-021-schema">
-{
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "One Clear Tool Time Card Calculator",
-  "url": "https://onecleartool.com/time-card-calculator/",
-  "applicationCategory": "UtilitiesApplication",
-  "operatingSystem": "Any",
-  "description": "Use the Time Card Calculator to add work hours, breaks, and totals for a pay period. Enter your numbers to get a clearer result for planning, comparison, or budgeting.",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  }
-}
-</script>
+
   <link rel="canonical" href="https://onecleartool.com/time-card-calculator/">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
   <meta property="og:title" content="Time Card Calculator | Total Hours and Pay">
@@ -228,6 +213,9 @@
   <meta property="og:url" content="https://onecleartool.com/time-card-calculator/">
   <meta property="og:type" content="website">
   <link rel="stylesheet" href="../assets/site.css">
+
+  <link rel="stylesheet" href="../assets/commercial.css">
+  <script src="../assets/tool-ux.js" defer></script>
   <script type="application/ld+json" id="oct-tool-schema">{"@context":"https://schema.org","@type":"WebApplication","name":"Time Card Calculator","url":"https://onecleartool.com/time-card-calculator/","applicationCategory":"UtilityApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
 </head>
 <body>
@@ -248,22 +236,22 @@
     <section class="grid">
       <form class="card" onsubmit="event.preventDefault();calc();">
         <h2>Your numbers</h2>
-        
+
         <label for="rate">Hourly rate <small>Your regular hourly pay</small></label>
         <input id="rate" type="number" inputmode="decimal" value="18" step="0.01">
-        
+
 
         <label for="regular">Regular hours <small>Hours paid at normal rate</small></label>
         <input id="regular" type="number" inputmode="decimal" value="40" step="0.01">
-        
+
 
         <label for="overtime">Overtime hours <small>Hours paid at overtime rate</small></label>
         <input id="overtime" type="number" inputmode="decimal" value="5" step="0.01">
-        
+
 
         <label for="multiplier">Overtime multiplier <small>Common overtime multiplier is 1.5</small></label>
         <input id="multiplier" type="number" inputmode="decimal" value="1.5" step="0.01">
-        
+
         <button type="submit">Calculate result</button>
         <p class="fine">Estimate only. This is not financial, tax, payroll, lending, or professional advice.</p>
       </form>
@@ -276,18 +264,18 @@
 
     <section class="faq">
       <h2>FAQ</h2>
-      
+
         <details>
           <summary>Does this include taxes?</summary>
           <p>No. It estimates gross pay before taxes and deductions.</p>
         </details>
-        
+
 
         <details>
           <summary>Is overtime always 1.5x?</summary>
           <p>Not always. Use the multiplier that applies to your situation.</p>
         </details>
-        
+
     </section>
   <section class="nba-growth-section" id="nothingbuta-optimization-batch-021-content" aria-labelledby="time-card-calculator-growth-help">
   <style>
@@ -343,6 +331,17 @@
   <div class="related"><a href="../hourly-to-salary-calculator/">Hourly to Salary Calculator</a><a href="../paycheck-estimator/">Paycheck Take-Home Estimator</a><a href="../days-between-dates-calculator/">Days Between Dates Calculator</a></div>
   <p class="fine">Results are planning estimates for education and comparison only. They are not financial, tax, legal, lending, payroll, construction, or professional advice.</p>
 </section>
+<aside class="oct-support" id="oct-tool-support" aria-label="Support One Clear Tool">
+  <strong>Help keep One Clear Tool free.</strong>
+  <p>If this calculator saved you time, optional support helps fund maintenance and new tools. No payment or account is required to use the calculator.</p>
+  <a href="https://www.buymeacoffee.com/divclass016" target="_blank" rel="noopener noreferrer">☕ Buy me a coffee</a>
+</aside>
+<nav class="oct-commercial-footer" id="oct-commercial-footer" aria-label="Site information">
+  <a href="../">All tools</a>
+  <a href="../privacy/">Privacy</a>
+  <a href="../terms/">Terms</a>
+  <a href="https://www.buymeacoffee.com/divclass016" target="_blank" rel="noopener noreferrer">Support</a>
+</nav>
 </main>
 
   <script>

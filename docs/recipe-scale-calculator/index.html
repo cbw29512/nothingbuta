@@ -205,22 +205,7 @@
     }
   }
 </style>
-<script type="application/ld+json" id="nothingbuta-optimization-batch-019-schema">
-{
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "One Clear Tool Recipe Scale Calculator",
-  "url": "https://onecleartool.com/recipe-scale-calculator/",
-  "applicationCategory": "UtilitiesApplication",
-  "operatingSystem": "Any",
-  "description": "Use the Recipe Scale Calculator to resize ingredients when changing servings or batch size. Enter your numbers to get a clearer result for planning, comparison, or budgeting.",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  }
-}
-</script>
+
   <link rel="canonical" href="https://onecleartool.com/recipe-scale-calculator/">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
   <meta property="og:title" content="Recipe Scale Calculator | Adjust Ingredient Amounts">
@@ -228,6 +213,9 @@
   <meta property="og:url" content="https://onecleartool.com/recipe-scale-calculator/">
   <meta property="og:type" content="website">
   <link rel="stylesheet" href="../assets/site.css">
+
+  <link rel="stylesheet" href="../assets/commercial.css">
+  <script src="../assets/tool-ux.js" defer></script>
   <script type="application/ld+json" id="oct-tool-schema">{"@context":"https://schema.org","@type":"WebApplication","name":"Recipe Scale Calculator","url":"https://onecleartool.com/recipe-scale-calculator/","applicationCategory":"UtilityApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
 </head>
 <body>
@@ -248,20 +236,20 @@
     <section class="grid">
       <form class="card" onsubmit="event.preventDefault();calc();">
         <h2>Your numbers</h2>
-        
+
         <label for="original">Original servings <small>Servings the recipe currently makes</small></label>
         <input id="original" type="number" inputmode="decimal" value="4" step="0.01">
-        
+
 
         <label for="desired">Desired servings <small>Servings you want to make</small></label>
         <input id="desired" type="number" inputmode="decimal" value="6" step="0.01">
-        
+
 
         <label for="quantity">Original ingredient quantity <small>Amount listed in the original recipe</small></label>
         <input id="quantity" type="number" inputmode="decimal" value="2" step="0.01">
-        
+
         <button type="submit">Calculate result</button>
-        
+
       </form>
 
       <section class="result" aria-live="polite">
@@ -272,18 +260,18 @@
 
     <section class="faq">
       <h2>FAQ</h2>
-      
+
         <details>
           <summary>How does recipe scaling work?</summary>
           <p>The calculator multiplies the original quantity by desired servings divided by original servings.</p>
         </details>
-        
+
 
         <details>
           <summary>Can I use any unit?</summary>
           <p>Yes. Keep the same unit before and after scaling, such as cups, grams, or tablespoons.</p>
         </details>
-        
+
     </section>
   <section class="nba-growth-section" id="nothingbuta-optimization-batch-019-content" aria-labelledby="recipe-scale-calculator-growth-help">
   <style>
@@ -339,6 +327,17 @@
   <div class="related"><a href="../unit-price-calculator/">Unit Price Calculator</a><a href="../days-between-dates-calculator/">Days Between Dates Calculator</a><a href="../tip-calculator/">Tip Calculator</a></div>
   <p class="fine">Results are planning estimates for education and comparison only. They are not financial, tax, legal, lending, payroll, construction, or professional advice.</p>
 </section>
+<aside class="oct-support" id="oct-tool-support" aria-label="Support One Clear Tool">
+  <strong>Help keep One Clear Tool free.</strong>
+  <p>If this calculator saved you time, optional support helps fund maintenance and new tools. No payment or account is required to use the calculator.</p>
+  <a href="https://www.buymeacoffee.com/divclass016" target="_blank" rel="noopener noreferrer">☕ Buy me a coffee</a>
+</aside>
+<nav class="oct-commercial-footer" id="oct-commercial-footer" aria-label="Site information">
+  <a href="../">All tools</a>
+  <a href="../privacy/">Privacy</a>
+  <a href="../terms/">Terms</a>
+  <a href="https://www.buymeacoffee.com/divclass016" target="_blank" rel="noopener noreferrer">Support</a>
+</nav>
 </main>
 
   <script>
