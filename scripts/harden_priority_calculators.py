@@ -75,7 +75,10 @@ def associate_debt_labels(doc: str) -> str:
         "Extra monthly payment": "extra",
     }
     for text, input_id in pairs.items():
-        pattern = re.compile(rf'<label(?![^>]*\bfor=)([^>]*)>{re.escape(text)}\b', re.IGNORECASE)
+        pattern = re.compile(
+            rf'<label(?![^>]*\bfor=)([^>]*)>\s*{re.escape(text)}(?=\s*(?:<small\b|</label>))',
+            re.IGNORECASE,
+        )
         doc = pattern.sub(rf'<label for="{input_id}"\1>{text}', doc, count=1)
     return doc
 
