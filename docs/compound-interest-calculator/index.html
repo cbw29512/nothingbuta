@@ -27,7 +27,12 @@
   <p>If this calculator saved you time, optional support helps fund maintenance and new tools. No payment or account is required to use the calculator.</p>
   <a href="https://www.buymeacoffee.com/divclass016" target="_blank" rel="noopener noreferrer">☕ Buy me a coffee</a>
 </aside>
-<nav class="oct-commercial-footer" id="oct-commercial-footer" aria-label="Site information"><a href="../">All tools</a><a href="../privacy/">Privacy</a><a href="../terms/">Terms</a><a href="https://www.buymeacoffee.com/divclass016" target="_blank" rel="noopener noreferrer">Support</a></nav>
+<nav class="oct-commercial-footer" id="oct-commercial-footer" aria-label="Site information">
+  <a href="../">All tools</a>
+  <a href="../privacy/">Privacy</a>
+  <a href="../terms/">Terms</a>
+  <a href="https://www.buymeacoffee.com/divclass016" target="_blank" rel="noopener noreferrer">Support</a>
+</nav>
 </main>
 <script>const n=id=>Math.max(Number(document.getElementById(id).value)||0,0),usd=new Intl.NumberFormat("en-US",{style:"currency",currency:"USD"}),metric=(v,l)=>`<div class="metric"><strong>${v}</strong><span>${l}</span></div>`;function calc(){const p=n("principal"),m=n("monthly"),months=Math.round(n("years")*12),r=n("rate")/100/12;let future,contrib=p+(m*months);if(r===0){future=contrib;}else{const factor=Math.pow(1+r,months);future=(p*factor)+(m*((factor-1)/r));}const growth=Math.max(future-contrib,0);document.getElementById("out").innerHTML=metric(usd.format(future),"Estimated future value")+metric(usd.format(contrib),"Total contributed")+metric(usd.format(growth),"Estimated growth");}calc();</script>
 </body></html>
