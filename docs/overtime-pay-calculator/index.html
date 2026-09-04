@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Overtime Pay Calculator | Estimate Regular and Overtime Pay</title>
+  <meta name="description" content="Estimate regular pay, overtime pay, and total gross earnings from hourly rate, hours, and overtime multiplier.">
+  <link rel="canonical" href="https://onecleartool.com/overtime-pay-calculator/"><meta name="robots" content="index, follow">
+  <link rel="stylesheet" href="../assets/site.css"><link rel="stylesheet" href="../assets/commercial.css"><script src="../assets/tool-ux.js" defer></script>
+  <script type="application/ld+json" id="oct-tool-schema">{"@context":"https://schema.org","@type":"WebApplication","name":"Overtime Pay Calculator","url":"https://onecleartool.com/overtime-pay-calculator/","applicationCategory":"UtilityApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+</head>
+<body><main class="wrap">
+  <p class="breadcrumb"><a href="../">All tools</a> / Work and money</p>
+  <section class="hero"><span class="eyebrow">One Clear Tool</span><h1>Overtime Pay Calculator</h1><p>Estimate regular pay, overtime pay, and total gross earnings for a work period.</p></section>
+  <section class="grid">
+    <form class="card" onsubmit="event.preventDefault();calc();"><h2>Your hours</h2>
+      <label for="rate">Hourly rate <small>Dollars per hour</small></label><input id="rate" type="number" min="0" step="0.01" value="20">
+      <label for="regular">Regular hours <small>Hours paid at base rate</small></label><input id="regular" type="number" min="0" step="0.1" value="40">
+      <label for="overtime">Overtime hours <small>Hours paid at overtime rate</small></label><input id="overtime" type="number" min="0" step="0.1" value="8">
+      <label for="multiplier">Overtime multiplier <small>1.5 for time-and-a-half</small></label><input id="multiplier" type="number" min="0" step="0.1" value="1.5">
+      <button type="submit">Calculate gross pay</button>
+    </form>
+    <section class="result" aria-live="polite"><h2>Result</h2><div id="out"></div></section>
+  </section>
+  <section class="panel"><h2>Know what this does—and does not—estimate</h2><div class="content-grid"><div><h3>Regular pay</h3><p>Regular hours are multiplied by your base hourly rate.</p></div><div><h3>Overtime pay</h3><p>Overtime hours use the multiplier you enter instead of assuming a legal rule.</p></div><div><h3>Gross only</h3><p>Taxes, deductions, bonuses, differentials, and employer-specific rules are not included.</p></div></div><div class="related"><a href="../time-card-calculator/">Time Card Calculator</a><a href="../hourly-to-salary-calculator/">Hourly to Salary Calculator</a><a href="../paycheck-estimator/">Paycheck Estimator</a></div><p class="fine">Estimate only. Overtime eligibility and required rates depend on applicable law, agreements, and employer policy.</p></section>
+<aside class="oct-support" id="oct-tool-support" aria-label="Support One Clear Tool">
+  <strong>Help keep One Clear Tool free.</strong>
+  <p>If this calculator saved you time, optional support helps fund maintenance and new tools. No payment or account is required to use the calculator.</p>
+  <a href="https://www.buymeacoffee.com/divclass016" target="_blank" rel="noopener noreferrer">☕ Buy me a coffee</a>
+</aside>
+<nav class="oct-commercial-footer" id="oct-commercial-footer" aria-label="Site information"><a href="../">All tools</a><a href="../privacy/">Privacy</a><a href="../terms/">Terms</a><a href="https://www.buymeacoffee.com/divclass016" target="_blank" rel="noopener noreferrer">Support</a></nav>
+</main>
+<script>const n=id=>Math.max(Number(document.getElementById(id).value)||0,0),usd=new Intl.NumberFormat("en-US",{style:"currency",currency:"USD"}),metric=(v,l)=>`<div class="metric"><strong>${v}</strong><span>${l}</span></div>`;function calc(){const regular=n("rate")*n("regular"),ot=n("rate")*n("multiplier")*n("overtime"),total=regular+ot;document.getElementById("out").innerHTML=metric(usd.format(regular),"Regular pay")+metric(usd.format(ot),"Overtime pay")+metric(usd.format(total),"Estimated gross pay");}calc();</script>
+</body></html>
