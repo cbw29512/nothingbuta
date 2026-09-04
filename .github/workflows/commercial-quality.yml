@@ -40,6 +40,10 @@ jobs:
         run: |
           node --check docs/assets/tool-ux.js
           node --check docs/assets/home-ux.js
+          node --check scripts/calculator-smoke.cjs
+
+      - name: Run calculator runtime smoke
+        run: node scripts/calculator-smoke.cjs
 
       - name: Verify calculator privacy boundary
         shell: bash
