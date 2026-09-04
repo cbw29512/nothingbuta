@@ -9,8 +9,10 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 DOCS = ROOT / "docs"
+CATALOG_PATH = ROOT / "scripts" / "tool_catalog.json"
 SUPPORT_URL = "https://www.buymeacoffee.com/divclass016"
 BASE_URL = "https://onecleartool.com"
+TOOL_COUNT = len(json.loads(CATALOG_PATH.read_text(encoding="utf-8")))
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
 
@@ -27,10 +29,10 @@ TOOL_FOOTER = f'''<nav class="oct-commercial-footer" id="oct-commercial-footer" 
   <a href="{SUPPORT_URL}" target="_blank" rel="noopener noreferrer">Support</a>
 </nav>'''
 
-HOME_SEARCH = '''<section class="oct-tool-search" id="oct-tool-search" aria-labelledby="oct-tool-search-label">
+HOME_SEARCH = f'''<section class="oct-tool-search" id="oct-tool-search" aria-labelledby="oct-tool-search-label">
   <label id="oct-tool-search-label" for="oct-tool-search-input">Find a tool</label>
   <input id="oct-tool-search-input" type="search" autocomplete="off" placeholder="Try debt, mortgage, tip, flooring, pay...">
-  <p class="oct-search-status" id="oct-tool-search-status" aria-live="polite">25 tools available.</p>
+  <p class="oct-search-status" id="oct-tool-search-status" aria-live="polite">{TOOL_COUNT} tools available.</p>
 </section>'''
 
 HOME_FOOTER = f'''<nav class="oct-commercial-footer" id="oct-commercial-footer" aria-label="Site information">
@@ -140,41 +142,24 @@ def polish_home(path: Path) -> str:
     return clean_trailing_whitespace(doc)
 
 
-def update_sitemap(doc: str) -> str:
-    additions = []
-    for path in ("privacy", "terms"):
-        url = f"{BASE_URL}/{path}/"
-        if url not in doc:
-            additions.append(
-                "  <url>\n"
-                f"    <loc>{url}</loc>\n"
-                "    <lastmod>2026-09-03</lastmod>\n"
-                "    <changefreq>monthly</changefreq>\n"
-                "    <priority>0.4</priority>\n"
-                "  </url>"
-            )
-    if additions:
-        doc = doc.replace("</urlset>", "\n".join(additions) + "\n</urlset>")
-    return clean_trailing_whitespace(doc)
-
-
 def expected_outputs() -> dict[Path, str]:
     outputs: dict[Path, str] = {}
     home = DOCS / "index.html"
     outputs[home] = polish_home(home)
     for path in tool_pages():
         outputs[path] = polish_tool(path)
-    sitemap = DOCS / "sitemap.xml"
-    outputs[sitemap] = update_sitemap(sitemap.read_text(encoding="utf-8-sig"))
     return outputs
 
 
 def validate_docs(outputs: dict[Path, str]) -> list[str]:
     errors: list[str] = []
     home = outputs[DOCS / "index.html"]
-    for needle in (SUPPORT_URL, "oct-tool-search-input", "privacy/", "terms/"):
+    for needle in (SUPPORT_URL, "oct-tool-search-input", "privacy/", "terms/", f"{TOOL_COUNT} tools available."):
         if needle not in home:
             errors.append(f"homepage missing {needle}")
+
+    if len(tool_pages()) != TOOL_COUNT:
+        errors.append(f"catalog expects {TOOL_COUNT} calculator pages but found {len(tool_pages())}")
 
     for path in tool_pages():
         doc = outputs[path]
@@ -206,11 +191,6 @@ def validate_docs(outputs: dict[Path, str]) -> list[str]:
         doc = path.read_text(encoding="utf-8")
         if SUPPORT_URL not in doc:
             errors.append(f"{path.relative_to(ROOT)}: missing support URL")
-
-    sitemap = outputs[DOCS / "sitemap.xml"]
-    for url in (f"{BASE_URL}/privacy/", f"{BASE_URL}/terms/"):
-        if url not in sitemap:
-            errors.append(f"sitemap missing {url}")
 
     return errors
 
