@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Drywall Calculator | Estimate Drywall Sheets</title>
+  <meta name="description" content="Estimate drywall sheets from room length, width, wall height, openings, sheet size, and waste allowance.">
+  <link rel="canonical" href="https://onecleartool.com/drywall-calculator/">
+  <meta name="robots" content="index, follow">
+  <link rel="stylesheet" href="../assets/site.css">
+  <link rel="stylesheet" href="../assets/commercial.css">
+  <script src="../assets/tool-ux.js" defer></script>
+  <script type="application/ld+json" id="oct-tool-schema">{"@context":"https://schema.org","@type":"WebApplication","name":"Drywall Calculator","url":"https://onecleartool.com/drywall-calculator/","applicationCategory":"UtilityApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+</head>
+<body>
+  <main class="wrap">
+    <p class="breadcrumb"><a href="../">All tools</a> / Home projects</p>
+    <section class="hero"><span class="eyebrow">One Clear Tool</span><h1>Drywall Calculator</h1><p>Estimate sheet count for four walls using room dimensions, openings, sheet size, and waste.</p></section>
+    <section class="grid">
+      <form class="card" onsubmit="event.preventDefault();calc();">
+        <h2>Your room</h2>
+        <label for="length">Room length <small>Feet</small></label><input id="length" type="number" min="0" step="0.1" value="12">
+        <label for="width">Room width <small>Feet</small></label><input id="width" type="number" min="0" step="0.1" value="10">
+        <label for="height">Wall height <small>Feet</small></label><input id="height" type="number" min="0" step="0.1" value="8">
+        <label for="openings">Doors and windows <small>Total square feet to subtract</small></label><input id="openings" type="number" min="0" step="1" value="40">
+        <label for="sheetHeight">Sheet size <small>Square feet per sheet; 4×8 = 32</small></label><input id="sheetHeight" type="number" min="1" step="1" value="32">
+        <label for="waste">Waste allowance <small>Percent</small></label><input id="waste" type="number" min="0" step="1" value="10">
+        <button type="submit">Calculate sheets</button>
+      </form>
+      <section class="result" aria-live="polite"><h2>Result</h2><div id="out"></div></section>
+    </section>
+    <section class="panel"><h2>What this estimate covers</h2><div class="content-grid"><div><h3>Wall area</h3><p>The calculator uses the perimeter of a rectangular room and subtracts your estimated opening area.</p></div><div><h3>Waste</h3><p>A waste allowance helps cover cuts, damaged edges, and layout inefficiency.</p></div><div><h3>Not included</h3><p>Ceilings, specialty board, fire assemblies, compound, fasteners, and framing are separate.</p></div></div><div class="related"><a href="../paint-coverage-calculator/">Paint Coverage Calculator</a><a href="../flooring-calculator/">Flooring Calculator</a><a href="../tile-calculator/">Tile Calculator</a></div><p class="fine">Planning estimate only. Local building requirements and actual layout can change material needs.</p></section>
+<aside class="oct-support" id="oct-tool-support" aria-label="Support One Clear Tool">
+  <strong>Help keep One Clear Tool free.</strong>
+  <p>If this calculator saved you time, optional support helps fund maintenance and new tools. No payment or account is required to use the calculator.</p>
+  <a href="https://www.buymeacoffee.com/divclass016" target="_blank" rel="noopener noreferrer">☕ Buy me a coffee</a>
+</aside>
+<nav class="oct-commercial-footer" id="oct-commercial-footer" aria-label="Site information">
+  <a href="../">All tools</a>
+  <a href="../privacy/">Privacy</a>
+  <a href="../terms/">Terms</a>
+  <a href="https://www.buymeacoffee.com/divclass016" target="_blank" rel="noopener noreferrer">Support</a>
+</nav>
+  </main>
+  <script>
+    const n=id=>Math.max(Number(document.getElementById(id).value)||0,0); const metric=(v,l)=>`<div class="metric"><strong>${v}</strong><span>${l}</span></div>`;
+    function calc(){const wall=Math.max((2*(n("length")+n("width"))*n("height"))-n("openings"),0);const adjusted=wall*(1+n("waste")/100);const sheet=Math.max(n("sheetHeight"),1);const count=Math.ceil(adjusted/sheet);document.getElementById("out").innerHTML=metric(wall.toFixed(0),"Net wall square feet")+metric(adjusted.toFixed(0),"Square feet with waste")+metric(String(count),`Sheets at ${sheet.toFixed(0)} ft² each`);} calc();
+  </script>
+</body>
+</html>

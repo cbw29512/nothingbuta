@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gravel Calculator | Estimate Gravel Volume</title>
+  <meta name="description" content="Estimate gravel volume in cubic feet and cubic yards for driveways, paths, beds, and simple landscaping projects.">
+  <link rel="canonical" href="https://onecleartool.com/gravel-calculator/">
+  <meta name="robots" content="index, follow">
+  <link rel="stylesheet" href="../assets/site.css">
+  <link rel="stylesheet" href="../assets/commercial.css">
+  <script src="../assets/tool-ux.js" defer></script>
+  <script type="application/ld+json" id="oct-tool-schema">{"@context":"https://schema.org","@type":"WebApplication","name":"Gravel Calculator","url":"https://onecleartool.com/gravel-calculator/","applicationCategory":"UtilityApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+</head>
+<body>
+  <main class="wrap">
+    <p class="breadcrumb"><a href="../">All tools</a> / Home projects</p>
+    <section class="hero">
+      <span class="eyebrow">One Clear Tool</span>
+      <h1>Gravel Calculator</h1>
+      <p>Estimate how much gravel to order from length, width, depth, and a waste allowance.</p>
+    </section>
+
+    <section class="grid">
+      <form class="card" onsubmit="event.preventDefault();calc();">
+        <h2>Your project</h2>
+        <label for="length">Length <small>Feet</small></label>
+        <input id="length" type="number" inputmode="decimal" min="0" step="0.1" value="20">
+        <label for="width">Width <small>Feet</small></label>
+        <input id="width" type="number" inputmode="decimal" min="0" step="0.1" value="10">
+        <label for="depth">Depth <small>Inches</small></label>
+        <input id="depth" type="number" inputmode="decimal" min="0" step="0.1" value="3">
+        <label for="waste">Extra allowance <small>Percent for settling, uneven grade, and margin</small></label>
+        <input id="waste" type="number" inputmode="decimal" min="0" step="1" value="10">
+        <button type="submit">Calculate gravel</button>
+      </form>
+
+      <section class="result" aria-live="polite">
+        <h2>Result</h2>
+        <div id="out"></div>
+      </section>
+    </section>
+
+    <section class="panel">
+      <h2>How to use this estimate</h2>
+      <div class="content-grid">
+        <div><h3>Measure the footprint</h3><p>Use the finished length and width of the area you plan to cover.</p></div>
+        <div><h3>Choose finished depth</h3><p>Enter the compacted depth you want. Loose material can settle after placement.</p></div>
+        <div><h3>Order with margin</h3><p>Supplier minimums, compaction, and irregular shapes can change the final quantity.</p></div>
+      </div>
+      <div class="related"><a href="../concrete-calculator/">Concrete Calculator</a><a href="../topsoil-calculator/">Topsoil Calculator</a><a href="../mulch-calculator/">Mulch Calculator</a></div>
+      <p class="fine">Planning estimate only. Confirm material type, compaction, delivery minimums, and project requirements with your supplier.</p>
+    </section>
+
+<aside class="oct-support" id="oct-tool-support" aria-label="Support One Clear Tool">
+  <strong>Help keep One Clear Tool free.</strong>
+  <p>If this calculator saved you time, optional support helps fund maintenance and new tools. No payment or account is required to use the calculator.</p>
+  <a href="https://www.buymeacoffee.com/divclass016" target="_blank" rel="noopener noreferrer">☕ Buy me a coffee</a>
+</aside>
+<nav class="oct-commercial-footer" id="oct-commercial-footer" aria-label="Site information">
+  <a href="../">All tools</a>
+  <a href="../privacy/">Privacy</a>
+  <a href="../terms/">Terms</a>
+  <a href="https://www.buymeacoffee.com/divclass016" target="_blank" rel="noopener noreferrer">Support</a>
+</nav>
+  </main>
+  <script>
+    const n = id => Math.max(Number(document.getElementById(id).value) || 0, 0);
+    const metric = (value, label) => `<div class="metric"><strong>${value}</strong><span>${label}</span></div>`;
+    function calc() {
+      const baseCubicFeet = n("length") * n("width") * (n("depth") / 12);
+      const adjusted = baseCubicFeet * (1 + n("waste") / 100);
+      const yards = adjusted / 27;
+      document.getElementById("out").innerHTML = metric(adjusted.toFixed(1), "Cubic feet") + metric(yards.toFixed(2), "Cubic yards") + metric((yards * 1.4).toFixed(2), "Approx. tons at 1.4 tons/yd³");
+    }
+    calc();
+  </script>
+</body>
+</html>

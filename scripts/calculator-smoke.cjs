@@ -173,7 +173,7 @@ try {
   failures.push(`known-value assertions: ${error.message}`);
 }
 
-if (directories.length !== 25) failures.push(`expected 25 calculator pages, found ${directories.length}`);
+if (directories.length !== 35) failures.push(`expected 35 calculator pages, found ${directories.length}`);
 
 if (failures.length) {
   console.error('Calculator smoke failures:');

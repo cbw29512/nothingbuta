@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Compound Interest Calculator | Estimate Savings Growth</title>
+  <meta name="description" content="Estimate future savings value from a starting balance, annual rate, monthly contribution, and time horizon.">
+  <link rel="canonical" href="https://onecleartool.com/compound-interest-calculator/"><meta name="robots" content="index, follow">
+  <link rel="stylesheet" href="../assets/site.css"><link rel="stylesheet" href="../assets/commercial.css"><script src="../assets/tool-ux.js" defer></script>
+  <script type="application/ld+json" id="oct-tool-schema">{"@context":"https://schema.org","@type":"WebApplication","name":"Compound Interest Calculator","url":"https://onecleartool.com/compound-interest-calculator/","applicationCategory":"UtilityApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+</head>
+<body><main class="wrap">
+  <p class="breadcrumb"><a href="../">All tools</a> / Work and money</p>
+  <section class="hero"><span class="eyebrow">One Clear Tool</span><h1>Compound Interest Calculator</h1><p>Estimate how a starting balance and steady monthly contributions may grow over time.</p></section>
+  <section class="grid">
+    <form class="card" onsubmit="event.preventDefault();calc();"><h2>Your assumptions</h2>
+      <label for="principal">Starting balance <small>Dollars</small></label><input id="principal" type="number" min="0" step="0.01" value="5000">
+      <label for="rate">Annual rate <small>Percent</small></label><input id="rate" type="number" min="0" step="0.01" value="5">
+      <label for="monthly">Monthly contribution <small>Dollars added at the end of each month</small></label><input id="monthly" type="number" min="0" step="0.01" value="200">
+      <label for="years">Time horizon <small>Years</small></label><input id="years" type="number" min="0" step="0.1" value="10">
+      <button type="submit">Calculate growth</button>
+    </form>
+    <section class="result" aria-live="polite"><h2>Result</h2><div id="out"></div></section>
+  </section>
+  <section class="panel"><h2>Read the estimate carefully</h2><div class="content-grid"><div><h3>Monthly compounding</h3><p>This calculator models a steady annual rate compounded monthly.</p></div><div><h3>Contributions</h3><p>Monthly contributions are modeled at the end of each month.</p></div><div><h3>Real returns vary</h3><p>Actual savings or investment returns can change over time and may include taxes, fees, or losses.</p></div></div><div class="related"><a href="../savings-goal-calculator/">Savings Goal Calculator</a><a href="../roi-calculator/">ROI Calculator</a><a href="../emergency-fund-calculator/">Emergency Fund Calculator</a></div><p class="fine">Educational planning estimate only; not investment, tax, or financial advice and not a prediction of future returns.</p></section>
+<aside class="oct-support" id="oct-tool-support" aria-label="Support One Clear Tool">
+  <strong>Help keep One Clear Tool free.</strong>
+  <p>If this calculator saved you time, optional support helps fund maintenance and new tools. No payment or account is required to use the calculator.</p>
+  <a href="https://www.buymeacoffee.com/divclass016" target="_blank" rel="noopener noreferrer">☕ Buy me a coffee</a>
+</aside>
+<nav class="oct-commercial-footer" id="oct-commercial-footer" aria-label="Site information">
+  <a href="../">All tools</a>
+  <a href="../privacy/">Privacy</a>
+  <a href="../terms/">Terms</a>
+  <a href="https://www.buymeacoffee.com/divclass016" target="_blank" rel="noopener noreferrer">Support</a>
+</nav>
+</main>
+<script>const n=id=>Math.max(Number(document.getElementById(id).value)||0,0),usd=new Intl.NumberFormat("en-US",{style:"currency",currency:"USD"}),metric=(v,l)=>`<div class="metric"><strong>${v}</strong><span>${l}</span></div>`;function calc(){const p=n("principal"),m=n("monthly"),months=Math.round(n("years")*12),r=n("rate")/100/12;let future,contrib=p+(m*months);if(r===0){future=contrib;}else{const factor=Math.pow(1+r,months);future=(p*factor)+(m*((factor-1)/r));}const growth=Math.max(future-contrib,0);document.getElementById("out").innerHTML=metric(usd.format(future),"Estimated future value")+metric(usd.format(contrib),"Total contributed")+metric(usd.format(growth),"Estimated growth");}calc();</script>
+</body></html>

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rice Water Calculator | Scale Rice and Water Ratios</title>
+  <meta name="description" content="Scale rice and water amounts for stovetop cooking using a configurable water-to-rice ratio.">
+  <link rel="canonical" href="https://onecleartool.com/rice-water-calculator/"><meta name="robots" content="index, follow">
+  <link rel="stylesheet" href="../assets/site.css"><link rel="stylesheet" href="../assets/commercial.css"><script src="../assets/tool-ux.js" defer></script>
+  <script type="application/ld+json" id="oct-tool-schema">{"@context":"https://schema.org","@type":"WebApplication","name":"Rice Water Calculator","url":"https://onecleartool.com/rice-water-calculator/","applicationCategory":"UtilityApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+</head>
+<body><main class="wrap">
+  <p class="breadcrumb"><a href="../">All tools</a> / Kitchen</p>
+  <section class="hero"><span class="eyebrow">One Clear Tool</span><h1>Rice Water Calculator</h1><p>Scale rice and water amounts without doing ratio math in your head.</p></section>
+  <section class="grid">
+    <form class="card" onsubmit="event.preventDefault();calc();"><h2>Your batch</h2>
+      <label for="rice">Dry rice <small>Cups</small></label><input id="rice" type="number" min="0" step="0.25" value="2">
+      <label for="ratio">Water ratio <small>Cups of water per cup of rice</small></label><input id="ratio" type="number" min="0" step="0.05" value="1.5">
+      <label for="serving">Dry rice per serving <small>Cups; adjust for your meal</small></label><input id="serving" type="number" min="0.01" step="0.05" value="0.5">
+      <button type="submit">Calculate batch</button>
+    </form>
+    <section class="result" aria-live="polite"><h2>Result</h2><div id="out"></div></section>
+  </section>
+  <section class="panel"><h2>Use the ratio that fits your rice</h2><div class="content-grid"><div><h3>Rice varies</h3><p>Different rice types and cooking methods need different water ratios.</p></div><div><h3>Start with the package</h3><p>Use the package or recipe ratio as your starting point, then scale it here.</p></div><div><h3>Serving size is flexible</h3><p>The serving estimate is only a planning aid and depends on appetite and side dishes.</p></div></div><div class="related"><a href="../recipe-scale-calculator/">Recipe Scale Calculator</a><a href="../unit-price-calculator/">Unit Price Calculator</a><a href="../meat-per-person-calculator/">Meat Per Person Calculator</a></div><p class="fine">Kitchen planning estimate only. Cooking method, rice variety, soaking, altitude, and equipment can change the ideal ratio.</p></section>
+<aside class="oct-support" id="oct-tool-support" aria-label="Support One Clear Tool">
+  <strong>Help keep One Clear Tool free.</strong>
+  <p>If this calculator saved you time, optional support helps fund maintenance and new tools. No payment or account is required to use the calculator.</p>
+  <a href="https://www.buymeacoffee.com/divclass016" target="_blank" rel="noopener noreferrer">☕ Buy me a coffee</a>
+</aside>
+<nav class="oct-commercial-footer" id="oct-commercial-footer" aria-label="Site information">
+  <a href="../">All tools</a>
+  <a href="../privacy/">Privacy</a>
+  <a href="../terms/">Terms</a>
+  <a href="https://www.buymeacoffee.com/divclass016" target="_blank" rel="noopener noreferrer">Support</a>
+</nav>
+</main>
+<script>const n=id=>Math.max(Number(document.getElementById(id).value)||0,0),metric=(v,l)=>`<div class="metric"><strong>${v}</strong><span>${l}</span></div>`;function calc(){const rice=n("rice"),water=rice*n("ratio"),serve=Math.max(n("serving"),.01),servings=rice/serve;document.getElementById("out").innerHTML=metric(`${rice.toFixed(2)} cups`,"Dry rice")+metric(`${water.toFixed(2)} cups`,"Water")+metric(servings.toFixed(1),"Approx. servings");}calc();</script>
+</body></html>
