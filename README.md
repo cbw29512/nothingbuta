@@ -8,28 +8,27 @@ https://onecleartool.com/
 
 ## Purpose
 
-One Clear Tool is a static GitHub Pages site that publishes focused, single-purpose calculators. Each page is designed to help a visitor get one useful estimate quickly without an account wall, clutter, or long setup.
+One Clear Tool is a static calculator hub built around focused, single-purpose micro-apps. Every calculator has its own direct URL, but the homepage also serves as the shared discovery layer. Pages are designed to give one useful estimate quickly without an account wall, clutter, or long setup.
 
 ## Current Tools
+
+### Money, work, and business
 
 - Break Even Calculator
 - Car Payment Calculator
 - Churn Rate Calculator
-- Concrete Calculator
+- Compound Interest Calculator
 - Conversion Rate Calculator
-- Days Between Dates Calculator
 - Debt Payoff Calculator
 - Discount Calculator
 - Emergency Fund Calculator
-- Flooring Calculator
 - Freelance Rate Calculator
 - Hourly to Salary Calculator
 - Loan Early Payoff Calculator
 - Mortgage Payment Calculator
-- Paint Coverage Calculator
+- Overtime Pay Calculator
 - Paycheck Take-Home Estimator
 - Percentage Change Calculator
-- Recipe Scale Calculator
 - Rent Affordability Calculator
 - Sales Tax Calculator
 - Savings Goal Calculator
@@ -37,6 +36,27 @@ One Clear Tool is a static GitHub Pages site that publishes focused, single-purp
 - Time Card Calculator
 - Tip Calculator
 - Unit Price Calculator
+
+### Home and project planning
+
+- Concrete Calculator
+- Drywall Calculator
+- Flooring Calculator
+- Grass Seed Calculator
+- Gravel Calculator
+- Mulch Calculator
+- Paint Coverage Calculator
+- Tile Calculator
+- Topsoil Calculator
+
+### Kitchen and everyday planning
+
+- Days Between Dates Calculator
+- Meat Per Person Calculator
+- Recipe Scale Calculator
+- Rice Water Calculator
+
+**Total: 35 live calculator pages.**
 
 ## Publishing
 
@@ -57,13 +77,20 @@ docs/sitemap.xml
 docs/index.html
 ```
 
-## Content Standard
+## Product Standard
 
 Every public tool page should have:
 
 - A clear title and meta description
 - A canonical URL using `https://onecleartool.com/`
-- Helpful on-page explanation text
-- Accessible form labels and readable result output
-- A short estimate-only disclaimer when the tool touches money, pay, taxes, loans, or planning
+- A single focused calculation with understandable inputs and outputs
+- Helpful on-page explanation text and related-tool links
+- Accessible form labels and an `aria-live` result region
+- Shared One Clear Tool styling and mobile behavior
+- Client-side-only calculator inputs with no analytics or submission API
+- Privacy, terms, and support links
+- A short estimate-only disclaimer when the tool touches money, pay, taxes, loans, construction, or planning
 
+## Quality Gate
+
+The permanent GitHub Actions quality workflow verifies generated commercial state, JavaScript syntax, runtime calculator behavior, client-side privacy boundaries, credential hygiene, and clean diffs. The runtime smoke gate requires all 35 calculator pages to execute and produce a result.
