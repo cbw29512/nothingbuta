@@ -47,11 +47,7 @@ SCRIPT_RE = re.compile(
 
 def tool_pages() -> list[Path]:
     excluded = {"assets", "privacy", "terms"}
-    return sorted(
-        path
-        for path in DOCS.glob("*/index.html")
-        if path.parent.name not in excluded
-    )
+    return sorted(path for path in DOCS.glob("*/index.html") if path.parent.name not in excluded)
 
 
 def ensure_before(doc: str, marker: str, snippet: str, closing: str) -> str:
@@ -62,9 +58,13 @@ def ensure_before(doc: str, marker: str, snippet: str, closing: str) -> str:
     return doc.replace(closing, snippet + "\n" + closing, 1)
 
 
-def remove_marker_block(doc: str, element: str, marker_id: str) -> str:
-    pattern = rf'\s*<{element}[^>]*id=["\']{re.escape(marker_id)}["\'][^>]*>.*?</{element}>'
-    return re.sub(pattern, "", doc, flags=re.IGNORECASE | re.DOTALL)
+def upsert_block(doc: str, element: str, marker_id: str, canonical: str, closing: str) -> str:
+    pattern = rf'<{element}[^>]*id=["\']{re.escape(marker_id)}["\'][^>]*>.*?</{element}>'
+    if re.search(pattern, doc, flags=re.IGNORECASE | re.DOTALL):
+        return re.sub(pattern, canonical, doc, count=1, flags=re.IGNORECASE | re.DOTALL)
+    if closing not in doc:
+        raise ValueError(f"Missing {closing}")
+    return doc.replace(closing, canonical + "\n" + closing, 1)
 
 
 def canonical_url(doc: str, slug: str) -> str:
@@ -77,19 +77,16 @@ def page_title(doc: str, slug: str) -> str:
     return re.sub(r"\s+", " ", match.group(1)).strip() if match else slug.replace("-", " ").title()
 
 
+def is_webapp_schema(body: str) -> bool:
+    return bool(re.search(r'["\']@type["\']\s*:\s*["\']WebApplication["\']', body, re.IGNORECASE))
+
+
 def normalize_webapp_schema(doc: str, slug: str) -> str:
-    kept: list[str] = []
-    for match in SCRIPT_RE.finditer(doc):
-        body = match.group("body")
-        if re.search(r'["\']@type["\']\s*:\s*["\']WebApplication["\']', body, re.IGNORECASE):
-            kept.append(match.group(0))
+    webapps = [match for match in SCRIPT_RE.finditer(doc) if is_webapp_schema(match.group("body"))]
+    if len(webapps) == 1 and 'id="oct-tool-schema"' in webapps[0].group(0):
+        return doc
 
-    if kept:
-        doc = SCRIPT_RE.sub(
-            lambda m: "" if re.search(r'["\']@type["\']\s*:\s*["\']WebApplication["\']', m.group("body"), re.IGNORECASE) else m.group(0),
-            doc,
-        )
-
+    doc = SCRIPT_RE.sub(lambda m: "" if is_webapp_schema(m.group("body")) else m.group(0), doc)
     schema = {
         "@context": "https://schema.org",
         "@type": "WebApplication",
@@ -107,10 +104,6 @@ def polish_tool(path: Path) -> str:
     slug = path.parent.name
     doc = path.read_text(encoding="utf-8-sig")
 
-    # Remove prior generated blocks before re-inserting canonical versions.
-    doc = remove_marker_block(doc, "aside", "oct-tool-support")
-    doc = remove_marker_block(doc, "nav", "oct-commercial-footer")
-
     doc = ensure_before(doc, 'href="../assets/commercial.css"', '  <link rel="stylesheet" href="../assets/commercial.css">', "</head>")
     doc = ensure_before(doc, 'src="../assets/tool-ux.js"', '  <script src="../assets/tool-ux.js" defer></script>', "</head>")
     doc = normalize_webapp_schema(doc, slug)
@@ -121,29 +114,25 @@ def polish_tool(path: Path) -> str:
             "Enter your gross pay per check, tax assumptions, and recurring deductions.",
         )
 
-    if "</main>" in doc:
-        doc = doc.replace("</main>", TOOL_SUPPORT + "\n" + TOOL_FOOTER + "\n</main>", 1)
-    else:
-        raise ValueError(f"{slug}: missing </main>")
-
+    doc = upsert_block(doc, "aside", "oct-tool-support", TOOL_SUPPORT, "</main>")
+    doc = upsert_block(doc, "nav", "oct-commercial-footer", TOOL_FOOTER, "</main>")
     return doc
 
 
 def polish_home(path: Path) -> str:
     doc = path.read_text(encoding="utf-8-sig")
-    doc = remove_marker_block(doc, "section", "oct-tool-search")
-    doc = remove_marker_block(doc, "nav", "oct-commercial-footer")
     doc = ensure_before(doc, 'href="assets/commercial.css"', '  <link rel="stylesheet" href="assets/commercial.css">', "</head>")
     doc = ensure_before(doc, 'src="assets/home-ux.js"', '  <script src="assets/home-ux.js" defer></script>', "</head>")
 
     grid = '<section class="tool-grid" aria-label="Available One Clear Tool calculators">'
-    if grid not in doc:
+    if 'id="oct-tool-search"' in doc:
+        doc = upsert_block(doc, "section", "oct-tool-search", HOME_SEARCH, grid)
+    elif grid in doc:
+        doc = doc.replace(grid, HOME_SEARCH + "\n\n    " + grid, 1)
+    else:
         raise ValueError("Homepage tool grid marker missing")
-    doc = doc.replace(grid, HOME_SEARCH + "\n\n    " + grid, 1)
 
-    if "</main>" not in doc:
-        raise ValueError("Homepage missing </main>")
-    doc = doc.replace("</main>", HOME_FOOTER + "\n</main>", 1)
+    doc = upsert_block(doc, "nav", "oct-commercial-footer", HOME_FOOTER, "</main>")
     return doc
 
 
