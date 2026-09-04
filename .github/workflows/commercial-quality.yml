@@ -31,10 +31,14 @@ jobs:
 
       - name: Generate commercial polish on development branch
         if: github.ref == 'refs/heads/audit/commercial-polish-20260904' && github.actor != 'github-actions[bot]'
-        run: python scripts/apply_commercial_polish.py --write
+        run: |
+          python scripts/apply_commercial_polish.py --write
+          python scripts/harden_priority_calculators.py --write
 
       - name: Verify generated commercial state
-        run: python scripts/apply_commercial_polish.py --check
+        run: |
+          python scripts/apply_commercial_polish.py --check
+          python scripts/harden_priority_calculators.py --check
 
       - name: Verify JavaScript syntax
         run: |
