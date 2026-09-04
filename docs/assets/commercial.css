@@ -1,0 +1,165 @@
+/* One Clear Tool commercial UX layer.
+   Kept separate from calculator-specific styling so the support/trust layer
+   stays consistent without changing calculator math or page-specific layout. */
+
+.oct-trust-note,
+.oct-result-actions,
+.oct-support,
+.oct-commercial-footer,
+.oct-tool-search {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.oct-trust-note {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .45rem .85rem;
+  align-items: center;
+  margin: .85rem 0 0;
+  padding: .72rem .85rem;
+  border: 1px solid rgba(15, 23, 42, .10);
+  border-radius: 14px;
+  background: rgba(248, 250, 252, .92);
+  color: #475569;
+  font-size: .88rem;
+  line-height: 1.45;
+}
+
+.oct-trust-note strong { color: #0f172a; }
+
+.oct-result-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .55rem;
+  margin-top: .9rem;
+}
+
+.oct-result-actions button {
+  width: auto !important;
+  min-height: 44px !important;
+  margin-top: 0 !important;
+  padding: .65rem .85rem !important;
+  border: 1px solid rgba(37, 99, 235, .18) !important;
+  border-radius: 999px !important;
+  background: #ffffff !important;
+  color: #1e3a8a !important;
+  box-shadow: none !important;
+  font-weight: 850 !important;
+}
+
+.oct-result-actions button:hover {
+  transform: translateY(-1px);
+  background: #eff6ff !important;
+}
+
+.oct-action-status {
+  width: 100%;
+  min-height: 1.25rem;
+  color: #475569;
+  font-size: .85rem;
+}
+
+.oct-support {
+  margin: 1.35rem 0 0;
+  padding: 1.05rem 1.1rem;
+  border: 1px solid rgba(37, 99, 235, .18);
+  border-radius: 20px;
+  background: linear-gradient(135deg, rgba(255,255,255,.98), rgba(219,234,254,.72));
+  box-shadow: 0 14px 34px rgba(15, 23, 42, .08);
+}
+
+.oct-support strong {
+  display: block;
+  margin-bottom: .25rem;
+  color: #0f172a;
+}
+
+.oct-support p {
+  margin: 0;
+  color: #475569;
+  line-height: 1.55;
+}
+
+.oct-support a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  margin-top: .75rem;
+  padding: .7rem .95rem;
+  border-radius: 999px;
+  background: #ffdd00;
+  color: #111827;
+  font-weight: 900;
+  text-decoration: none;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, .12);
+}
+
+.oct-support a:hover { transform: translateY(-1px); }
+
+.oct-commercial-footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .55rem 1rem;
+  align-items: center;
+  margin-top: 1rem;
+  padding: 1rem 0 .25rem;
+  border-top: 1px solid rgba(15, 23, 42, .10);
+  color: #475569;
+  font-size: .9rem;
+  line-height: 1.5;
+}
+
+.oct-commercial-footer a {
+  color: #1e3a8a;
+  font-weight: 800;
+  text-decoration-thickness: .08em;
+  text-underline-offset: .18em;
+}
+
+.oct-tool-search {
+  margin: 0 0 1rem;
+  padding: 1rem;
+  border: 1px solid rgba(15, 23, 42, .10);
+  border-radius: 20px;
+  background: rgba(255,255,255,.94);
+  box-shadow: 0 14px 35px rgba(15,23,42,.06);
+}
+
+.oct-tool-search label {
+  display: block;
+  margin-bottom: .4rem;
+  color: #0f172a;
+  font-weight: 900;
+}
+
+.oct-tool-search input {
+  width: 100%;
+  min-height: 48px;
+  border: 1px solid #cbd5e1;
+  border-radius: 14px;
+  padding: .75rem .85rem;
+  background: #fff;
+  color: #0f172a;
+  font: inherit;
+}
+
+.oct-tool-search input:focus,
+.oct-support a:focus-visible,
+.oct-commercial-footer a:focus-visible,
+.oct-result-actions button:focus-visible {
+  outline: 4px solid rgba(37, 99, 235, .20);
+  outline-offset: 2px;
+}
+
+.oct-search-status {
+  margin: .45rem 0 0;
+  color: #475569;
+  font-size: .88rem;
+}
+
+@media (max-width: 560px) {
+  .oct-result-actions button,
+  .oct-support a { width: 100% !important; }
+  .oct-commercial-footer { align-items: flex-start; flex-direction: column; }
+}
