@@ -238,23 +238,23 @@
         <h2>Your numbers</h2>
 
         <label for="price">Home price <small>Purchase price</small></label>
-        <input id="price" type="number" inputmode="decimal" value="300000" step="0.01">
+        <input id="price" type="number" inputmode="decimal" value="300000" min="0" step="0.01" required>
 
 
         <label for="down">Down payment <small>Cash down</small></label>
-        <input id="down" type="number" inputmode="decimal" value="60000" step="0.01">
+        <input id="down" type="number" inputmode="decimal" value="60000" min="0" step="0.01">
 
 
         <label for="rate">Interest rate % <small>Annual rate</small></label>
-        <input id="rate" type="number" inputmode="decimal" value="6.75" step="0.01">
+        <input id="rate" type="number" inputmode="decimal" value="6.75" min="0" max="100" step="0.01" required>
 
 
         <label for="years">Loan term years <small>Common terms are 15 or 30</small></label>
-        <input id="years" type="number" inputmode="decimal" value="30" step="0.01">
+        <input id="years" type="number" inputmode="decimal" value="30" min="1" max="50" step="1" required>
 
 
         <label for="escrow">Monthly taxes and insurance <small>Optional monthly estimate</small></label>
-        <input id="escrow" type="number" inputmode="decimal" value="350" step="0.01">
+        <input id="escrow" type="number" inputmode="decimal" value="350" min="0" step="0.01">
 
         <button type="submit">Calculate result</button>
         <p class="fine">Estimate only. This is not financial, tax, payroll, lending, or professional advice.</p>

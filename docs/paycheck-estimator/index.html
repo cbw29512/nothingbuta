@@ -238,19 +238,19 @@
         <h2>Your numbers</h2>
 
         <label for="gross">Gross pay per check <small>Before taxes and deductions</small></label>
-        <input id="gross" type="number" inputmode="decimal" value="2200" step="0.01">
+        <input id="gross" type="number" inputmode="decimal" value="2200" min="0" step="0.01" required>
 
 
         <label for="federal">Federal tax % <small>Estimate only</small></label>
-        <input id="federal" type="number" inputmode="decimal" value="12" step="0.01">
+        <input id="federal" type="number" inputmode="decimal" value="12" min="0" max="100" step="0.01" required>
 
 
         <label for="state">State and local tax % <small>Estimate only</small></label>
-        <input id="state" type="number" inputmode="decimal" value="5" step="0.01">
+        <input id="state" type="number" inputmode="decimal" value="5" min="0" max="100" step="0.01" required>
 
 
         <label for="deduct">Other deductions <small>Insurance, retirement, and other deductions</small></label>
-        <input id="deduct" type="number" inputmode="decimal" value="150" step="0.01">
+        <input id="deduct" type="number" inputmode="decimal" value="150" min="0" step="0.01">
 
         <button type="submit">Calculate result</button>
         <p class="fine">Estimate only. This is not financial, tax, payroll, lending, or professional advice.</p>

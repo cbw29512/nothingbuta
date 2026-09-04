@@ -238,23 +238,23 @@
         <h2>Your numbers</h2>
 
         <label for="income">Desired annual income <small>Amount you want to keep before business expenses and tax buffer</small></label>
-        <input id="income" type="number" inputmode="decimal" value="75000" step="0.01">
+        <input id="income" type="number" inputmode="decimal" value="75000" min="0" step="0.01" required>
 
 
         <label for="expenses">Annual business expenses <small>Software, equipment, insurance, marketing, and similar costs</small></label>
-        <input id="expenses" type="number" inputmode="decimal" value="8000" step="0.01">
+        <input id="expenses" type="number" inputmode="decimal" value="8000" min="0" step="0.01">
 
 
         <label for="tax">Tax buffer % <small>Extra percentage to reserve for taxes and overhead uncertainty</small></label>
-        <input id="tax" type="number" inputmode="decimal" value="25" step="0.01">
+        <input id="tax" type="number" inputmode="decimal" value="25" min="0" max="100" step="0.01" required>
 
 
         <label for="hours">Billable hours per week <small>Hours you can realistically bill clients</small></label>
-        <input id="hours" type="number" inputmode="decimal" value="25" step="0.01">
+        <input id="hours" type="number" inputmode="decimal" value="25" min="0.1" max="168" step="0.1" required>
 
 
         <label for="weeks">Working weeks per year <small>Use fewer than 52 if you want vacation or unpaid time</small></label>
-        <input id="weeks" type="number" inputmode="decimal" value="46" step="0.01">
+        <input id="weeks" type="number" inputmode="decimal" value="46" min="1" max="52" step="1" required>
 
         <button type="submit">Calculate result</button>
         <p class="fine">Estimate only. This is not financial, tax, payroll, lending, or professional advice.</p>
