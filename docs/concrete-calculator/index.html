@@ -205,22 +205,7 @@
     }
   }
 </style>
-<script type="application/ld+json" id="nothingbuta-optimization-batch-012-schema">
-{
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "One Clear Tool Concrete Calculator",
-  "url": "https://onecleartool.com/concrete-calculator/",
-  "applicationCategory": "UtilitiesApplication",
-  "operatingSystem": "Any",
-  "description": "Use the Concrete Calculator to estimate concrete volume for slabs, posts, or small projects. Enter your numbers to get a clearer result for planning, comparison, or budgeting.",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  }
-}
-</script>
+
   <link rel="canonical" href="https://onecleartool.com/concrete-calculator/">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
   <meta property="og:title" content="Concrete Calculator | Estimate Concrete Volume">
@@ -228,6 +213,9 @@
   <meta property="og:url" content="https://onecleartool.com/concrete-calculator/">
   <meta property="og:type" content="website">
   <link rel="stylesheet" href="../assets/site.css">
+
+  <link rel="stylesheet" href="../assets/commercial.css">
+  <script src="../assets/tool-ux.js" defer></script>
   <script type="application/ld+json" id="oct-tool-schema">{"@context":"https://schema.org","@type":"WebApplication","name":"Concrete Calculator","url":"https://onecleartool.com/concrete-calculator/","applicationCategory":"UtilityApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
 </head>
 <body>
@@ -248,28 +236,28 @@
     <section class="grid">
       <form class="card" onsubmit="event.preventDefault();calc();">
         <h2>Your numbers</h2>
-        
+
         <label for="length">Slab length <small>Length in feet</small></label>
         <input id="length" type="number" inputmode="decimal" value="10" step="0.01">
-        
+
 
         <label for="width">Slab width <small>Width in feet</small></label>
         <input id="width" type="number" inputmode="decimal" value="8" step="0.01">
-        
+
 
         <label for="depth">Slab depth <small>Depth in inches</small></label>
         <input id="depth" type="number" inputmode="decimal" value="4" step="0.01">
-        
+
 
         <label for="waste">Waste allowance <small>Extra percentage for spill, uneven ground, and margin</small></label>
         <input id="waste" type="number" inputmode="decimal" value="10" step="0.01">
-        
+
 
         <label for="yield">Bag yield <small>Cubic feet per bag</small></label>
         <input id="yield" type="number" inputmode="decimal" value="0.6" step="0.01">
-        
+
         <button type="submit">Calculate result</button>
-        
+
       </form>
 
       <section class="result" aria-live="polite">
@@ -280,18 +268,18 @@
 
     <section class="faq">
       <h2>FAQ</h2>
-      
+
         <details>
           <summary>Why is depth in inches?</summary>
           <p>Concrete slab depth is often planned in inches while length and width are measured in feet.</p>
         </details>
-        
+
 
         <details>
           <summary>Is this structural advice?</summary>
           <p>No. This is an estimate-only material calculator, not engineering or construction advice.</p>
         </details>
-        
+
     </section>
   <section class="nba-growth-section" id="nothingbuta-optimization-batch-012-content" aria-labelledby="concrete-calculator-growth-help">
   <style>
@@ -352,6 +340,17 @@
   <div class="related"><a href="../flooring-calculator/">Flooring Calculator</a><a href="../paint-coverage-calculator/">Paint Coverage Calculator</a><a href="../unit-price-calculator/">Unit Price Calculator</a></div>
   <p class="fine">Results are planning estimates for education and comparison only. They are not financial, tax, legal, lending, payroll, construction, or professional advice.</p>
 </section>
+<aside class="oct-support" id="oct-tool-support" aria-label="Support One Clear Tool">
+  <strong>Help keep One Clear Tool free.</strong>
+  <p>If this calculator saved you time, optional support helps fund maintenance and new tools. No payment or account is required to use the calculator.</p>
+  <a href="https://www.buymeacoffee.com/divclass016" target="_blank" rel="noopener noreferrer">☕ Buy me a coffee</a>
+</aside>
+<nav class="oct-commercial-footer" id="oct-commercial-footer" aria-label="Site information">
+  <a href="../">All tools</a>
+  <a href="../privacy/">Privacy</a>
+  <a href="../terms/">Terms</a>
+  <a href="https://www.buymeacoffee.com/divclass016" target="_blank" rel="noopener noreferrer">Support</a>
+</nav>
 </main>
 
   <script>

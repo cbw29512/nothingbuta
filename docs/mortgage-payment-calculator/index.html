@@ -205,22 +205,7 @@
     }
   }
 </style>
-<script type="application/ld+json" id="nothingbuta-optimization-batch-002-schema">
-{
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "One Clear Tool Mortgage Payment Calculator",
-  "url": "https://onecleartool.com/mortgage-payment-calculator/",
-  "applicationCategory": "FinanceApplication",
-  "operatingSystem": "Any",
-  "description": "Estimate a monthly mortgage payment using loan amount, interest rate, loan term, taxes, insurance, and other housing costs before you shop.",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  }
-}
-</script>
+
   <link rel="canonical" href="https://onecleartool.com/mortgage-payment-calculator/">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
   <meta property="og:title" content="Mortgage Payment Calculator | Estimate Monthly Home Payments">
@@ -228,6 +213,9 @@
   <meta property="og:url" content="https://onecleartool.com/mortgage-payment-calculator/">
   <meta property="og:type" content="website">
   <link rel="stylesheet" href="../assets/site.css">
+
+  <link rel="stylesheet" href="../assets/commercial.css">
+  <script src="../assets/tool-ux.js" defer></script>
   <script type="application/ld+json" id="oct-tool-schema">{"@context":"https://schema.org","@type":"WebApplication","name":"Mortgage Payment Calculator","url":"https://onecleartool.com/mortgage-payment-calculator/","applicationCategory":"UtilityApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
 </head>
 <body>
@@ -248,26 +236,26 @@
     <section class="grid">
       <form class="card" onsubmit="event.preventDefault();calc();">
         <h2>Your numbers</h2>
-        
+
         <label for="price">Home price <small>Purchase price</small></label>
         <input id="price" type="number" inputmode="decimal" value="300000" step="0.01">
-        
+
 
         <label for="down">Down payment <small>Cash down</small></label>
         <input id="down" type="number" inputmode="decimal" value="60000" step="0.01">
-        
+
 
         <label for="rate">Interest rate % <small>Annual rate</small></label>
         <input id="rate" type="number" inputmode="decimal" value="6.75" step="0.01">
-        
+
 
         <label for="years">Loan term years <small>Common terms are 15 or 30</small></label>
         <input id="years" type="number" inputmode="decimal" value="30" step="0.01">
-        
+
 
         <label for="escrow">Monthly taxes and insurance <small>Optional monthly estimate</small></label>
         <input id="escrow" type="number" inputmode="decimal" value="350" step="0.01">
-        
+
         <button type="submit">Calculate result</button>
         <p class="fine">Estimate only. This is not financial, tax, payroll, lending, or professional advice.</p>
       </form>
@@ -280,18 +268,18 @@
 
     <section class="faq">
       <h2>FAQ</h2>
-      
+
         <details>
           <summary>Is this a lender quote?</summary>
           <p>No. It is an educational estimate, not a lender quote or financial advice.</p>
         </details>
-        
+
 
         <details>
           <summary>Does this include taxes and insurance?</summary>
           <p>Only if you enter a monthly estimate for taxes and insurance.</p>
         </details>
-        
+
     </section>
   <section class="nba-growth-section" id="nothingbuta-optimization-batch-002-content" aria-labelledby="mortgage-growth-help">
   <style>
@@ -362,6 +350,17 @@
   <div class="related"><a href="../rent-affordability-calculator/">Rent Affordability Calculator</a><a href="../savings-goal-calculator/">Savings Goal Calculator</a><a href="../loan-early-payoff-calculator/">Loan Early Payoff Calculator</a></div>
   <p class="fine">Results are planning estimates for education and comparison only. They are not financial, tax, legal, lending, payroll, construction, or professional advice.</p>
 </section>
+<aside class="oct-support" id="oct-tool-support" aria-label="Support One Clear Tool">
+  <strong>Help keep One Clear Tool free.</strong>
+  <p>If this calculator saved you time, optional support helps fund maintenance and new tools. No payment or account is required to use the calculator.</p>
+  <a href="https://www.buymeacoffee.com/divclass016" target="_blank" rel="noopener noreferrer">☕ Buy me a coffee</a>
+</aside>
+<nav class="oct-commercial-footer" id="oct-commercial-footer" aria-label="Site information">
+  <a href="../">All tools</a>
+  <a href="../privacy/">Privacy</a>
+  <a href="../terms/">Terms</a>
+  <a href="https://www.buymeacoffee.com/divclass016" target="_blank" rel="noopener noreferrer">Support</a>
+</nav>
 </main>
 
   <script>

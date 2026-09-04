@@ -205,22 +205,7 @@
     }
   }
 </style>
-<script type="application/ld+json" id="nothingbuta-optimization-batch-020-schema">
-{
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "One Clear Tool Sales Tax Calculator",
-  "url": "https://onecleartool.com/sales-tax-calculator/",
-  "applicationCategory": "UtilitiesApplication",
-  "operatingSystem": "Any",
-  "description": "Use the Sales Tax Calculator to estimate tax, subtotal, and final price before checkout. Enter your numbers to get a clearer result for planning, comparison, or budgeting.",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  }
-}
-</script>
+
   <link rel="canonical" href="https://onecleartool.com/sales-tax-calculator/">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
   <meta property="og:title" content="Sales Tax Calculator | Estimate Final Price">
@@ -228,6 +213,9 @@
   <meta property="og:url" content="https://onecleartool.com/sales-tax-calculator/">
   <meta property="og:type" content="website">
   <link rel="stylesheet" href="../assets/site.css">
+
+  <link rel="stylesheet" href="../assets/commercial.css">
+  <script src="../assets/tool-ux.js" defer></script>
   <script type="application/ld+json" id="oct-tool-schema">{"@context":"https://schema.org","@type":"WebApplication","name":"Sales Tax Calculator","url":"https://onecleartool.com/sales-tax-calculator/","applicationCategory":"UtilityApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
 </head>
 <body>
@@ -248,16 +236,16 @@
     <section class="grid">
       <form class="card" onsubmit="event.preventDefault();calc();">
         <h2>Your numbers</h2>
-        
+
         <label for="price">Item price <small>Before tax</small></label>
         <input id="price" type="number" inputmode="decimal" value="100" step="0.01">
-        
+
 
         <label for="tax">Sales tax % <small>Local tax rate</small></label>
         <input id="tax" type="number" inputmode="decimal" value="7" step="0.01">
-        
+
         <button type="submit">Calculate result</button>
-        
+
       </form>
 
       <section class="result" aria-live="polite">
@@ -268,18 +256,18 @@
 
     <section class="faq">
       <h2>FAQ</h2>
-      
+
         <details>
           <summary>Is this exact?</summary>
           <p>It is an estimate. Local rules and exemptions can change real totals.</p>
         </details>
-        
+
 
         <details>
           <summary>Can I use decimal tax rates?</summary>
           <p>Yes. For example, use 7.25 for 7.25 percent.</p>
         </details>
-        
+
     </section>
   <section class="nba-growth-section" id="nothingbuta-optimization-batch-020-content" aria-labelledby="sales-tax-calculator-growth-help">
   <style>
@@ -350,6 +338,17 @@
   <div class="related"><a href="../discount-calculator/">Discount Calculator</a><a href="../unit-price-calculator/">Unit Price Calculator</a><a href="../percentage-change-calculator/">Percentage Change Calculator</a></div>
   <p class="fine">Results are planning estimates for education and comparison only. They are not financial, tax, legal, lending, payroll, construction, or professional advice.</p>
 </section>
+<aside class="oct-support" id="oct-tool-support" aria-label="Support One Clear Tool">
+  <strong>Help keep One Clear Tool free.</strong>
+  <p>If this calculator saved you time, optional support helps fund maintenance and new tools. No payment or account is required to use the calculator.</p>
+  <a href="https://www.buymeacoffee.com/divclass016" target="_blank" rel="noopener noreferrer">☕ Buy me a coffee</a>
+</aside>
+<nav class="oct-commercial-footer" id="oct-commercial-footer" aria-label="Site information">
+  <a href="../">All tools</a>
+  <a href="../privacy/">Privacy</a>
+  <a href="../terms/">Terms</a>
+  <a href="https://www.buymeacoffee.com/divclass016" target="_blank" rel="noopener noreferrer">Support</a>
+</nav>
 </main>
 
   <script>

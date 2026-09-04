@@ -205,22 +205,7 @@
     }
   }
 </style>
-<script type="application/ld+json" id="nothingbuta-optimization-batch-003-schema">
-{
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "One Clear Tool Rent Affordability Calculator",
-  "url": "https://onecleartool.com/rent-affordability-calculator/",
-  "applicationCategory": "FinanceApplication",
-  "operatingSystem": "Any",
-  "description": "Estimate how much rent may fit your monthly budget using income, debt, expenses, and savings goals before you choose a place.",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  }
-}
-</script>
+
   <link rel="canonical" href="https://onecleartool.com/rent-affordability-calculator/">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
   <meta property="og:title" content="Rent Affordability Calculator | Estimate a Practical Rent Range">
@@ -228,6 +213,9 @@
   <meta property="og:url" content="https://onecleartool.com/rent-affordability-calculator/">
   <meta property="og:type" content="website">
   <link rel="stylesheet" href="../assets/site.css">
+
+  <link rel="stylesheet" href="../assets/commercial.css">
+  <script src="../assets/tool-ux.js" defer></script>
   <script type="application/ld+json" id="oct-tool-schema">{"@context":"https://schema.org","@type":"WebApplication","name":"Rent Affordability Calculator","url":"https://onecleartool.com/rent-affordability-calculator/","applicationCategory":"UtilityApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
 </head>
 <body>
@@ -248,22 +236,22 @@
     <section class="grid">
       <form class="card" onsubmit="event.preventDefault();calc();">
         <h2>Your numbers</h2>
-        
+
         <label for="income">Monthly take-home income <small>Income available after taxes</small></label>
         <input id="income" type="number" inputmode="decimal" value="4200" step="0.01">
-        
+
 
         <label for="percent">Target rent percent <small>Common affordability target is around 30 percent</small></label>
         <input id="percent" type="number" inputmode="decimal" value="30" step="0.01">
-        
+
 
         <label for="debts">Monthly debt payments <small>Car payment, loans, cards, or other required payments</small></label>
         <input id="debts" type="number" inputmode="decimal" value="350" step="0.01">
-        
+
 
         <label for="utilities">Estimated utilities <small>Power, water, internet, and similar bills</small></label>
         <input id="utilities" type="number" inputmode="decimal" value="250" step="0.01">
-        
+
         <button type="submit">Calculate result</button>
         <p class="fine">Estimate only. This is not financial, tax, payroll, lending, or professional advice.</p>
       </form>
@@ -276,18 +264,18 @@
 
     <section class="faq">
       <h2>FAQ</h2>
-      
+
         <details>
           <summary>Does this include utilities?</summary>
           <p>Yes, utilities are subtracted so the result is closer to a practical rent estimate.</p>
         </details>
-        
+
 
         <details>
           <summary>Is 30 percent always right?</summary>
           <p>No. It is a common starting point, but real affordability depends on your full budget.</p>
         </details>
-        
+
     </section>
   <section class="nba-growth-section" id="nothingbuta-optimization-batch-003-content" aria-labelledby="rent-growth-help">
   <style>
@@ -406,6 +394,17 @@
   <div class="related"><a href="../paycheck-estimator/">Paycheck Take-Home Estimator</a><a href="../emergency-fund-calculator/">Emergency Fund Calculator</a><a href="../mortgage-payment-calculator/">Mortgage Payment Calculator</a></div>
   <p class="fine">Results are planning estimates for education and comparison only. They are not financial, tax, legal, lending, payroll, construction, or professional advice.</p>
 </section>
+<aside class="oct-support" id="oct-tool-support" aria-label="Support One Clear Tool">
+  <strong>Help keep One Clear Tool free.</strong>
+  <p>If this calculator saved you time, optional support helps fund maintenance and new tools. No payment or account is required to use the calculator.</p>
+  <a href="https://www.buymeacoffee.com/divclass016" target="_blank" rel="noopener noreferrer">☕ Buy me a coffee</a>
+</aside>
+<nav class="oct-commercial-footer" id="oct-commercial-footer" aria-label="Site information">
+  <a href="../">All tools</a>
+  <a href="../privacy/">Privacy</a>
+  <a href="../terms/">Terms</a>
+  <a href="https://www.buymeacoffee.com/divclass016" target="_blank" rel="noopener noreferrer">Support</a>
+</nav>
 </main>
 
   <script>

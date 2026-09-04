@@ -205,22 +205,7 @@
     }
   }
 </style>
-<script type="application/ld+json" id="nothingbuta-optimization-batch-017-schema">
-{
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "One Clear Tool Paint Coverage Calculator",
-  "url": "https://onecleartool.com/paint-coverage-calculator/",
-  "applicationCategory": "UtilitiesApplication",
-  "operatingSystem": "Any",
-  "description": "Use the Paint Coverage Calculator to estimate paint needs from room size, coats, and coverage. Enter your numbers to get a clearer result for planning, comparison, or budgeting.",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  }
-}
-</script>
+
   <link rel="canonical" href="https://onecleartool.com/paint-coverage-calculator/">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
   <meta property="og:title" content="Paint Coverage Calculator | Estimate Paint Needed">
@@ -228,6 +213,9 @@
   <meta property="og:url" content="https://onecleartool.com/paint-coverage-calculator/">
   <meta property="og:type" content="website">
   <link rel="stylesheet" href="../assets/site.css">
+
+  <link rel="stylesheet" href="../assets/commercial.css">
+  <script src="../assets/tool-ux.js" defer></script>
   <script type="application/ld+json" id="oct-tool-schema">{"@context":"https://schema.org","@type":"WebApplication","name":"Paint Coverage Calculator","url":"https://onecleartool.com/paint-coverage-calculator/","applicationCategory":"UtilityApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
 </head>
 <body>
@@ -248,32 +236,32 @@
     <section class="grid">
       <form class="card" onsubmit="event.preventDefault();calc();">
         <h2>Your numbers</h2>
-        
+
         <label for="width">Total wall width <small>Combined wall width in feet</small></label>
         <input id="width" type="number" inputmode="decimal" value="40" step="0.01">
-        
+
 
         <label for="height">Wall height <small>Wall height in feet</small></label>
         <input id="height" type="number" inputmode="decimal" value="8" step="0.01">
-        
+
 
         <label for="doors">Doors <small>Number of standard doors to subtract</small></label>
         <input id="doors" type="number" inputmode="decimal" value="2" step="0.01">
-        
+
 
         <label for="windows">Windows <small>Number of standard windows to subtract</small></label>
         <input id="windows" type="number" inputmode="decimal" value="4" step="0.01">
-        
+
 
         <label for="coats">Coats <small>Number of paint coats</small></label>
         <input id="coats" type="number" inputmode="decimal" value="2" step="0.01">
-        
+
 
         <label for="coverage">Coverage per gallon <small>Square feet covered by one gallon</small></label>
         <input id="coverage" type="number" inputmode="decimal" value="350" step="0.01">
-        
+
         <button type="submit">Calculate result</button>
-        
+
       </form>
 
       <section class="result" aria-live="polite">
@@ -284,18 +272,18 @@
 
     <section class="faq">
       <h2>FAQ</h2>
-      
+
         <details>
           <summary>How much area does this subtract for doors and windows?</summary>
           <p>It estimates 21 square feet per door and 15 square feet per window.</p>
         </details>
-        
+
 
         <details>
           <summary>Is this exact?</summary>
           <p>No. Paint coverage varies by surface, product, color change, and application method.</p>
         </details>
-        
+
     </section>
   <section class="nba-growth-section" id="nothingbuta-optimization-batch-017-content" aria-labelledby="paint-coverage-calculator-growth-help">
   <style>
@@ -356,6 +344,17 @@
   <div class="related"><a href="../flooring-calculator/">Flooring Calculator</a><a href="../concrete-calculator/">Concrete Calculator</a><a href="../unit-price-calculator/">Unit Price Calculator</a></div>
   <p class="fine">Results are planning estimates for education and comparison only. They are not financial, tax, legal, lending, payroll, construction, or professional advice.</p>
 </section>
+<aside class="oct-support" id="oct-tool-support" aria-label="Support One Clear Tool">
+  <strong>Help keep One Clear Tool free.</strong>
+  <p>If this calculator saved you time, optional support helps fund maintenance and new tools. No payment or account is required to use the calculator.</p>
+  <a href="https://www.buymeacoffee.com/divclass016" target="_blank" rel="noopener noreferrer">☕ Buy me a coffee</a>
+</aside>
+<nav class="oct-commercial-footer" id="oct-commercial-footer" aria-label="Site information">
+  <a href="../">All tools</a>
+  <a href="../privacy/">Privacy</a>
+  <a href="../terms/">Terms</a>
+  <a href="https://www.buymeacoffee.com/divclass016" target="_blank" rel="noopener noreferrer">Support</a>
+</nav>
 </main>
 
   <script>
