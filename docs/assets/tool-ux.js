@@ -4,7 +4,37 @@
   const SUPPORT_URL = "https://www.buymeacoffee.com/divclass016";
 
   function textFromResult(result) {
-    return (result?.innerText || "").replace(/\n{3,}/g, "\n\n").trim();
+    if (!result) return "";
+    const parts = [];
+    const summary = result.querySelector("#summary");
+    if (summary?.textContent?.trim()) parts.push(summary.textContent.trim());
+
+    const out = result.querySelector("#out");
+    if (out) {
+      const metrics = Array.from(out.querySelectorAll(".metric"));
+      if (metrics.length) {
+        for (const metric of metrics) {
+          const value = metric.querySelector("strong")?.textContent?.trim() || "";
+          const label = metric.querySelector("span")?.textContent?.trim() || "";
+          if (value || label) parts.push(label ? `${label}: ${value}` : value);
+        }
+        const extra = Array.from(out.children)
+          .filter((node) => !node.classList.contains("metric"))
+          .map((node) => node.textContent?.trim())
+          .filter(Boolean);
+        parts.push(...extra);
+      } else if (out.textContent?.trim()) {
+        parts.push(out.textContent.trim());
+      }
+    }
+
+    if (!parts.length) {
+      const clone = result.cloneNode(true);
+      clone.querySelector(".oct-result-actions")?.remove();
+      parts.push(clone.textContent?.trim() || "");
+    }
+
+    return parts.filter(Boolean).join("\n").replace(/\n{3,}/g, "\n\n").trim();
   }
 
   async function copyText(text) {
