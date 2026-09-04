@@ -1,0 +1,52 @@
+name: Normalize Result Targets
+
+on:
+  push:
+    branches: [feature/micro-app-expansion-02]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  normalize:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v4
+        with:
+          ref: feature/micro-app-expansion-02
+          fetch-depth: 0
+
+      - name: Replace legacy result globals
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          changed = []
+          for path in sorted(Path('docs').glob('*/index.html')):
+              text = path.read_text(encoding='utf-8')
+              updated = text.replace("out.innerHTML", "document.getElementById('out').innerHTML")
+              if updated != text:
+                  path.write_text(updated, encoding='utf-8')
+                  changed.append(str(path))
+          print(f'Normalized {len(changed)} page(s).')
+          for path in changed:
+              print(path)
+          PY
+
+      - name: Commit normalized pages
+        shell: bash
+        run: |
+          set -euo pipefail
+          if git diff --quiet; then
+            echo "No result-target changes required."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs
+          git commit -m "Use explicit calculator result targets"
+          git push origin HEAD:feature/micro-app-expansion-02
