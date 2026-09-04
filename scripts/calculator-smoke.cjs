@@ -6,6 +6,7 @@ const vm = require('vm');
 
 const ROOT = path.resolve(__dirname, '..');
 const DOCS = path.join(ROOT, 'docs');
+const CATALOG = JSON.parse(fs.readFileSync(path.join(ROOT, 'scripts', 'tool_catalog.json'), 'utf8'));
 const EXCLUDED = new Set(['assets', 'privacy', 'terms']);
 
 function attribute(tag, name) {
@@ -50,7 +51,7 @@ function parseElements(html) {
     if (!id) continue;
     const body = match[2];
     const options = Array.from(body.matchAll(/<option\b([^>]*)>([\s\S]*?)<\/option>/gi));
-    let chosen = options.find((option) => /\bselected\b/i.test(option[1])) || options[0];
+    const chosen = options.find((option) => /\bselected\b/i.test(option[1])) || options[0];
     const value = chosen ? (attribute(`<option${chosen[1]}>`, 'value') || chosen[2].replace(/<[^>]+>/g, '').trim()) : '';
     const element = makeElement(value);
     elements.set(id, element);
@@ -148,7 +149,21 @@ const directories = fs.readdirSync(DOCS, { withFileTypes: true })
   .filter((name) => fs.existsSync(path.join(DOCS, name, 'index.html')))
   .sort();
 
+const catalogSlugs = CATALOG.map((item) => item.slug).sort();
 const failures = [];
+
+if (new Set(catalogSlugs).size !== catalogSlugs.length) {
+  failures.push('tool catalog contains duplicate slugs');
+}
+if (JSON.stringify(directories) !== JSON.stringify(catalogSlugs)) {
+  const disk = new Set(directories);
+  const catalog = new Set(catalogSlugs);
+  const missingPages = catalogSlugs.filter((slug) => !disk.has(slug));
+  const unregistered = directories.filter((slug) => !catalog.has(slug));
+  if (missingPages.length) failures.push(`catalog entries missing pages: ${missingPages.join(', ')}`);
+  if (unregistered.length) failures.push(`calculator pages missing catalog entries: ${unregistered.join(', ')}`);
+}
+
 const results = new Map();
 for (const slug of directories) {
   try {
@@ -169,11 +184,15 @@ try {
   const expectedCar = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' })
     .format(monthlyPayment(27000, 7.5, 60));
   if (!car.includes(expectedCar)) failures.push(`car-payment-calculator: expected default payment ${expectedCar}`);
+
+  const cups = results.get('cups-to-ounces-converter')?.out || '';
+  if (!cups.includes('16.00 fl oz')) failures.push('cups-to-ounces-converter: default conversion regression');
+
+  const kg = results.get('kg-to-pounds-converter')?.out || '';
+  if (!kg.includes('22.046 lb')) failures.push('kg-to-pounds-converter: default conversion regression');
 } catch (error) {
   failures.push(`known-value assertions: ${error.message}`);
 }
-
-if (directories.length !== 35) failures.push(`expected 35 calculator pages, found ${directories.length}`);
 
 if (failures.length) {
   console.error('Calculator smoke failures:');
@@ -181,4 +200,4 @@ if (failures.length) {
   process.exit(1);
 }
 
-console.log(`Calculator runtime smoke passed for ${directories.length} pages.`);
+console.log(`Calculator runtime smoke passed for all ${CATALOG.length} catalog tools.`);

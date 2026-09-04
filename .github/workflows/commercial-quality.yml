@@ -29,8 +29,9 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Verify generated commercial state
+      - name: Verify generated catalog and commercial state
         run: |
+          python scripts/sync_tool_catalog.py --check
           python scripts/apply_commercial_polish.py --check
           python scripts/harden_priority_calculators.py --check
 
