@@ -1,0 +1,60 @@
+name: Commercial Polish
+
+on:
+  push:
+    branches:
+      - audit/commercial-polish-20260903
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  polish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Propagate Buy Me a Coffee support CTA
+        run: python3 scripts/apply_support_cta.py
+
+      - name: Verify calculator structure
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f docs/index.html
+          test -f docs/sitemap.xml
+          count="$(find docs -mindepth 2 -maxdepth 2 -name index.html | wc -l | tr -d ' ')"
+          test "$count" -ge 25
+          missing=0
+          while IFS= read -r page; do
+            grep -q 'https://www.buymeacoffee.com/divclass016' "$page" || { echo "Missing Buy Me a Coffee: $page"; missing=1; }
+            grep -q '<form' "$page" || { echo "Missing calculator form: $page"; missing=1; }
+            grep -q 'aria-live="polite"' "$page" || { echo "Missing accessible result live region: $page"; missing=1; }
+          done < <(find docs -mindepth 2 -maxdepth 2 -name index.html | sort)
+          test "$missing" -eq 0
+
+      - name: Commit generated polish on branch
+        if: github.event_name == 'push' && github.actor != 'github-actions[bot]'
+        shell: bash
+        run: |
+          set -euo pipefail
+          if git diff --quiet; then
+            echo "No generated changes to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs
+          git commit -m "Apply site-wide Buy Me a Coffee support CTA"
+          git push
+
+      - name: Ensure generated state is clean
+        if: github.event_name == 'pull_request' || github.actor == 'github-actions[bot]'
+        run: git diff --exit-code
