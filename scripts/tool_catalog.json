@@ -48,5 +48,15 @@
   {"slug":"square-footage-calculator","name":"Square Footage Calculator","description":"Calculate square footage for rooms, walls, floors, and project areas.","category":"Home"},
   {"slug":"cups-to-ounces-converter","name":"Cups to Ounces Converter","description":"Convert US cups to fluid ounces instantly.","category":"Conversions"},
   {"slug":"kg-to-pounds-converter","name":"Kilograms to Pounds Converter","description":"Convert kilograms to pounds instantly.","category":"Conversions"},
-  {"slug":"age-calculator","name":"Age Calculator","description":"Calculate age in years, months, and days from a birth date.","category":"Everyday"}
+  {"slug":"age-calculator","name":"Age Calculator","description":"Calculate age in years, months, and days from a birth date.","category":"Everyday"},
+  {"slug":"business-days-calculator","name":"Business Days Calculator","description":"Count Monday-through-Friday business days between two dates.","category":"Everyday"},
+  {"slug":"cubic-yard-calculator","name":"Cubic Yard Calculator","description":"Calculate cubic yards for landscaping, gravel, soil, and project planning.","category":"Home"},
+  {"slug":"credit-card-interest-calculator","name":"Credit Card Interest Calculator","description":"Estimate simple monthly credit-card interest from balance and APR.","category":"Money & Work"},
+  {"slug":"profit-margin-calculator","name":"Profit Margin Calculator","description":"Calculate profit, profit margin, and markup from revenue and cost.","category":"Business"},
+  {"slug":"feet-to-meters-converter","name":"Feet to Meters Converter","description":"Convert feet to meters instantly.","category":"Conversions"},
+  {"slug":"inches-to-cm-converter","name":"Inches to Centimeters Converter","description":"Convert inches to centimeters instantly.","category":"Conversions"},
+  {"slug":"gallons-to-liters-converter","name":"Gallons to Liters Converter","description":"Convert US liquid gallons to liters instantly.","category":"Conversions"},
+  {"slug":"fahrenheit-to-celsius-converter","name":"Fahrenheit to Celsius Converter","description":"Convert Fahrenheit temperatures to Celsius instantly.","category":"Conversions"},
+  {"slug":"days-until-christmas","name":"Days Until Christmas","description":"Count the days from a selected date to the next December 25.","category":"Everyday"},
+  {"slug":"word-counter","name":"Word Counter","description":"Count words, characters, characters without spaces, and reading time.","category":"Text"}
 ]
