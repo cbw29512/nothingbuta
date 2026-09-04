@@ -50,6 +50,10 @@ def tool_pages() -> list[Path]:
     return sorted(path for path in DOCS.glob("*/index.html") if path.parent.name not in excluded)
 
 
+def clean_trailing_whitespace(doc: str) -> str:
+    return re.sub(r"[ \t]+(?=\n)", "", doc)
+
+
 def ensure_before(doc: str, marker: str, snippet: str, closing: str) -> str:
     if marker in doc:
         return doc
@@ -116,7 +120,7 @@ def polish_tool(path: Path) -> str:
 
     doc = upsert_block(doc, "aside", "oct-tool-support", TOOL_SUPPORT, "</main>")
     doc = upsert_block(doc, "nav", "oct-commercial-footer", TOOL_FOOTER, "</main>")
-    return doc
+    return clean_trailing_whitespace(doc)
 
 
 def polish_home(path: Path) -> str:
@@ -133,7 +137,7 @@ def polish_home(path: Path) -> str:
         raise ValueError("Homepage tool grid marker missing")
 
     doc = upsert_block(doc, "nav", "oct-commercial-footer", HOME_FOOTER, "</main>")
-    return doc
+    return clean_trailing_whitespace(doc)
 
 
 def update_sitemap(doc: str) -> str:
@@ -151,7 +155,7 @@ def update_sitemap(doc: str) -> str:
             )
     if additions:
         doc = doc.replace("</urlset>", "\n".join(additions) + "\n</urlset>")
-    return doc
+    return clean_trailing_whitespace(doc)
 
 
 def expected_outputs() -> dict[Path, str]:
