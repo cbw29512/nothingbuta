@@ -1,0 +1,57 @@
+name: Expand 70 Tool Catalog
+
+on:
+  push:
+    branches: [feature/micro-app-expansion-04h]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  expand:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feature/micro-app-expansion-04h
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Register new tools
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          path=Path('scripts/tool_catalog.json')
+          items=json.loads(path.read_text())
+          additions=[
+            {"slug":"random-number-generator","name":"Random Number Generator","description":"Generate a random whole number inside a range you choose.","category":"Everyday"},
+            {"slug":"days-until-date-calculator","name":"Days Until Date Calculator","description":"Count calendar days from a start date to a target date.","category":"Everyday"},
+            {"slug":"weeks-between-dates-calculator","name":"Weeks Between Dates Calculator","description":"Calculate whole weeks and extra days between two dates.","category":"Everyday"},
+            {"slug":"debt-to-income-calculator","name":"Debt-to-Income Calculator","description":"Estimate monthly debt-to-income ratio from debt payments and gross income.","category":"Money & Work"},
+            {"slug":"pounds-to-kg-converter","name":"Pounds to Kilograms Converter","description":"Convert pounds to kilograms instantly.","category":"Conversions"},
+            {"slug":"ounces-to-cups-converter","name":"Ounces to Cups Converter","description":"Convert US fluid ounces to cups instantly.","category":"Conversions"},
+            {"slug":"celsius-to-fahrenheit-converter","name":"Celsius to Fahrenheit Converter","description":"Convert Celsius temperatures to Fahrenheit instantly.","category":"Conversions"},
+            {"slug":"miles-to-km-converter","name":"Miles to Kilometers Converter","description":"Convert miles to kilometers instantly.","category":"Conversions"},
+            {"slug":"km-to-miles-converter","name":"Kilometers to Miles Converter","description":"Convert kilometers to miles instantly.","category":"Conversions"},
+            {"slug":"tablespoons-to-cups-converter","name":"Tablespoons to Cups Converter","description":"Convert US tablespoons to cups instantly.","category":"Conversions"}
+          ]
+          by_slug={item['slug']:item for item in items}
+          for item in additions: by_slug[item['slug']]=item
+          path.write_text(json.dumps(list(by_slug.values()),indent=2)+"\n")
+          PY
+          python scripts/apply_commercial_polish.py --write
+          python scripts/sync_tool_catalog.py --write
+      - name: Commit normalized 70-tool state
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add scripts/tool_catalog.json docs README.md
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Register and normalize 70-tool catalog"
+          git push origin HEAD:feature/micro-app-expansion-04h
