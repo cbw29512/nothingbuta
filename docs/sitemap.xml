@@ -6,6 +6,11 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://onecleartool.com/add-days-to-date-calculator/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://onecleartool.com/age-calculator/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -27,6 +32,16 @@
   </url>
   <url>
     <loc>https://onecleartool.com/celsius-to-fahrenheit-converter/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://onecleartool.com/cm-to-inches-converter/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://onecleartool.com/character-counter/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -67,6 +82,11 @@
   </url>
   <url>
     <loc>https://onecleartool.com/cups-to-ounces-converter/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://onecleartool.com/cups-to-tablespoons-converter/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -186,6 +206,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://onecleartool.com/liters-to-gallons-converter/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://onecleartool.com/loan-early-payoff-calculator/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -197,6 +222,11 @@
   </url>
   <url>
     <loc>https://onecleartool.com/meat-per-person-calculator/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://onecleartool.com/meters-to-feet-converter/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -251,6 +281,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://onecleartool.com/percentage-calculator/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://onecleartool.com/percentage-change-calculator/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -296,6 +331,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://onecleartool.com/salary-to-hourly-calculator/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://onecleartool.com/sales-tax-calculator/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -321,12 +361,22 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://onecleartool.com/teaspoons-to-tablespoons-converter/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://onecleartool.com/tile-calculator/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://onecleartool.com/time-card-calculator/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://onecleartool.com/time-duration-calculator/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
