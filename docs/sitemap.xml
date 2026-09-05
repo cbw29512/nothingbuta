@@ -26,6 +26,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://onecleartool.com/celsius-to-fahrenheit-converter/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://onecleartool.com/churn-rate-calculator/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -76,7 +81,17 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://onecleartool.com/days-until-date-calculator/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://onecleartool.com/debt-payoff-calculator/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://onecleartool.com/debt-to-income-calculator/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -166,6 +181,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://onecleartool.com/km-to-miles-converter/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://onecleartool.com/loan-early-payoff-calculator/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -181,6 +201,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://onecleartool.com/miles-to-km-converter/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://onecleartool.com/mortgage-payment-calculator/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -192,6 +217,11 @@
   </url>
   <url>
     <loc>https://onecleartool.com/mulch-calculator/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://onecleartool.com/ounces-to-cups-converter/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -226,12 +256,22 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://onecleartool.com/pounds-to-kg-converter/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://onecleartool.com/profit-margin-calculator/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://onecleartool.com/raise-calculator/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://onecleartool.com/random-number-generator/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -276,6 +316,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://onecleartool.com/tablespoons-to-cups-converter/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://onecleartool.com/tile-calculator/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -297,6 +342,11 @@
   </url>
   <url>
     <loc>https://onecleartool.com/unit-price-calculator/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://onecleartool.com/weeks-between-dates-calculator/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
