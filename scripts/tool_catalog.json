@@ -418,5 +418,65 @@
     "name": "Tablespoons to Cups Converter",
     "description": "Convert US tablespoons to cups instantly.",
     "category": "Conversions"
+  },
+  {
+    "slug": "character-counter",
+    "name": "Character Counter",
+    "description": "Count characters, characters without spaces, words, and lines instantly.",
+    "category": "Text"
+  },
+  {
+    "slug": "meters-to-feet-converter",
+    "name": "Meters to Feet Converter",
+    "description": "Convert meters to feet instantly.",
+    "category": "Conversions"
+  },
+  {
+    "slug": "percentage-calculator",
+    "name": "Percentage Calculator",
+    "description": "Find a percentage of a number and what percent one value is of another.",
+    "category": "Everyday"
+  },
+  {
+    "slug": "cm-to-inches-converter",
+    "name": "Centimeters to Inches Converter",
+    "description": "Convert centimeters to inches instantly.",
+    "category": "Conversions"
+  },
+  {
+    "slug": "liters-to-gallons-converter",
+    "name": "Liters to Gallons Converter",
+    "description": "Convert liters to US liquid gallons instantly.",
+    "category": "Conversions"
+  },
+  {
+    "slug": "cups-to-tablespoons-converter",
+    "name": "Cups to Tablespoons Converter",
+    "description": "Convert US cups to tablespoons instantly.",
+    "category": "Conversions"
+  },
+  {
+    "slug": "teaspoons-to-tablespoons-converter",
+    "name": "Teaspoons to Tablespoons Converter",
+    "description": "Convert US teaspoons to tablespoons instantly.",
+    "category": "Conversions"
+  },
+  {
+    "slug": "add-days-to-date-calculator",
+    "name": "Add Days to Date Calculator",
+    "description": "Add or subtract calendar days from a selected date.",
+    "category": "Everyday"
+  },
+  {
+    "slug": "time-duration-calculator",
+    "name": "Time Duration Calculator",
+    "description": "Calculate elapsed hours and minutes between two clock times.",
+    "category": "Everyday"
+  },
+  {
+    "slug": "salary-to-hourly-calculator",
+    "name": "Salary to Hourly Calculator",
+    "description": "Convert annual salary to an estimated hourly rate.",
+    "category": "Money & Work"
   }
 ]
