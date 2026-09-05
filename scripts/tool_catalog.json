@@ -1,62 +1,422 @@
 [
-  {"slug":"break-even-calculator","name":"Break Even Calculator","description":"Find how many sales, units, or dollars you need to cover your costs.","category":"Money & Work"},
-  {"slug":"car-payment-calculator","name":"Car Payment Calculator","description":"Estimate a monthly vehicle payment from price, down payment, rate, and term.","category":"Money & Work"},
-  {"slug":"churn-rate-calculator","name":"Churn Rate Calculator","description":"Calculate customer churn and understand how many users or accounts you lost.","category":"Business"},
-  {"slug":"compound-interest-calculator","name":"Compound Interest Calculator","description":"Estimate future savings growth from a starting balance and monthly contributions.","category":"Money & Work"},
-  {"slug":"concrete-calculator","name":"Concrete Calculator","description":"Estimate concrete volume for slabs, pads, and simple home projects.","category":"Home"},
-  {"slug":"conversion-rate-calculator","name":"Conversion Rate Calculator","description":"Measure how many visitors, leads, or prospects turned into results.","category":"Business"},
-  {"slug":"days-between-dates-calculator","name":"Days Between Dates Calculator","description":"Count the days between two dates for planning, deadlines, and schedules.","category":"Everyday"},
-  {"slug":"debt-payoff-calculator","name":"Debt Payoff Calculator","description":"Estimate payoff time, interest paid, and how extra payments can help.","category":"Money & Work"},
-  {"slug":"deck-board-calculator","name":"Deck Board Calculator","description":"Estimate deck board count from deck size, board width, spacing, and waste.","category":"Home"},
-  {"slug":"discount-calculator","name":"Discount Calculator","description":"Calculate sale price and savings from a percentage discount.","category":"Everyday"},
-  {"slug":"drywall-calculator","name":"Drywall Calculator","description":"Estimate drywall sheet count from room dimensions, openings, and waste.","category":"Home"},
-  {"slug":"emergency-fund-calculator","name":"Emergency Fund Calculator","description":"Estimate how much to save for a basic financial safety cushion.","category":"Money & Work"},
-  {"slug":"fence-material-calculator","name":"Fence Material Calculator","description":"Estimate fence panels, posts, rails, and pickets for a planned fence line.","category":"Home"},
-  {"slug":"flooring-calculator","name":"Flooring Calculator","description":"Estimate flooring material needs from room size and waste allowance.","category":"Home"},
-  {"slug":"food-portions-calculator","name":"Food Portions Calculator","description":"Estimate simple food quantities for a group meal or gathering.","category":"Kitchen"},
-  {"slug":"freelance-rate-calculator","name":"Freelance Rate Calculator","description":"Estimate an hourly freelance rate based on income goals and billable time.","category":"Money & Work"},
-  {"slug":"fuel-cost-calculator","name":"Fuel Cost Calculator","description":"Estimate trip fuel cost from distance, fuel economy, and gas price.","category":"Auto"},
-  {"slug":"grass-seed-calculator","name":"Grass Seed Calculator","description":"Estimate grass seed needed from lawn area and application rate.","category":"Home"},
-  {"slug":"gravel-calculator","name":"Gravel Calculator","description":"Estimate gravel volume and order quantity for driveways, paths, and beds.","category":"Home"},
-  {"slug":"hourly-to-salary-calculator","name":"Hourly to Salary Calculator","description":"Convert hourly pay into weekly, monthly, and yearly gross income.","category":"Money & Work"},
-  {"slug":"loan-early-payoff-calculator","name":"Loan Early Payoff Calculator","description":"See how extra payments may reduce payoff time and interest.","category":"Money & Work"},
-  {"slug":"lumber-calculator","name":"Lumber Calculator","description":"Estimate board feet and lumber quantity for basic project planning.","category":"Home"},
-  {"slug":"meat-per-person-calculator","name":"Meat Per Person Calculator","description":"Estimate how many pounds of meat to buy for a group meal.","category":"Kitchen"},
-  {"slug":"mortgage-payment-calculator","name":"Mortgage Payment Calculator","description":"Estimate monthly mortgage cost with down payment, rate, term, taxes, and insurance.","category":"Money & Work"},
-  {"slug":"mpg-calculator","name":"MPG Calculator","description":"Calculate miles per gallon from distance traveled and fuel used.","category":"Auto"},
-  {"slug":"mulch-calculator","name":"Mulch Calculator","description":"Estimate mulch volume and bag count for beds, borders, and landscaping.","category":"Home"},
-  {"slug":"oven-temperature-converter","name":"Oven Temperature Converter","description":"Convert oven temperatures between Fahrenheit and Celsius.","category":"Kitchen"},
-  {"slug":"overtime-pay-calculator","name":"Overtime Pay Calculator","description":"Estimate regular pay, overtime pay, and total gross earnings.","category":"Money & Work"},
-  {"slug":"paint-coverage-calculator","name":"Paint Coverage Calculator","description":"Estimate paint needs for walls, rooms, and simple repaint projects.","category":"Home"},
-  {"slug":"pasta-per-person-calculator","name":"Pasta Per Person Calculator","description":"Estimate dry pasta quantity for a planned number of servings.","category":"Kitchen"},
-  {"slug":"paycheck-estimator","name":"Paycheck Take-Home Estimator","description":"Estimate take-home pay after basic taxes and deductions.","category":"Money & Work"},
-  {"slug":"percentage-change-calculator","name":"Percentage Change Calculator","description":"Calculate increase, decrease, and percentage difference between two values.","category":"Everyday"},
-  {"slug":"raise-calculator","name":"Raise Calculator","description":"Estimate new pay and added annual income from a percentage or dollar raise.","category":"Money & Work"},
-  {"slug":"recipe-scale-calculator","name":"Recipe Scale Calculator","description":"Scale ingredients up or down when changing serving sizes.","category":"Kitchen"},
-  {"slug":"rent-affordability-calculator","name":"Rent Affordability Calculator","description":"Estimate a practical rent range from income and monthly budget targets.","category":"Money & Work"},
-  {"slug":"rice-water-calculator","name":"Rice Water Calculator","description":"Scale rice and water amounts for common stovetop cooking ratios.","category":"Kitchen"},
-  {"slug":"roofing-shingle-calculator","name":"Roofing Shingle Calculator","description":"Estimate roof squares and shingle bundles from roof area and waste.","category":"Home"},
-  {"slug":"roi-calculator","name":"Simple ROI Calculator","description":"Compare cost, return, profit, and return on investment.","category":"Business"},
-  {"slug":"sales-tax-calculator","name":"Sales Tax Calculator","description":"Calculate estimated sales tax and final price before checkout.","category":"Everyday"},
-  {"slug":"savings-goal-calculator","name":"Savings Goal Calculator","description":"Estimate how long it may take to hit a savings goal.","category":"Money & Work"},
-  {"slug":"tile-calculator","name":"Tile Calculator","description":"Estimate tile area and boxes needed with a configurable waste allowance.","category":"Home"},
-  {"slug":"time-card-calculator","name":"Time Card Calculator","description":"Total work hours and estimate pay from regular and overtime time.","category":"Money & Work"},
-  {"slug":"tip-calculator","name":"Tip Calculator","description":"Calculate tip, total bill, and split cost per person.","category":"Everyday"},
-  {"slug":"topsoil-calculator","name":"Topsoil Calculator","description":"Estimate topsoil volume for gardens, lawns, raised areas, and leveling.","category":"Home"},
-  {"slug":"unit-price-calculator","name":"Unit Price Calculator","description":"Compare package prices and find the better value per unit.","category":"Everyday"},
-  {"slug":"commission-calculator","name":"Commission Calculator","description":"Estimate commission earnings from sales amount and commission rate.","category":"Money & Work"},
-  {"slug":"square-footage-calculator","name":"Square Footage Calculator","description":"Calculate square footage for rooms, walls, floors, and project areas.","category":"Home"},
-  {"slug":"cups-to-ounces-converter","name":"Cups to Ounces Converter","description":"Convert US cups to fluid ounces instantly.","category":"Conversions"},
-  {"slug":"kg-to-pounds-converter","name":"Kilograms to Pounds Converter","description":"Convert kilograms to pounds instantly.","category":"Conversions"},
-  {"slug":"age-calculator","name":"Age Calculator","description":"Calculate age in years, months, and days from a birth date.","category":"Everyday"},
-  {"slug":"business-days-calculator","name":"Business Days Calculator","description":"Count Monday-through-Friday business days between two dates.","category":"Everyday"},
-  {"slug":"cubic-yard-calculator","name":"Cubic Yard Calculator","description":"Calculate cubic yards for landscaping, gravel, soil, and project planning.","category":"Home"},
-  {"slug":"credit-card-interest-calculator","name":"Credit Card Interest Calculator","description":"Estimate simple monthly credit-card interest from balance and APR.","category":"Money & Work"},
-  {"slug":"profit-margin-calculator","name":"Profit Margin Calculator","description":"Calculate profit, profit margin, and markup from revenue and cost.","category":"Business"},
-  {"slug":"feet-to-meters-converter","name":"Feet to Meters Converter","description":"Convert feet to meters instantly.","category":"Conversions"},
-  {"slug":"inches-to-cm-converter","name":"Inches to Centimeters Converter","description":"Convert inches to centimeters instantly.","category":"Conversions"},
-  {"slug":"gallons-to-liters-converter","name":"Gallons to Liters Converter","description":"Convert US liquid gallons to liters instantly.","category":"Conversions"},
-  {"slug":"fahrenheit-to-celsius-converter","name":"Fahrenheit to Celsius Converter","description":"Convert Fahrenheit temperatures to Celsius instantly.","category":"Conversions"},
-  {"slug":"days-until-christmas","name":"Days Until Christmas","description":"Count the days from a selected date to the next December 25.","category":"Everyday"},
-  {"slug":"word-counter","name":"Word Counter","description":"Count words, characters, characters without spaces, and reading time.","category":"Text"}
+  {
+    "slug": "break-even-calculator",
+    "name": "Break Even Calculator",
+    "description": "Find how many sales, units, or dollars you need to cover your costs.",
+    "category": "Money & Work"
+  },
+  {
+    "slug": "car-payment-calculator",
+    "name": "Car Payment Calculator",
+    "description": "Estimate a monthly vehicle payment from price, down payment, rate, and term.",
+    "category": "Money & Work"
+  },
+  {
+    "slug": "churn-rate-calculator",
+    "name": "Churn Rate Calculator",
+    "description": "Calculate customer churn and understand how many users or accounts you lost.",
+    "category": "Business"
+  },
+  {
+    "slug": "compound-interest-calculator",
+    "name": "Compound Interest Calculator",
+    "description": "Estimate future savings growth from a starting balance and monthly contributions.",
+    "category": "Money & Work"
+  },
+  {
+    "slug": "concrete-calculator",
+    "name": "Concrete Calculator",
+    "description": "Estimate concrete volume for slabs, pads, and simple home projects.",
+    "category": "Home"
+  },
+  {
+    "slug": "conversion-rate-calculator",
+    "name": "Conversion Rate Calculator",
+    "description": "Measure how many visitors, leads, or prospects turned into results.",
+    "category": "Business"
+  },
+  {
+    "slug": "days-between-dates-calculator",
+    "name": "Days Between Dates Calculator",
+    "description": "Count the days between two dates for planning, deadlines, and schedules.",
+    "category": "Everyday"
+  },
+  {
+    "slug": "debt-payoff-calculator",
+    "name": "Debt Payoff Calculator",
+    "description": "Estimate payoff time, interest paid, and how extra payments can help.",
+    "category": "Money & Work"
+  },
+  {
+    "slug": "deck-board-calculator",
+    "name": "Deck Board Calculator",
+    "description": "Estimate deck board count from deck size, board width, spacing, and waste.",
+    "category": "Home"
+  },
+  {
+    "slug": "discount-calculator",
+    "name": "Discount Calculator",
+    "description": "Calculate sale price and savings from a percentage discount.",
+    "category": "Everyday"
+  },
+  {
+    "slug": "drywall-calculator",
+    "name": "Drywall Calculator",
+    "description": "Estimate drywall sheet count from room dimensions, openings, and waste.",
+    "category": "Home"
+  },
+  {
+    "slug": "emergency-fund-calculator",
+    "name": "Emergency Fund Calculator",
+    "description": "Estimate how much to save for a basic financial safety cushion.",
+    "category": "Money & Work"
+  },
+  {
+    "slug": "fence-material-calculator",
+    "name": "Fence Material Calculator",
+    "description": "Estimate fence panels, posts, rails, and pickets for a planned fence line.",
+    "category": "Home"
+  },
+  {
+    "slug": "flooring-calculator",
+    "name": "Flooring Calculator",
+    "description": "Estimate flooring material needs from room size and waste allowance.",
+    "category": "Home"
+  },
+  {
+    "slug": "food-portions-calculator",
+    "name": "Food Portions Calculator",
+    "description": "Estimate simple food quantities for a group meal or gathering.",
+    "category": "Kitchen"
+  },
+  {
+    "slug": "freelance-rate-calculator",
+    "name": "Freelance Rate Calculator",
+    "description": "Estimate an hourly freelance rate based on income goals and billable time.",
+    "category": "Money & Work"
+  },
+  {
+    "slug": "fuel-cost-calculator",
+    "name": "Fuel Cost Calculator",
+    "description": "Estimate trip fuel cost from distance, fuel economy, and gas price.",
+    "category": "Auto"
+  },
+  {
+    "slug": "grass-seed-calculator",
+    "name": "Grass Seed Calculator",
+    "description": "Estimate grass seed needed from lawn area and application rate.",
+    "category": "Home"
+  },
+  {
+    "slug": "gravel-calculator",
+    "name": "Gravel Calculator",
+    "description": "Estimate gravel volume and order quantity for driveways, paths, and beds.",
+    "category": "Home"
+  },
+  {
+    "slug": "hourly-to-salary-calculator",
+    "name": "Hourly to Salary Calculator",
+    "description": "Convert hourly pay into weekly, monthly, and yearly gross income.",
+    "category": "Money & Work"
+  },
+  {
+    "slug": "loan-early-payoff-calculator",
+    "name": "Loan Early Payoff Calculator",
+    "description": "See how extra payments may reduce payoff time and interest.",
+    "category": "Money & Work"
+  },
+  {
+    "slug": "lumber-calculator",
+    "name": "Lumber Calculator",
+    "description": "Estimate board feet and lumber quantity for basic project planning.",
+    "category": "Home"
+  },
+  {
+    "slug": "meat-per-person-calculator",
+    "name": "Meat Per Person Calculator",
+    "description": "Estimate how many pounds of meat to buy for a group meal.",
+    "category": "Kitchen"
+  },
+  {
+    "slug": "mortgage-payment-calculator",
+    "name": "Mortgage Payment Calculator",
+    "description": "Estimate monthly mortgage cost with down payment, rate, term, taxes, and insurance.",
+    "category": "Money & Work"
+  },
+  {
+    "slug": "mpg-calculator",
+    "name": "MPG Calculator",
+    "description": "Calculate miles per gallon from distance traveled and fuel used.",
+    "category": "Auto"
+  },
+  {
+    "slug": "mulch-calculator",
+    "name": "Mulch Calculator",
+    "description": "Estimate mulch volume and bag count for beds, borders, and landscaping.",
+    "category": "Home"
+  },
+  {
+    "slug": "oven-temperature-converter",
+    "name": "Oven Temperature Converter",
+    "description": "Convert oven temperatures between Fahrenheit and Celsius.",
+    "category": "Kitchen"
+  },
+  {
+    "slug": "overtime-pay-calculator",
+    "name": "Overtime Pay Calculator",
+    "description": "Estimate regular pay, overtime pay, and total gross earnings.",
+    "category": "Money & Work"
+  },
+  {
+    "slug": "paint-coverage-calculator",
+    "name": "Paint Coverage Calculator",
+    "description": "Estimate paint needs for walls, rooms, and simple repaint projects.",
+    "category": "Home"
+  },
+  {
+    "slug": "pasta-per-person-calculator",
+    "name": "Pasta Per Person Calculator",
+    "description": "Estimate dry pasta quantity for a planned number of servings.",
+    "category": "Kitchen"
+  },
+  {
+    "slug": "paycheck-estimator",
+    "name": "Paycheck Take-Home Estimator",
+    "description": "Estimate take-home pay after basic taxes and deductions.",
+    "category": "Money & Work"
+  },
+  {
+    "slug": "percentage-change-calculator",
+    "name": "Percentage Change Calculator",
+    "description": "Calculate increase, decrease, and percentage difference between two values.",
+    "category": "Everyday"
+  },
+  {
+    "slug": "raise-calculator",
+    "name": "Raise Calculator",
+    "description": "Estimate new pay and added annual income from a percentage or dollar raise.",
+    "category": "Money & Work"
+  },
+  {
+    "slug": "recipe-scale-calculator",
+    "name": "Recipe Scale Calculator",
+    "description": "Scale ingredients up or down when changing serving sizes.",
+    "category": "Kitchen"
+  },
+  {
+    "slug": "rent-affordability-calculator",
+    "name": "Rent Affordability Calculator",
+    "description": "Estimate a practical rent range from income and monthly budget targets.",
+    "category": "Money & Work"
+  },
+  {
+    "slug": "rice-water-calculator",
+    "name": "Rice Water Calculator",
+    "description": "Scale rice and water amounts for common stovetop cooking ratios.",
+    "category": "Kitchen"
+  },
+  {
+    "slug": "roofing-shingle-calculator",
+    "name": "Roofing Shingle Calculator",
+    "description": "Estimate roof squares and shingle bundles from roof area and waste.",
+    "category": "Home"
+  },
+  {
+    "slug": "roi-calculator",
+    "name": "Simple ROI Calculator",
+    "description": "Compare cost, return, profit, and return on investment.",
+    "category": "Business"
+  },
+  {
+    "slug": "sales-tax-calculator",
+    "name": "Sales Tax Calculator",
+    "description": "Calculate estimated sales tax and final price before checkout.",
+    "category": "Everyday"
+  },
+  {
+    "slug": "savings-goal-calculator",
+    "name": "Savings Goal Calculator",
+    "description": "Estimate how long it may take to hit a savings goal.",
+    "category": "Money & Work"
+  },
+  {
+    "slug": "tile-calculator",
+    "name": "Tile Calculator",
+    "description": "Estimate tile area and boxes needed with a configurable waste allowance.",
+    "category": "Home"
+  },
+  {
+    "slug": "time-card-calculator",
+    "name": "Time Card Calculator",
+    "description": "Total work hours and estimate pay from regular and overtime time.",
+    "category": "Money & Work"
+  },
+  {
+    "slug": "tip-calculator",
+    "name": "Tip Calculator",
+    "description": "Calculate tip, total bill, and split cost per person.",
+    "category": "Everyday"
+  },
+  {
+    "slug": "topsoil-calculator",
+    "name": "Topsoil Calculator",
+    "description": "Estimate topsoil volume for gardens, lawns, raised areas, and leveling.",
+    "category": "Home"
+  },
+  {
+    "slug": "unit-price-calculator",
+    "name": "Unit Price Calculator",
+    "description": "Compare package prices and find the better value per unit.",
+    "category": "Everyday"
+  },
+  {
+    "slug": "commission-calculator",
+    "name": "Commission Calculator",
+    "description": "Estimate commission earnings from sales amount and commission rate.",
+    "category": "Money & Work"
+  },
+  {
+    "slug": "square-footage-calculator",
+    "name": "Square Footage Calculator",
+    "description": "Calculate square footage for rooms, walls, floors, and project areas.",
+    "category": "Home"
+  },
+  {
+    "slug": "cups-to-ounces-converter",
+    "name": "Cups to Ounces Converter",
+    "description": "Convert US cups to fluid ounces instantly.",
+    "category": "Conversions"
+  },
+  {
+    "slug": "kg-to-pounds-converter",
+    "name": "Kilograms to Pounds Converter",
+    "description": "Convert kilograms to pounds instantly.",
+    "category": "Conversions"
+  },
+  {
+    "slug": "age-calculator",
+    "name": "Age Calculator",
+    "description": "Calculate age in years, months, and days from a birth date.",
+    "category": "Everyday"
+  },
+  {
+    "slug": "business-days-calculator",
+    "name": "Business Days Calculator",
+    "description": "Count Monday-through-Friday business days between two dates.",
+    "category": "Everyday"
+  },
+  {
+    "slug": "cubic-yard-calculator",
+    "name": "Cubic Yard Calculator",
+    "description": "Calculate cubic yards for landscaping, gravel, soil, and project planning.",
+    "category": "Home"
+  },
+  {
+    "slug": "credit-card-interest-calculator",
+    "name": "Credit Card Interest Calculator",
+    "description": "Estimate simple monthly credit-card interest from balance and APR.",
+    "category": "Money & Work"
+  },
+  {
+    "slug": "profit-margin-calculator",
+    "name": "Profit Margin Calculator",
+    "description": "Calculate profit, profit margin, and markup from revenue and cost.",
+    "category": "Business"
+  },
+  {
+    "slug": "feet-to-meters-converter",
+    "name": "Feet to Meters Converter",
+    "description": "Convert feet to meters instantly.",
+    "category": "Conversions"
+  },
+  {
+    "slug": "inches-to-cm-converter",
+    "name": "Inches to Centimeters Converter",
+    "description": "Convert inches to centimeters instantly.",
+    "category": "Conversions"
+  },
+  {
+    "slug": "gallons-to-liters-converter",
+    "name": "Gallons to Liters Converter",
+    "description": "Convert US liquid gallons to liters instantly.",
+    "category": "Conversions"
+  },
+  {
+    "slug": "fahrenheit-to-celsius-converter",
+    "name": "Fahrenheit to Celsius Converter",
+    "description": "Convert Fahrenheit temperatures to Celsius instantly.",
+    "category": "Conversions"
+  },
+  {
+    "slug": "days-until-christmas",
+    "name": "Days Until Christmas",
+    "description": "Count the days from a selected date to the next December 25.",
+    "category": "Everyday"
+  },
+  {
+    "slug": "word-counter",
+    "name": "Word Counter",
+    "description": "Count words, characters, characters without spaces, and reading time.",
+    "category": "Text"
+  },
+  {
+    "slug": "random-number-generator",
+    "name": "Random Number Generator",
+    "description": "Generate a random whole number inside a range you choose.",
+    "category": "Everyday"
+  },
+  {
+    "slug": "days-until-date-calculator",
+    "name": "Days Until Date Calculator",
+    "description": "Count calendar days from a start date to a target date.",
+    "category": "Everyday"
+  },
+  {
+    "slug": "weeks-between-dates-calculator",
+    "name": "Weeks Between Dates Calculator",
+    "description": "Calculate whole weeks and extra days between two dates.",
+    "category": "Everyday"
+  },
+  {
+    "slug": "debt-to-income-calculator",
+    "name": "Debt-to-Income Calculator",
+    "description": "Estimate monthly debt-to-income ratio from debt payments and gross income.",
+    "category": "Money & Work"
+  },
+  {
+    "slug": "pounds-to-kg-converter",
+    "name": "Pounds to Kilograms Converter",
+    "description": "Convert pounds to kilograms instantly.",
+    "category": "Conversions"
+  },
+  {
+    "slug": "ounces-to-cups-converter",
+    "name": "Ounces to Cups Converter",
+    "description": "Convert US fluid ounces to cups instantly.",
+    "category": "Conversions"
+  },
+  {
+    "slug": "celsius-to-fahrenheit-converter",
+    "name": "Celsius to Fahrenheit Converter",
+    "description": "Convert Celsius temperatures to Fahrenheit instantly.",
+    "category": "Conversions"
+  },
+  {
+    "slug": "miles-to-km-converter",
+    "name": "Miles to Kilometers Converter",
+    "description": "Convert miles to kilometers instantly.",
+    "category": "Conversions"
+  },
+  {
+    "slug": "km-to-miles-converter",
+    "name": "Kilometers to Miles Converter",
+    "description": "Convert kilometers to miles instantly.",
+    "category": "Conversions"
+  },
+  {
+    "slug": "tablespoons-to-cups-converter",
+    "name": "Tablespoons to Cups Converter",
+    "description": "Convert US tablespoons to cups instantly.",
+    "category": "Conversions"
+  }
 ]

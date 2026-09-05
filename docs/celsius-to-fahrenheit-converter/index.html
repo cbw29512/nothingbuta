@@ -1,0 +1,15 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Celsius to Fahrenheit Converter | One Clear Tool</title><meta name="description" content="Convert Celsius temperatures to Fahrenheit instantly."><link rel="canonical" href="https://onecleartool.com/celsius-to-fahrenheit-converter/"><link rel="stylesheet" href="../assets/site.css">  <link rel="stylesheet" href="../assets/commercial.css">
+  <script src="../assets/tool-ux.js" defer></script>
+  <script type="application/ld+json" id="oct-tool-schema">{"@context":"https://schema.org","@type":"WebApplication","name":"Celsius to Fahrenheit Converter","url":"https://onecleartool.com/celsius-to-fahrenheit-converter/","applicationCategory":"UtilityApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+</head><body><main class="wrap"><section class="hero"><span class="eyebrow">One Clear Tool</span><h1>Celsius to Fahrenheit Converter</h1><p>Convert Celsius temperatures to Fahrenheit.</p></section><section class="grid"><form class="card" onsubmit="event.preventDefault();calc();"><label for="value">Celsius</label><input id="value" type="number" value="20" step="0.1"><button type="submit">Convert</button></form><section class="result" aria-live="polite"><h2>Result</h2><div id="out"></div></section></section><aside class="oct-support" id="oct-tool-support" aria-label="Support One Clear Tool">
+  <strong>Help keep One Clear Tool free.</strong>
+  <p>If this calculator saved you time, optional support helps fund maintenance and new tools. No payment or account is required to use the calculator.</p>
+  <a href="https://www.buymeacoffee.com/divclass016" target="_blank" rel="noopener noreferrer">☕ Buy me a coffee</a>
+</aside>
+<nav class="oct-commercial-footer" id="oct-commercial-footer" aria-label="Site information">
+  <a href="../">All tools</a>
+  <a href="../privacy/">Privacy</a>
+  <a href="../terms/">Terms</a>
+  <a href="https://www.buymeacoffee.com/divclass016" target="_blank" rel="noopener noreferrer">Support</a>
+</nav>
+</main><script>function calc(){const v=Number(document.getElementById('value').value)||0;document.getElementById('out').innerHTML=`<div class="metric"><strong>${(v*9/5+32).toFixed(1)} °F</strong><span>Fahrenheit</span></div>`;}calc();</script></body></html>

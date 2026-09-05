@@ -56,7 +56,7 @@ One Clear Tool is a static calculator hub built around focused, single-purpose m
 - Recipe Scale Calculator
 - Rice Water Calculator
 
-**Total: 60 live calculator pages.**
+**Total: 70 live calculator pages.**
 
 ## Publishing
 
@@ -93,4 +93,4 @@ Every public tool page should have:
 
 ## Quality Gate
 
-The permanent GitHub Actions quality workflow verifies generated commercial state, JavaScript syntax, runtime calculator behavior, client-side privacy boundaries, credential hygiene, and clean diffs. The runtime smoke gate requires all 60 calculator pages to execute and produce a result.
+The permanent GitHub Actions quality workflow verifies generated commercial state, JavaScript syntax, runtime calculator behavior, client-side privacy boundaries, credential hygiene, and clean diffs. The runtime smoke gate requires all 70 calculator pages to execute and produce a result.

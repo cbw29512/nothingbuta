@@ -1,0 +1,15 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Random Number Generator | One Clear Tool</title><meta name="description" content="Generate a random whole number between a minimum and maximum value."><link rel="canonical" href="https://onecleartool.com/random-number-generator/"><link rel="stylesheet" href="../assets/site.css">  <link rel="stylesheet" href="../assets/commercial.css">
+  <script src="../assets/tool-ux.js" defer></script>
+  <script type="application/ld+json" id="oct-tool-schema">{"@context":"https://schema.org","@type":"WebApplication","name":"Random Number Generator","url":"https://onecleartool.com/random-number-generator/","applicationCategory":"UtilityApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+</head><body><main class="wrap"><section class="hero"><span class="eyebrow">One Clear Tool</span><h1>Random Number Generator</h1><p>Generate a random whole number inside a range you choose.</p></section><section class="grid"><form class="card" onsubmit="event.preventDefault();calc();"><h2>Your range</h2><label for="min">Minimum</label><input id="min" type="number" value="1" step="1"><label for="max">Maximum</label><input id="max" type="number" value="100" step="1"><button type="submit">Generate number</button></form><section class="result" aria-live="polite"><h2>Result</h2><div id="out"></div></section></section><section class="panel"><h2>Simple random choice</h2><p>This tool generates a whole number from the inclusive range you enter. It is intended for everyday choices and games, not cryptographic or security use.</p></section><aside class="oct-support" id="oct-tool-support" aria-label="Support One Clear Tool">
+  <strong>Help keep One Clear Tool free.</strong>
+  <p>If this calculator saved you time, optional support helps fund maintenance and new tools. No payment or account is required to use the calculator.</p>
+  <a href="https://www.buymeacoffee.com/divclass016" target="_blank" rel="noopener noreferrer">☕ Buy me a coffee</a>
+</aside>
+<nav class="oct-commercial-footer" id="oct-commercial-footer" aria-label="Site information">
+  <a href="../">All tools</a>
+  <a href="../privacy/">Privacy</a>
+  <a href="../terms/">Terms</a>
+  <a href="https://www.buymeacoffee.com/divclass016" target="_blank" rel="noopener noreferrer">Support</a>
+</nav>
+</main><script>const n=id=>Number(document.getElementById(id).value);function calc(){const a=Math.ceil(n('min')),b=Math.floor(n('max')),o=document.getElementById('out');if(!Number.isFinite(a)||!Number.isFinite(b)||a>b){o.innerHTML='<div class="warn">Enter a valid minimum and maximum.</div>';return;}const r=Math.floor(Math.random()*(b-a+1))+a;o.innerHTML=`<div class="metric"><strong>${r}</strong><span>Random whole number</span></div>`;}calc();</script></body></html>
