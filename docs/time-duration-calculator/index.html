@@ -12,4 +12,4 @@
   <a href="../terms/">Terms</a>
   <a href="https://www.buymeacoffee.com/divclass016" target="_blank" rel="noopener noreferrer">Support</a>
 </nav>
-</main><script>function mins(v){const [h,m]=v.split(':').map(Number);return h*60+m;}function calc(){const s=mins(document.getElementById('start').value),e=mins(document.getElementById('end').value),o=document.getElementById('out');let d=e-s;if(d<0)d+=1440;const h=Math.floor(d/60),m=d%60;o.innerHTML=`<div class="metric"><strong>${h} hr ${m} min</strong><span>Elapsed time</span></div><div class="metric"><strong>${(d/60).toFixed(2)}</strong><span>Decimal hours</span></div>`;}calc();</script></body></html>
+</main><script>function mins(v){const [h,m]=v.split(':').map(Number);return h*60+m;}function calc(){const s=mins(document.getElementById('start').value),e=mins(document.getElementById('end').value),o=document.getElementById('out');let d=e-s;if(d<0)d+=1440;const h=Math.floor(d/60),m=d%60;o.innerHTML=`<div class="metric"><strong>${h} hours ${m} minutes</strong><span>Elapsed time</span></div><div class="metric"><strong>${(d/60).toFixed(2)}</strong><span>Decimal hours</span></div>`;}calc();</script></body></html>
