@@ -71,7 +71,7 @@
       const baseCubicFeet = n("length") * n("width") * (n("depth") / 12);
       const adjusted = baseCubicFeet * (1 + n("waste") / 100);
       const yards = adjusted / 27;
-      document.getElementById("out").innerHTML = metric(adjusted.toFixed(1), "Cubic feet") + metric(yards.toFixed(2), "Cubic yards") + metric((yards * 1.4).toFixed(2), "Approx. tons at 1.4 tons/yd³");
+      document.getElementById("out").innerHTML = metric(adjusted.toFixed(1), "Cubic feet") + metric(yards.toFixed(2), "Cubic yards") + metric((yards * 1.4).toFixed(2), "About tons at 1.4 tons/yd³");
     }
     calc();
   </script>
