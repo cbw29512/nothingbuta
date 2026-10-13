@@ -222,13 +222,13 @@
 <nav class="tool-jump" id="nothingbuta-tool-jump" aria-label="One Clear Tool tool navigation">
   <label for="tool-jump-select">More One Clear Tool tools</label>
   <select id="tool-jump-select" onchange="if (this.value) window.location.href = this.value;">
-    <option value="">Jump to another tool...</option><option value="../break-even-calculator/">Break Even Calculator</option><option value="../car-payment-calculator/">Car Payment Calculator</option><option value="../churn-rate-calculator/">Churn Rate Calculator</option><option value="../concrete-calculator/">Concrete Calculator</option><option value="../conversion-rate-calculator/">Conversion Rate Calculator</option><option value="../days-between-dates-calculator/">Days Between Dates Calculator</option><option value="../debt-payoff-calculator/">Debt Payoff Calculator</option><option value="../discount-calculator/">Discount Calculator</option><option value="../emergency-fund-calculator/">Emergency Fund Calculator</option><option value="../flooring-calculator/">Flooring Calculator</option><option value="../freelance-rate-calculator/">Freelance Rate Calculator</option><option value="../hourly-to-salary-calculator/">Hourly to Salary Calculator</option><option value="../loan-early-payoff-calculator/">Loan Early Payoff Calculator</option><option value="../mortgage-payment-calculator/">Mortgage Payment Calculator</option><option value="../paint-coverage-calculator/">Paint Coverage Calculator</option><option value="../paycheck-estimator/">Paycheck Take-Home Estimator</option><option value="../percentage-change-calculator/">Percentage Change Calculator</option><option value="../recipe-scale-calculator/" selected>Recipe Scale Calculator</option><option value="../rent-affordability-calculator/">Rent Affordability Calculator</option><option value="../sales-tax-calculator/">Sales Tax Calculator</option><option value="../savings-goal-calculator/">Savings Goal Calculator</option><option value="../roi-calculator/">Simple ROI Calculator</option><option value="../time-card-calculator/">Time Card Calculator</option><option value="../tip-calculator/">Tip Calculator</option><option value="../unit-price-calculator/">Unit Price Calculator</option>
+    <option value="">Jump to another tool...</option><option value="../break-even-calculator/">Break Even Calculator</option><option value="../car-payment-calculator/">Car Payment Calculator</option><option value="../churn-rate-calculator/">Churn Rate Calculator</option><option value="../concrete-calculator/">Concrete Calculator</option><option value="../conversion-rate-calculator/">Conversion Rate Calculator</option><option value="../days-between-dates-calculator/">Days Between Dates Calculator</option><option value="../debt-payoff-calculator/">Debt Payoff Calculator</option><option value="../discount-calculator/">Discount Calculator</option><option value="../emergency-fund-calculator/">Emergency Fund Calculator</option><option value="../flooring-calculator/">Flooring Calculator</option><option value="../freelance-rate-calculator/">Freelance Rate Calculator</option><option value="../hourly-to-salary-calculator/">Hourly to Salary Calculator</option><option value="../loan-early-payoff-calculator/">Loan Early Payoff Calculator</option><option value="../mortgage-payment-calculator/">Mortgage Payment Calculator</option><option value="../paint-coverage-calculator/">Paint Coverage Calculator</option><option value="../paycheck-estimator/">Paycheck Take-Home Estimator</option><option value="../percentage-change-calculator/">Percentage Change Calculator</option><option value="../recipe-scale-calculator/" selected>Recipe Scale Calculator</option><option value="../rent-affordability-calculator/">Rent Affordability Calculator</option><option value="../sales-tax-calculator/">Sales Tax Calculator</option><option value="../savings-goal-calculator/">Savings Goal Calculator</option><option value="../roi-calculator/">Simple Return on Investment Calculator</option><option value="../time-card-calculator/">Time Card Calculator</option><option value="../tip-calculator/">Tip Calculator</option><option value="../unit-price-calculator/">Unit Price Calculator</option>
   </select>
 </nav>
 
   <main class="wrap">
     <section class="hero">
-      <span class="eyebrow">One Clear Tool tool</span>
+      <span class="eyebrow">One Clear Tool</span>
       <h1>Recipe Scale Calculator</h1>
       <p>Scale an ingredient amount when changing recipe servings.</p>
     </section>
@@ -259,7 +259,7 @@
     </section>
 
     <section class="faq">
-      <h2>FAQ</h2>
+      <h2>Common questions</h2>
 
         <details>
           <summary>How does recipe scaling work?</summary>
@@ -372,7 +372,7 @@
     function monthsText(months) {
       const years = Math.floor(months / 12);
       const rem = months % 12;
-      return years ? `${years} yr ${rem} mo` : `${rem} mo`;
+      return years ? `${years} years ${rem} months` : `${rem} months`;
     }
 
     function calc() {
@@ -509,7 +509,7 @@
           } else {
             const net = returned - cost;
             const roi = (net / cost) * 100;
-            html = block(money(net), "Estimated net return") + block(`${roi.toFixed(2)}%`, "Estimated ROI") + block(money(returned), "Return value") + block(money(cost), "Initial cost");
+            html = block(money(net), "Estimated net return") + block(`${roi.toFixed(2)}%`, "Estimated return on investment") + block(money(returned), "Return value") + block(money(cost), "Initial cost");
           }
         }
 
@@ -532,14 +532,14 @@
           const paintableArea = Math.max(wallArea - subtractArea, 0);
           const totalCoverage = paintableArea * Math.max(num("coats"), 1);
           const gallons = num("coverage") > 0 ? totalCoverage / num("coverage") : 0;
-          html = block(`${paintableArea.toLocaleString()} sq ft`, "Estimated paintable area") + block(`${totalCoverage.toLocaleString()} sq ft`, "Area after coats") + block(gallons.toFixed(2), "Estimated gallons") + block(Math.ceil(gallons).toLocaleString(), "Whole gallons to consider");
+          html = block(`${paintableArea.toLocaleString()} square feet`, "Estimated paintable area") + block(`${totalCoverage.toLocaleString()} square feet`, "Area after coats") + block(gallons.toFixed(2), "Estimated gallons") + block(Math.ceil(gallons).toLocaleString(), "Whole gallons to consider");
         }
 
         if (FORMULA === "flooring") {
           const area = Math.max(num("length") * num("width"), 0);
           const withWaste = area * (1 + Math.max(num("waste"), 0) / 100);
           const boxes = num("box") > 0 ? Math.ceil(withWaste / num("box")) : 0;
-          html = block(`${area.toLocaleString()} sq ft`, "Room area") + block(`${withWaste.toFixed(2)} sq ft`, "Area with waste allowance") + block(boxes.toLocaleString(), "Estimated boxes") + block(`${num("waste").toFixed(1)}%`, "Waste allowance");
+          html = block(`${area.toLocaleString()} square feet`, "Room area") + block(`${withWaste.toFixed(2)} square feet`, "Area with waste allowance") + block(boxes.toLocaleString(), "Estimated boxes") + block(`${num("waste").toFixed(1)}%`, "Waste allowance");
         }
 
         if (FORMULA === "concrete") {
@@ -547,7 +547,7 @@
           const withWaste = cubicFeet * (1 + Math.max(num("waste"), 0) / 100);
           const cubicYards = withWaste / 27;
           const bags = num("yield") > 0 ? Math.ceil(withWaste / num("yield")) : 0;
-          html = block(`${withWaste.toFixed(2)} cu ft`, "Estimated concrete volume") + block(`${cubicYards.toFixed(3)} cu yd`, "Estimated cubic yards") + block(bags.toLocaleString(), "Estimated bags") + block(`${num("depth").toFixed(1)} in`, "Slab depth");
+          html = block(`${withWaste.toFixed(2)} cubic feet`, "Estimated concrete volume") + block(`${cubicYards.toFixed(3)} cu yd`, "Estimated cubic yards") + block(bags.toLocaleString(), "Estimated bags") + block(`${num("depth").toFixed(1)} inches`, "Slab depth");
         }
         // === RENDERER_EXPANSION_PACK_2_FORMULAS END ===
 

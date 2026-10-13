@@ -230,7 +230,7 @@
 <nav class="tool-jump" id="nothingbuta-tool-jump" aria-label="One Clear Tool tool navigation">
   <label for="tool-jump-select">More One Clear Tool tools</label>
   <select id="tool-jump-select" onchange="if (this.value) window.location.href = this.value;">
-    <option value="">Jump to another tool...</option><option value="../break-even-calculator/">Break Even Calculator</option><option value="../car-payment-calculator/">Car Payment Calculator</option><option value="../churn-rate-calculator/">Churn Rate Calculator</option><option value="../concrete-calculator/">Concrete Calculator</option><option value="../conversion-rate-calculator/">Conversion Rate Calculator</option><option value="../days-between-dates-calculator/">Days Between Dates Calculator</option><option value="../debt-payoff-calculator/" selected>Debt Payoff Calculator</option><option value="../discount-calculator/">Discount Calculator</option><option value="../emergency-fund-calculator/">Emergency Fund Calculator</option><option value="../flooring-calculator/">Flooring Calculator</option><option value="../freelance-rate-calculator/">Freelance Rate Calculator</option><option value="../hourly-to-salary-calculator/">Hourly to Salary Calculator</option><option value="../loan-early-payoff-calculator/">Loan Early Payoff Calculator</option><option value="../mortgage-payment-calculator/">Mortgage Payment Calculator</option><option value="../paint-coverage-calculator/">Paint Coverage Calculator</option><option value="../paycheck-estimator/">Paycheck Take-Home Estimator</option><option value="../percentage-change-calculator/">Percentage Change Calculator</option><option value="../recipe-scale-calculator/">Recipe Scale Calculator</option><option value="../rent-affordability-calculator/">Rent Affordability Calculator</option><option value="../sales-tax-calculator/">Sales Tax Calculator</option><option value="../savings-goal-calculator/">Savings Goal Calculator</option><option value="../roi-calculator/">Simple ROI Calculator</option><option value="../time-card-calculator/">Time Card Calculator</option><option value="../tip-calculator/">Tip Calculator</option><option value="../unit-price-calculator/">Unit Price Calculator</option>
+    <option value="">Jump to another tool...</option><option value="../break-even-calculator/">Break Even Calculator</option><option value="../car-payment-calculator/">Car Payment Calculator</option><option value="../churn-rate-calculator/">Churn Rate Calculator</option><option value="../concrete-calculator/">Concrete Calculator</option><option value="../conversion-rate-calculator/">Conversion Rate Calculator</option><option value="../days-between-dates-calculator/">Days Between Dates Calculator</option><option value="../debt-payoff-calculator/" selected>Debt Payoff Calculator</option><option value="../discount-calculator/">Discount Calculator</option><option value="../emergency-fund-calculator/">Emergency Fund Calculator</option><option value="../flooring-calculator/">Flooring Calculator</option><option value="../freelance-rate-calculator/">Freelance Rate Calculator</option><option value="../hourly-to-salary-calculator/">Hourly to Salary Calculator</option><option value="../loan-early-payoff-calculator/">Loan Early Payoff Calculator</option><option value="../mortgage-payment-calculator/">Mortgage Payment Calculator</option><option value="../paint-coverage-calculator/">Paint Coverage Calculator</option><option value="../paycheck-estimator/">Paycheck Take-Home Estimator</option><option value="../percentage-change-calculator/">Percentage Change Calculator</option><option value="../recipe-scale-calculator/">Recipe Scale Calculator</option><option value="../rent-affordability-calculator/">Rent Affordability Calculator</option><option value="../sales-tax-calculator/">Sales Tax Calculator</option><option value="../savings-goal-calculator/">Savings Goal Calculator</option><option value="../roi-calculator/">Simple Return on Investment Calculator</option><option value="../time-card-calculator/">Time Card Calculator</option><option value="../tip-calculator/">Tip Calculator</option><option value="../unit-price-calculator/">Unit Price Calculator</option>
   </select>
 </nav>
 
@@ -238,7 +238,7 @@
     <section class="hero">
       <span class="eyebrow">Debt payoff calculator</span>
       <h1>See your debt payoff path in seconds.</h1>
-      <p>Enter your balance, APR, monthly payment, and extra payment to estimate payoff time, interest paid, interest saved, and months saved.</p>
+      <p>Enter your balance, annual percentage rate, monthly payment, and extra payment to estimate payoff time, interest paid, interest saved, and months saved.</p>
     </section>
 
     <section class="grid">
@@ -246,7 +246,7 @@
         <h2>Your numbers</h2>
         <label for="balance">Current balance <small>How much you owe today</small></label>
         <input id="balance" type="number" inputmode="decimal" value="5000" aria-label="Current debt balance" min="0.01" step="0.01" required>
-        <label for="apr">APR % <small>Annual interest rate</small></label>
+        <label for="apr">Annual percentage rate % <small>Annual interest rate</small></label>
         <input id="apr" type="number" inputmode="decimal" value="19.99" aria-label="Annual interest rate" min="0" max="100" step="0.01" required>
         <label for="pay">Monthly payment <small>Your regular planned payment</small></label>
         <input id="pay" type="number" inputmode="decimal" value="250" aria-label="Current monthly payment" min="0.01" step="0.01" required>
@@ -270,7 +270,7 @@
     </section>
 
     <section class="faq">
-      <h2>FAQ</h2>
+      <h2>Common questions</h2>
       <details><summary>What does interest saved mean?</summary><p>Interest saved compares your regular payment with your payment plus the extra monthly amount.</p></details>
       <details><summary>Does this replace my lender payoff quote?</summary><p>No. Use this as an estimate. Your lender can provide the official payoff amount and terms.</p></details>
     </section>
@@ -279,7 +279,7 @@
   <div class="content-grid">
     <div>
       <h3>How to use this tool</h3>
-      <p>Enter balance, APR, regular monthly payment, and optional extra payment.</p>
+      <p>Enter balance, annual percentage rate, regular monthly payment, and optional extra payment.</p>
     </div>
     <div>
       <h3>What the result means</h3>
@@ -294,6 +294,11 @@
   <div class="related"><a href="../loan-early-payoff-calculator/">Loan Early Payoff Calculator</a><a href="../emergency-fund-calculator/">Emergency Fund Calculator</a><a href="../savings-goal-calculator/">Savings Goal Calculator</a></div>
   <p class="fine">Results are planning estimates for education and comparison only. They are not financial, tax, legal, lending, payroll, construction, or professional advice.</p>
 </section>
+<aside class="oct-pro-soon" aria-label="Save and Export pack, coming soon">
+  <strong>Save and Export pack: coming soon</strong>
+  <p>Save your numbers, download a printable payoff schedule, and export to a spreadsheet. Not for sale yet. This calculator stays free.</p>
+  <button type="button" disabled aria-disabled="true">Coming soon</button>
+</aside>
 <aside class="oct-support" id="oct-tool-support" aria-label="Support One Clear Tool">
   <strong>Help keep One Clear Tool free.</strong>
   <p>If this calculator saved you time, optional support helps fund maintenance and new tools. No payment or account is required to use the calculator.</p>
@@ -311,7 +316,7 @@
     const usd=new Intl.NumberFormat("en-US",{style:"currency",currency:"USD"});
     const n=id=>Number(document.getElementById(id).value)||0;
     function payoff(b,apr,p){const r=apr/100/12;if(b<=0||p<=0)return{ok:false,msg:"Balance and payment must be above zero."};if(r>0&&p<=b*r)return{ok:false,msg:"Payment is too low to reduce the balance."};let m=0,i=0;while(b>0&&m<1200){const x=b*r;i+=x;b=b+x-p;m++}return m>=1200?{ok:false,msg:"Try a higher payment."}:{ok:true,m,i}}
-    function fm(m){const y=Math.floor(m/12),mo=m%12;return y?`${y} yr ${mo} mo`:`${mo} mo`}
+    function fm(m){const y=Math.floor(m/12),mo=m%12;return y?`${y} years ${mo} months`:`${mo} months`}
     function calc(){try{const b=n("balance"),a=n("apr"),p=n("pay"),e=n("extra"),base=payoff(b,a,p),more=payoff(b,a,p+e),out=document.getElementById("out"),sum=document.getElementById("summary");if(!base.ok||!more.ok){document.getElementById('out').innerHTML=`<div class="warn">${base.msg||more.msg}</div>`;return}const saved=Math.max(base.i-more.i,0),months=Math.max(base.m-more.m,0);sum.textContent=`With ${usd.format(p+e)} per month, estimated payoff is ${fm(more.m)}.`;document.getElementById('out').innerHTML=`<div class="metric"><strong>${fm(more.m)}</strong><span>Payoff time</span></div><div class="metric"><strong>${usd.format(more.i)}</strong><span>Interest paid</span></div><div class="metric"><strong>${usd.format(saved)}</strong><span>Interest saved</span></div><div class="metric"><strong>${months}</strong><span>Months saved</span></div><div class="good">Without extra payment: ${fm(base.m)} and ${usd.format(base.i)} interest.</div>`}catch(err){console.error("Debt payoff calculator error",err);const out=document.getElementById("out");if(out)document.getElementById('out').innerHTML='<div class="warn">Calculation error occurred. Please check the inputs and try again.</div>';}}
     document.querySelectorAll("input").forEach(x=>x.addEventListener("input",calc));calc();
   </script>

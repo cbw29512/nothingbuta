@@ -222,13 +222,13 @@
 <nav class="tool-jump" id="nothingbuta-tool-jump" aria-label="One Clear Tool tool navigation">
   <label for="tool-jump-select">More One Clear Tool tools</label>
   <select id="tool-jump-select" onchange="if (this.value) window.location.href = this.value;">
-    <option value="">Jump to another tool...</option><option value="../break-even-calculator/">Break Even Calculator</option><option value="../car-payment-calculator/">Car Payment Calculator</option><option value="../churn-rate-calculator/">Churn Rate Calculator</option><option value="../concrete-calculator/">Concrete Calculator</option><option value="../conversion-rate-calculator/">Conversion Rate Calculator</option><option value="../days-between-dates-calculator/">Days Between Dates Calculator</option><option value="../debt-payoff-calculator/">Debt Payoff Calculator</option><option value="../discount-calculator/">Discount Calculator</option><option value="../emergency-fund-calculator/">Emergency Fund Calculator</option><option value="../flooring-calculator/">Flooring Calculator</option><option value="../freelance-rate-calculator/">Freelance Rate Calculator</option><option value="../hourly-to-salary-calculator/">Hourly to Salary Calculator</option><option value="../loan-early-payoff-calculator/">Loan Early Payoff Calculator</option><option value="../mortgage-payment-calculator/" selected>Mortgage Payment Calculator</option><option value="../paint-coverage-calculator/">Paint Coverage Calculator</option><option value="../paycheck-estimator/">Paycheck Take-Home Estimator</option><option value="../percentage-change-calculator/">Percentage Change Calculator</option><option value="../recipe-scale-calculator/">Recipe Scale Calculator</option><option value="../rent-affordability-calculator/">Rent Affordability Calculator</option><option value="../sales-tax-calculator/">Sales Tax Calculator</option><option value="../savings-goal-calculator/">Savings Goal Calculator</option><option value="../roi-calculator/">Simple ROI Calculator</option><option value="../time-card-calculator/">Time Card Calculator</option><option value="../tip-calculator/">Tip Calculator</option><option value="../unit-price-calculator/">Unit Price Calculator</option>
+    <option value="">Jump to another tool...</option><option value="../break-even-calculator/">Break Even Calculator</option><option value="../car-payment-calculator/">Car Payment Calculator</option><option value="../churn-rate-calculator/">Churn Rate Calculator</option><option value="../concrete-calculator/">Concrete Calculator</option><option value="../conversion-rate-calculator/">Conversion Rate Calculator</option><option value="../days-between-dates-calculator/">Days Between Dates Calculator</option><option value="../debt-payoff-calculator/">Debt Payoff Calculator</option><option value="../discount-calculator/">Discount Calculator</option><option value="../emergency-fund-calculator/">Emergency Fund Calculator</option><option value="../flooring-calculator/">Flooring Calculator</option><option value="../freelance-rate-calculator/">Freelance Rate Calculator</option><option value="../hourly-to-salary-calculator/">Hourly to Salary Calculator</option><option value="../loan-early-payoff-calculator/">Loan Early Payoff Calculator</option><option value="../mortgage-payment-calculator/" selected>Mortgage Payment Calculator</option><option value="../paint-coverage-calculator/">Paint Coverage Calculator</option><option value="../paycheck-estimator/">Paycheck Take-Home Estimator</option><option value="../percentage-change-calculator/">Percentage Change Calculator</option><option value="../recipe-scale-calculator/">Recipe Scale Calculator</option><option value="../rent-affordability-calculator/">Rent Affordability Calculator</option><option value="../sales-tax-calculator/">Sales Tax Calculator</option><option value="../savings-goal-calculator/">Savings Goal Calculator</option><option value="../roi-calculator/">Simple Return on Investment Calculator</option><option value="../time-card-calculator/">Time Card Calculator</option><option value="../tip-calculator/">Tip Calculator</option><option value="../unit-price-calculator/">Unit Price Calculator</option>
   </select>
 </nav>
 
   <main class="wrap">
     <section class="hero">
-      <span class="eyebrow">One Clear Tool tool</span>
+      <span class="eyebrow">One Clear Tool</span>
       <h1>Mortgage Payment Calculator</h1>
       <p>Estimate a monthly mortgage payment using price, down payment, rate, term, and escrow.</p>
     </section>
@@ -267,7 +267,7 @@
     </section>
 
     <section class="faq">
-      <h2>FAQ</h2>
+      <h2>Common questions</h2>
 
         <details>
           <summary>Is this a lender quote?</summary>
@@ -350,6 +350,11 @@
   <div class="related"><a href="../rent-affordability-calculator/">Rent Affordability Calculator</a><a href="../savings-goal-calculator/">Savings Goal Calculator</a><a href="../loan-early-payoff-calculator/">Loan Early Payoff Calculator</a></div>
   <p class="fine">Results are planning estimates for education and comparison only. They are not financial, tax, legal, lending, payroll, construction, or professional advice.</p>
 </section>
+<aside class="oct-pro-soon" aria-label="Save and Export pack, coming soon">
+  <strong>Save and Export pack: coming soon</strong>
+  <p>Save your numbers, download a printable payoff schedule, and export to a spreadsheet. Not for sale yet. This calculator stays free.</p>
+  <button type="button" disabled aria-disabled="true">Coming soon</button>
+</aside>
 <aside class="oct-support" id="oct-tool-support" aria-label="Support One Clear Tool">
   <strong>Help keep One Clear Tool free.</strong>
   <p>If this calculator saved you time, optional support helps fund maintenance and new tools. No payment or account is required to use the calculator.</p>
@@ -395,7 +400,7 @@
     function monthsText(months) {
       const years = Math.floor(months / 12);
       const rem = months % 12;
-      return years ? `${years} yr ${rem} mo` : `${rem} mo`;
+      return years ? `${years} years ${rem} months` : `${rem} months`;
     }
 
     function calc() {

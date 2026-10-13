@@ -68,7 +68,7 @@
       const cubicYards = cubicFeet / 27;
       const bagSize = Math.max(n("bag"), 0.1);
       const bags = Math.ceil(cubicFeet / bagSize);
-      document.getElementById("out").innerHTML = metric(cubicFeet.toFixed(1), "Cubic feet") + metric(cubicYards.toFixed(2), "Cubic yards") + metric(String(bags), `Bags at ${bagSize.toFixed(1)} ft³ each`);
+      document.getElementById("out").innerHTML = metric(cubicFeet.toFixed(1), "Cubic feet") + metric(cubicYards.toFixed(2), "Cubic yards") + metric(String(bags), `Bags at ${bagSize.toFixed(1)} cubic feet each`);
     }
     calc();
   </script>

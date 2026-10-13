@@ -222,13 +222,13 @@
 <nav class="tool-jump" id="nothingbuta-tool-jump" aria-label="One Clear Tool tool navigation">
   <label for="tool-jump-select">More One Clear Tool tools</label>
   <select id="tool-jump-select" onchange="if (this.value) window.location.href = this.value;">
-    <option value="">Jump to another tool...</option><option value="../break-even-calculator/" selected>Break Even Calculator</option><option value="../car-payment-calculator/">Car Payment Calculator</option><option value="../churn-rate-calculator/">Churn Rate Calculator</option><option value="../concrete-calculator/">Concrete Calculator</option><option value="../conversion-rate-calculator/">Conversion Rate Calculator</option><option value="../days-between-dates-calculator/">Days Between Dates Calculator</option><option value="../debt-payoff-calculator/">Debt Payoff Calculator</option><option value="../discount-calculator/">Discount Calculator</option><option value="../emergency-fund-calculator/">Emergency Fund Calculator</option><option value="../flooring-calculator/">Flooring Calculator</option><option value="../freelance-rate-calculator/">Freelance Rate Calculator</option><option value="../hourly-to-salary-calculator/">Hourly to Salary Calculator</option><option value="../loan-early-payoff-calculator/">Loan Early Payoff Calculator</option><option value="../mortgage-payment-calculator/">Mortgage Payment Calculator</option><option value="../paint-coverage-calculator/">Paint Coverage Calculator</option><option value="../paycheck-estimator/">Paycheck Take-Home Estimator</option><option value="../percentage-change-calculator/">Percentage Change Calculator</option><option value="../recipe-scale-calculator/">Recipe Scale Calculator</option><option value="../rent-affordability-calculator/">Rent Affordability Calculator</option><option value="../sales-tax-calculator/">Sales Tax Calculator</option><option value="../savings-goal-calculator/">Savings Goal Calculator</option><option value="../roi-calculator/">Simple ROI Calculator</option><option value="../time-card-calculator/">Time Card Calculator</option><option value="../tip-calculator/">Tip Calculator</option><option value="../unit-price-calculator/">Unit Price Calculator</option>
+    <option value="">Jump to another tool...</option><option value="../break-even-calculator/" selected>Break Even Calculator</option><option value="../car-payment-calculator/">Car Payment Calculator</option><option value="../churn-rate-calculator/">Churn Rate Calculator</option><option value="../concrete-calculator/">Concrete Calculator</option><option value="../conversion-rate-calculator/">Conversion Rate Calculator</option><option value="../days-between-dates-calculator/">Days Between Dates Calculator</option><option value="../debt-payoff-calculator/">Debt Payoff Calculator</option><option value="../discount-calculator/">Discount Calculator</option><option value="../emergency-fund-calculator/">Emergency Fund Calculator</option><option value="../flooring-calculator/">Flooring Calculator</option><option value="../freelance-rate-calculator/">Freelance Rate Calculator</option><option value="../hourly-to-salary-calculator/">Hourly to Salary Calculator</option><option value="../loan-early-payoff-calculator/">Loan Early Payoff Calculator</option><option value="../mortgage-payment-calculator/">Mortgage Payment Calculator</option><option value="../paint-coverage-calculator/">Paint Coverage Calculator</option><option value="../paycheck-estimator/">Paycheck Take-Home Estimator</option><option value="../percentage-change-calculator/">Percentage Change Calculator</option><option value="../recipe-scale-calculator/">Recipe Scale Calculator</option><option value="../rent-affordability-calculator/">Rent Affordability Calculator</option><option value="../sales-tax-calculator/">Sales Tax Calculator</option><option value="../savings-goal-calculator/">Savings Goal Calculator</option><option value="../roi-calculator/">Simple Return on Investment Calculator</option><option value="../time-card-calculator/">Time Card Calculator</option><option value="../tip-calculator/">Tip Calculator</option><option value="../unit-price-calculator/">Unit Price Calculator</option>
   </select>
 </nav>
 
   <main class="wrap">
     <section class="hero">
-      <span class="eyebrow">One Clear Tool tool</span>
+      <span class="eyebrow">One Clear Tool</span>
       <h1>Break-Even Calculator</h1>
       <p>Estimate how many units you need to sell to cover fixed and variable costs.</p>
     </section>
@@ -259,7 +259,7 @@
     </section>
 
     <section class="faq">
-      <h2>FAQ</h2>
+      <h2>Common questions</h2>
 
         <details>
           <summary>What does break-even mean?</summary>
@@ -297,12 +297,12 @@
   <h3>What the result means</h3>
   <p>Treat the result as a planning estimate. The real break-even point can change if pricing, supplies, labor, platform fees, refunds, or marketing costs shift.</p>
   <h3>Useful next checks</h3>
-  <p>After finding break-even, compare the result with ROI, conversion rate, churn rate, and the amount of traffic or sales volume needed to make the project worthwhile.</p>
+  <p>After finding break-even, compare the result with return on investment, conversion rate, churn rate, and the amount of traffic or sales volume needed to make the project worthwhile.</p>
   <h3>Related tools</h3>
   <div class="nba-related-grid">
 
       <a class="nba-related-card" href="../roi-calculator/">
-        <strong>Simple ROI Calculator</strong>
+        <strong>Simple Return on Investment Calculator</strong>
         <span>Estimate whether the project return is worth the cost.</span>
       </a>
 
@@ -339,7 +339,7 @@
     </div>
   </div>
   <h3>Related tools</h3>
-  <div class="related"><a href="../roi-calculator/">Simple ROI Calculator</a><a href="../conversion-rate-calculator/">Conversion Rate Calculator</a><a href="../freelance-rate-calculator/">Freelance Rate Calculator</a></div>
+  <div class="related"><a href="../roi-calculator/">Simple Return on Investment Calculator</a><a href="../conversion-rate-calculator/">Conversion Rate Calculator</a><a href="../freelance-rate-calculator/">Freelance Rate Calculator</a></div>
   <p class="fine">Results are planning estimates for education and comparison only. They are not financial, tax, legal, lending, payroll, construction, or professional advice.</p>
 </section>
 <aside class="oct-support" id="oct-tool-support" aria-label="Support One Clear Tool">
@@ -387,7 +387,7 @@
     function monthsText(months) {
       const years = Math.floor(months / 12);
       const rem = months % 12;
-      return years ? `${years} yr ${rem} mo` : `${rem} mo`;
+      return years ? `${years} years ${rem} months` : `${rem} months`;
     }
 
     function calc() {
