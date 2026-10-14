@@ -171,3 +171,18 @@
 .oct-pro-soon button{font-size:1.05rem;font-weight:800;padding:.8rem 1.2rem;border-radius:999px;border:0;background:#94a3b8;color:#fff;cursor:not-allowed}
 .oct-pro-soon p{margin:.5rem 0 0;font-size:.98rem}
 .oct-example{border-left:4px solid #2563eb}
+/* Save and Export pack */
+.oct-pack{margin:1rem 0;padding:1.1rem;border-radius:16px;border:2px solid #2563eb;background:#eff6ff;color:#0f172a}
+.oct-pack strong{font-size:1.25rem}
+.oct-pack p{font-size:1.02rem}
+.oct-pack-actions{display:grid;gap:.6rem}
+.oct-pack button,.oct-pack-buy{display:block;width:100%;font-size:1.05rem;font-weight:800;padding:.85rem 1rem;border-radius:999px;border:0;background:#1d4ed8;color:#fff;text-align:center;text-decoration:none;cursor:pointer}
+.oct-pack-buy{background:#ffdd00;color:#111;margin:.5rem 0 1rem}
+.oct-pack label{display:block;font-weight:700;margin:.4rem 0}
+.oct-pack-unlock{display:grid;grid-template-columns:1fr auto;gap:.5rem}
+.oct-pack-unlock input{font-size:1.05rem;padding:.75rem;border-radius:12px;border:1px solid #94a3b8}
+.oct-pack-unlock button{width:auto}
+.oct-pack-status{min-height:1.3em;margin-top:.6rem;font-weight:700}
+.oct-pack-save{display:grid;grid-template-columns:1fr auto auto;gap:.4rem;align-items:center;padding:.5rem 0;border-top:1px solid #cbd5e1}
+.oct-pack-save small{display:block;color:#475569}
+.oct-pack-save button{width:auto;padding:.5rem .8rem;font-size:.95rem;background:#334155}
