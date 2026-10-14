@@ -2,8 +2,8 @@
    Switch on: set PACK_LIVE = true (and set BUY_URL). Until then it only runs with ?pack=preview. */
 (() => {
   "use strict";
-  const PACK_LIVE = false;
-  const BUY_URL = "https://buymeacoffee.com/divclass016";
+  const PACK_LIVE = true;
+  const BUY_URL = "https://buymeacoffee.com/divclass016/e/586870";
   const CODE_SHA256 = "787fa10ee056a92a0818224b054cb546ff105dcd1d32ef60f7fc4eb3bb1d3705";
   const UNLOCK_KEY = "oct-pack-unlocked";
   const SAVE_KEY = "oct-pack-saves";
