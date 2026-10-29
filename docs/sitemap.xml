@@ -6,6 +6,11 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://onecleartool.com/acres-to-square-feet-converter/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://onecleartool.com/add-days-to-date-calculator/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -17,6 +22,11 @@
   </url>
   <url>
     <loc>https://onecleartool.com/break-even-calculator/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://onecleartool.com/brick-calculator/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -91,6 +101,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://onecleartool.com/day-of-week-calculator/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://onecleartool.com/days-between-dates-calculator/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -112,6 +127,11 @@
   </url>
   <url>
     <loc>https://onecleartool.com/debt-to-income-calculator/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://onecleartool.com/decimal-to-hours-converter/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -191,6 +211,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://onecleartool.com/hours-to-decimal-converter/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://onecleartool.com/inches-to-cm-converter/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -217,6 +242,11 @@
   </url>
   <url>
     <loc>https://onecleartool.com/lumber-calculator/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://onecleartool.com/markup-calculator/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -256,6 +286,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://onecleartool.com/oven-gas-mark-converter/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://onecleartool.com/oven-temperature-converter/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -291,6 +326,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://onecleartool.com/pizza-calculator/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://onecleartool.com/pounds-to-kg-converter/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -307,6 +347,11 @@
   </url>
   <url>
     <loc>https://onecleartool.com/random-number-generator/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://onecleartool.com/reading-time-calculator/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -351,6 +396,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://onecleartool.com/square-feet-to-acres-converter/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://onecleartool.com/square-footage-calculator/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -362,6 +412,11 @@
   </url>
   <url>
     <loc>https://onecleartool.com/teaspoons-to-tablespoons-converter/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://onecleartool.com/text-case-converter/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -396,6 +451,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://onecleartool.com/wallpaper-calculator/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://onecleartool.com/weeks-between-dates-calculator/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -414,65 +474,5 @@
     <loc>https://onecleartool.com/terms/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
-  </url>
-  <url>
-    <loc>https://onecleartool.com/acres-to-square-feet-converter/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://onecleartool.com/brick-calculator/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://onecleartool.com/day-of-week-calculator/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://onecleartool.com/decimal-to-hours-converter/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://onecleartool.com/hours-to-decimal-converter/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://onecleartool.com/markup-calculator/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://onecleartool.com/oven-gas-mark-converter/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://onecleartool.com/pizza-calculator/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://onecleartool.com/reading-time-calculator/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://onecleartool.com/square-feet-to-acres-converter/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://onecleartool.com/text-case-converter/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://onecleartool.com/wallpaper-calculator/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
   </url>
 </urlset>

@@ -145,12 +145,14 @@
   }
 
 
-  function installCoffeeLine(result) {
-    if (!result || document.querySelector(".oct-coffee-line")) return;
-    const line = document.createElement("p");
-    line.className = "oct-coffee-line";
-    line.innerHTML = 'Did this save you time? <a href="https://buymeacoffee.com/divclass016" target="_blank" rel="noopener noreferrer">Buy me a coffee</a>';
-    result.insertAdjacentElement("afterend", line);
+  function consolidateSupportLinks() {
+    // Keep the existing optional support area, without another request below
+    // the result or in the footer navigation.
+    const links = Array.from(document.querySelectorAll('a[href*="buymeacoffee.com/divclass016"]'));
+    const preferred = links.find(link => link.closest(".oct-support")) || links[0];
+    for (const link of links) {
+      if (link !== preferred) link.remove();
+    }
   }
 
   function verifySupportLink() {
@@ -163,7 +165,7 @@
     const result = document.querySelector(".result, [aria-live=\"polite\"]");
     installTrustNote(form);
     installResultActions(form, result);
-    installCoffeeLine(result);
+    consolidateSupportLinks();
     verifySupportLink();
   }
 

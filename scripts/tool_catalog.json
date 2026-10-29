@@ -478,5 +478,77 @@
     "name": "Salary to Hourly Calculator",
     "description": "Convert annual salary to an estimated hourly rate.",
     "category": "Money & Work"
+  },
+  {
+    "slug": "acres-to-square-feet-converter",
+    "name": "Acres to Square Feet Converter",
+    "description": "Convert acres to square feet instantly for land and property planning.",
+    "category": "Conversions"
+  },
+  {
+    "slug": "brick-calculator",
+    "name": "Brick Calculator",
+    "description": "Estimate brick quantity from wall dimensions, brick face size, mortar joint, and waste.",
+    "category": "Home"
+  },
+  {
+    "slug": "day-of-week-calculator",
+    "name": "Day of Week Calculator",
+    "description": "Find what day of the week any valid calendar date falls on.",
+    "category": "Everyday"
+  },
+  {
+    "slug": "decimal-to-hours-converter",
+    "name": "Decimal to Hours Converter",
+    "description": "Convert decimal hours into hours and minutes for payroll, billing, and time tracking.",
+    "category": "Conversions"
+  },
+  {
+    "slug": "hours-to-decimal-converter",
+    "name": "Hours to Decimal Converter",
+    "description": "Convert hours and minutes to decimal hours for payroll, billing, and time tracking.",
+    "category": "Conversions"
+  },
+  {
+    "slug": "markup-calculator",
+    "name": "Markup Calculator",
+    "description": "Calculate selling price and gross profit from item cost and markup percentage.",
+    "category": "Business"
+  },
+  {
+    "slug": "oven-gas-mark-converter",
+    "name": "Oven Gas Mark Converter",
+    "description": "Convert a UK oven gas mark to its common Fahrenheit and Celsius equivalents.",
+    "category": "Kitchen"
+  },
+  {
+    "slug": "pizza-calculator",
+    "name": "Pizza Calculator",
+    "description": "Estimate how many pizzas to order from guest count, slices per person, and slices per pizza.",
+    "category": "Kitchen"
+  },
+  {
+    "slug": "reading-time-calculator",
+    "name": "Reading Time Calculator",
+    "description": "Estimate reading time from text length and reading speed in words per minute.",
+    "category": "Text"
+  },
+  {
+    "slug": "square-feet-to-acres-converter",
+    "name": "Square Feet to Acres Converter",
+    "description": "Convert square feet to acres instantly for land and property planning.",
+    "category": "Conversions"
+  },
+  {
+    "slug": "text-case-converter",
+    "name": "Text Case Converter",
+    "description": "Convert text to uppercase, lowercase, title case, or sentence case instantly.",
+    "category": "Text"
+  },
+  {
+    "slug": "wallpaper-calculator",
+    "name": "Wallpaper Calculator",
+    "description": "Estimate wallpaper rolls from room perimeter, wall height, roll dimensions, and waste.",
+    "category": "Home"
   }
 ]

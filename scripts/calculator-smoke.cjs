@@ -198,10 +198,10 @@ try {
   if (!car.includes(expectedCar)) failures.push(`car-payment-calculator: expected default payment ${expectedCar}`);
 
   const cups = results.get('cups-to-ounces-converter')?.out || '';
-  if (!cups.includes('16.00 fl oz')) failures.push('cups-to-ounces-converter: default conversion regression');
+  if (!cups.includes('16.00 fluid ounces')) failures.push('cups-to-ounces-converter: default conversion regression');
 
   const kg = results.get('kg-to-pounds-converter')?.out || '';
-  if (!kg.includes('22.046 lb')) failures.push('kg-to-pounds-converter: default conversion regression');
+  if (!kg.includes('22.046 pounds')) failures.push('kg-to-pounds-converter: default conversion regression');
 
   const words = results.get('word-counter')?.out || '';
   if (results.has('word-counter') && !words.includes('10')) failures.push('word-counter: default word-count regression');
