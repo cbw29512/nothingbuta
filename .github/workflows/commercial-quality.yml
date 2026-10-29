@@ -43,6 +43,8 @@ jobs:
 
       - name: Run calculator runtime smoke
         run: node scripts/calculator-smoke.cjs
+      - name: Verify one optional support link per page
+        run: node scripts/verify-support-consistency.cjs
 
       - name: Verify calculator privacy boundary
         shell: bash
