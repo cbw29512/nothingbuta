@@ -26,7 +26,6 @@ TOOL_FOOTER = f'''<nav class="oct-commercial-footer" id="oct-commercial-footer" 
   <a href="../">All tools</a>
   <a href="../privacy/">Privacy</a>
   <a href="../terms/">Terms</a>
-  <a href="{SUPPORT_URL}" target="_blank" rel="noopener noreferrer">Support</a>
 </nav>'''
 
 HOME_SEARCH = f'''<section class="oct-tool-search" id="oct-tool-search" aria-labelledby="oct-tool-search-label">
@@ -38,7 +37,6 @@ HOME_SEARCH = f'''<section class="oct-tool-search" id="oct-tool-search" aria-lab
 HOME_FOOTER = f'''<nav class="oct-commercial-footer" id="oct-commercial-footer" aria-label="Site information">
   <a href="privacy/">Privacy</a>
   <a href="terms/">Terms</a>
-  <a href="{SUPPORT_URL}" target="_blank" rel="noopener noreferrer">Support</a>
 </nav>'''
 
 SCRIPT_RE = re.compile(
