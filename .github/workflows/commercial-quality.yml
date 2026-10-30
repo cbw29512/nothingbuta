@@ -41,6 +41,8 @@ jobs:
           node --check docs/assets/home-ux.js
           node --check scripts/calculator-smoke.cjs
 
+      - name: Verify homepage search and category filtering
+        run: node scripts/verify-home-filter.cjs
       - name: Run calculator runtime smoke
         run: node scripts/calculator-smoke.cjs
       - name: Verify one optional support link per page

@@ -32,6 +32,10 @@ TOOL_FOOTER = f'''<nav class="oct-commercial-footer" id="oct-commercial-footer" 
 HOME_SEARCH = f'''<section class="oct-tool-search" id="oct-tool-search" aria-labelledby="oct-tool-search-label">
   <label id="oct-tool-search-label" for="oct-tool-search-input">Find a tool</label>
   <input id="oct-tool-search-input" type="search" autocomplete="off" placeholder="Try debt, mortgage, tip, flooring, pay...">
+  <label for="oct-tool-category">Category</label>
+  <select id="oct-tool-category" aria-label="Filter calculators by category">
+    <option value="">All categories</option>
+  </select>
   <p class="oct-search-status" id="oct-tool-search-status" aria-live="polite">{TOOL_COUNT} tools available.</p>
 </section>'''
 
@@ -153,7 +157,7 @@ def expected_outputs() -> dict[Path, str]:
 def validate_docs(outputs: dict[Path, str]) -> list[str]:
     errors: list[str] = []
     home = outputs[DOCS / "index.html"]
-    for needle in (SUPPORT_URL, "oct-tool-search-input", "privacy/", "terms/", f"{TOOL_COUNT} tools available."):
+    for needle in (SUPPORT_URL, "oct-tool-search-input", "oct-tool-category", "privacy/", "terms/", f"{TOOL_COUNT} tools available."):
         if needle not in home:
             errors.append(f"homepage missing {needle}")
 
