@@ -144,6 +144,20 @@
   font: inherit;
 }
 
+.oct-tool-search select {
+  width: 100%;
+  min-height: 48px;
+  margin-top: .1rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 14px;
+  padding: .75rem .85rem;
+  background: #fff;
+  color: #0f172a;
+  font: inherit;
+}
+.oct-tool-search input + label { margin-top: .9rem; }
+
+.oct-tool-search select:focus-visible,
 .oct-tool-search input:focus,
 .oct-support a:focus-visible,
 .oct-commercial-footer a:focus-visible,
